@@ -4,11 +4,9 @@
 
 .about {
   @include section-spacing(padding-left, $horizontal: true);
-  // @include section-spacing(padding-right, $horizontal: true);
   @include section-spacing(padding-bottom, $horizontal: true);
   @include section-spacing(margin-bottom, $vertical: true);
   position: relative;
-  border: 1px red solid;
 }
 
 .about__title {

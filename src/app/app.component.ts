@@ -6,7 +6,7 @@ import LocomotiveScroll from 'locomotive-scroll';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   scroll: any;
 
   ngOnInit() {
@@ -16,7 +16,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    this.scroll.update();
+  public updateScroll(): void {
+    window.addEventListener('load', () => {
+      this.scroll.update();
+    });
   }
 }

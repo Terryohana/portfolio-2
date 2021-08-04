@@ -1,0 +1,22 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/text.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+.contact {
+  @include section-spacing(padding-right, $horizontal: true);
+  @include section-spacing(padding-left, $horizontal: true);
+  @include section-spacing(padding-bottom, $vertical: true);
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact__links {
+  flex-basis: 90%;
+  display: grid;
+  gap: 20px;
+}
+
+.contact__title {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+}

@@ -9,9 +9,10 @@ import { ScrollNoticeComponent } from './components/atoms/scroll-notice/scroll-n
 import { WorkComponent } from './components/organisms/work/work.component';
 import { ProjectComponent } from './components/molecules/project/project.component';
 import { AboutComponent } from './components/organisms/about/about.component';
+import { FooterComponent } from './components/organisms/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, HeaderComponent, LogoComponent, NameComponent, ScrollNoticeComponent, WorkComponent, ProjectComponent, AboutComponent],
+  declarations: [AppComponent, ButtonComponent, HeaderComponent, LogoComponent, NameComponent, ScrollNoticeComponent, WorkComponent, ProjectComponent, AboutComponent, FooterComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
