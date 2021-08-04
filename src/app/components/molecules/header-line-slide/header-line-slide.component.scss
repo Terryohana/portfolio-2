@@ -1,0 +1,90 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/text.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+// perspective
+
+$perspective: 400px;
+
+// rotate size
+
+$rotateXl: 64deg;
+$rotateLg: 32deg;
+$rotateMd: 16deg;
+$rotateSm: 8deg;
+
+// translate size
+
+$translateXl: 50px;
+$translateLg: 5px;
+
+.header__title {
+  cursor: default;
+  transform-origin: center;
+}
+
+.header__title--line-one {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX($rotateXl)
+      translateY($translateXl);
+  }
+}
+.header__title--line-two {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX($rotateLg)
+      translateY($translateLg);
+  }
+}
+.header__title--line-three {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX($rotateMd);
+  }
+}
+.header__title--line-four {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX($rotateSm);
+  }
+}
+.header__title--line-five {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX(-$rotateSm);
+  }
+}
+.header__title--line-six {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX(-$rotateMd);
+  }
+}
+.header__title--line-seven {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX(-$rotateLg)
+      translateY(-$translateLg);
+  }
+}
+.header__title--line-eight {
+  .header__title__inner {
+    transform: perspective($perspective) rotateX(-$rotateXl)
+      translateY(-$translateXl);
+  }
+}
+
+.header__word {
+  display: inline-flex;
+}
+
+.header__letter {
+  position: relative;
+  overflow: hidden;
+}
+
+.header__letter__face {
+  display: inline-block;
+  padding: 0 1px;
+}
+
+.header__letter__face--outlined {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}

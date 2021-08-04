@@ -18,7 +18,6 @@ export class ProjectComponent implements AfterViewInit {
       const titleFilled = project.children[1].children[0];
       const titleOutlined = project.children[1].children[1];
       const activeMarker = project.children[2];
-      console.log(activeMarker);
       const settings = {
         title: {
           duration: 0.75,

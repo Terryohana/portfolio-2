@@ -11,10 +11,6 @@
   opacity: 0;
 }
 
-.header__block {
-  opacity: 0;
-}
-
 .header__block--top {
   @include section-spacing(top, $horizontal: true);
   @include section-spacing(left, $horizontal: true);
@@ -32,83 +28,6 @@
   right: -500vw;
   transform: translateY(-48%);
   text-align: center;
-}
-
-.header__title {
-  cursor: default;
-  transform-origin: center;
-  $perspective: 400px;
-  $outer-still: 64deg;
-  $outer: 32deg;
-  $inner: 16deg;
-  $middle: 8deg;
-  $outer-translate: 5px;
-  $outer-still-translate: 50px;
-  &:nth-child(1) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX($outer-still)
-        translateY($outer-still-translate);
-    }
-  }
-  &:nth-child(2) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX($outer)
-        translateY($outer-translate);
-    }
-  }
-  &:nth-child(3) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX($inner);
-    }
-  }
-  &:nth-child(4) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX($middle);
-    }
-  }
-  &:nth-child(5) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX(-$middle);
-    }
-  }
-  &:nth-child(6) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX(-$inner);
-    }
-  }
-  &:nth-child(7) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX(-$outer)
-        translateY(-$outer-translate);
-    }
-  }
-  &:nth-child(8) {
-    .header__title__inner {
-      transform: perspective($perspective) rotateX(-$outer-still)
-        translateY(-$outer-still-translate);
-    }
-  }
-}
-
-.header__word {
-  display: inline-flex;
-}
-
-.header__letter {
-  position: relative;
-  overflow: hidden;
-}
-
-.header__letter__face {
-  display: inline-block;
-  padding: 0 1px;
-}
-
-.header__letter__face--outlined {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
 .header__block--bottom {
@@ -174,17 +93,4 @@
     transparentize($color: $color-black, $amount: 0) 15%,
     transparentize($color: $color-black, $amount: 1) 100%
   );
-}
-
-.header__mask {
-  position: absolute;
-  display: none;
-  z-index: 5;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  bottom: 0;
-  left: 0;
-  background: transparentize($color: $color-black, $amount: 0.5);
-  pointer-events: none;
 }

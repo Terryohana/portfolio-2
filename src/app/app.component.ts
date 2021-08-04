@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
     });
+    this.updateScroll();
   }
 
   public updateScroll(): void {
