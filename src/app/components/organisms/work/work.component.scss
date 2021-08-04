@@ -1,0 +1,23 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/text.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+.work {
+  display: flex;
+  align-items: flex-start;
+  @include section-spacing(padding-left, $horizontal: true);
+  @include section-spacing(padding-right, $horizontal: true);
+  @include section-spacing(padding-bottom, $horizontal: true);
+  @include section-spacing(margin-bottom, $vertical: true);
+}
+
+.work__title {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+}
+
+.work__projects {
+  @include section-spacing(padding-left, $horizontal: true);
+  @include section-spacing(margin-left, $horizontal: true);
+  flex-grow: 1;
+}

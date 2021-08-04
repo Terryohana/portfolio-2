@@ -7,9 +7,11 @@ import { LogoComponent } from './components/atoms/logo/logo.component';
 import { NameComponent } from './components/atoms/name/name.component';
 import { ScrollNoticeComponent } from './components/atoms/scroll-notice/scroll-notice.component';
 import { WorkComponent } from './components/organisms/work/work.component';
+import { ProjectComponent } from './components/molecules/project/project.component';
+import { AboutComponent } from './components/organisms/about/about.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, HeaderComponent, LogoComponent, NameComponent, ScrollNoticeComponent, WorkComponent],
+  declarations: [AppComponent, ButtonComponent, HeaderComponent, LogoComponent, NameComponent, ScrollNoticeComponent, WorkComponent, ProjectComponent, AboutComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],

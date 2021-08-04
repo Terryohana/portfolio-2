@@ -1,0 +1,64 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/text.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+.project {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px $color-white solid;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.project--border-top {
+  border-top: 1px $color-white solid;
+}
+
+.project__text {
+  flex-basis: calc(100% - 50px);
+}
+
+.project__text {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.project__text__title {
+  padding: 15px 0;
+}
+
+.project__text__title--filled {
+  position: relative;
+  z-index: 1;
+  @include text-outline(transparent, 2px, $color-white);
+}
+
+.project__text__title--outlined {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  @include text-outline($color-white, 2px, transparent);
+}
+
+.project__number {
+  overflow: hidden;
+  flex-basis: 70px;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  padding-left: 3px;
+}
+
+.project__marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  background-color: $color-white;
+  z-index: 0;
+}

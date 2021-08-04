@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import LocomotiveScroll from 'locomotive-scroll';
-import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-root',

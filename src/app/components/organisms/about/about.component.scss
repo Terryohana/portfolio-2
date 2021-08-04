@@ -1,0 +1,40 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/text.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+.about {
+  @include section-spacing(padding-left, $horizontal: true);
+  // @include section-spacing(padding-right, $horizontal: true);
+  @include section-spacing(padding-bottom, $horizontal: true);
+  @include section-spacing(margin-bottom, $vertical: true);
+  position: relative;
+  border: 1px red solid;
+}
+
+.about__title {
+  @include section-spacing(margin-bottom, $horizontal: true);
+  display: inline-block;
+}
+
+.about__text {
+  width: 950px;
+}
+
+.about__text__p {
+  &:last-child {
+    margin-top: 50px;
+  }
+}
+
+.about__bike {
+  position: absolute;
+  width: 150px;
+  top: 0;
+  right: 0;
+}
+
+.about__bike__image {
+  width: 150px;
+  transform: rotate(-90deg);
+  transform-origin: bottom right;
+}
