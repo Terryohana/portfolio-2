@@ -1,0 +1,86 @@
+.h1 {
+  font-size: 75px;
+  line-height: 105%;
+  font-family: "Druk Text Wide Super";
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.h2 {
+  position: relative;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: "Druk Text Wide";
+  font-weight: bold;
+  font-style: normal;
+  overflow: hidden;
+}
+
+.h2--vertical {
+  padding-left: 8px;
+}
+
+.h2--horizontal {
+  padding-bottom: 8px;
+}
+
+.h2__line {
+  position: absolute;
+  background-color: $color-pink;
+}
+
+.h2__line--vertical {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+}
+
+.h2__line--horizontal {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.h3 {
+  font-size: 45px;
+  line-height: 120%;
+  font-family: "Druk Text Wide Super";
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.h4 {
+  font-size: 45px;
+  line-height: 120%;
+  font-family: "Druk Text Wide Super";
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.p {
+  line-height: 145%;
+  font-family: "Druk Text Wide";
+  font-weight: 500;
+  font-style: normal;
+}
+
+.p--sm {
+  font-size: 14px;
+}
+
+.p--md {
+  font-size: 16px;
+}
+
+.p--lg {
+  font-size: 40px;
+}
+
+.p--xl {
+  font-size: 50px;
+}

@@ -1,0 +1,15 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/text.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+.name {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.name__line {
+  background-color: $color-white;
+  height: $line-width;
+  transform: translateX(-100%);
+}

@@ -1,4 +1,8 @@
 @import "~locomotive-scroll/dist/locomotive-scroll.css";
+@import "../src/assets/styles/fonts.scss";
+@import "../src/assets/styles/variables.scss";
+@import "../src/assets/styles/mixins.scss";
+@import "../src/assets/styles/text.scss";
 
 *,
 *::after,
@@ -8,26 +12,19 @@
   padding: 0;
 }
 
+body {
+  position: relative;
+  background-color: $color-black;
+  color: $color-white;
+  font-family: "Druk Text Wide";
+}
+
 section {
   position: relative;
   height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
-  &:nth-child(even) {
-    background: red;
-    border: 2px blue solid;
-  }
-  &:nth-child(odd) {
-    background: black;
-    border: 2px green solid;
-  }
-}
-
-span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 100px;
-  color: white;
+  background: whitesmoke;
+  border: 5px grey solid;
 }

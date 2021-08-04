@@ -1,0 +1,27 @@
+@mixin max-width {
+  max-width: $breakpoint-max;
+  margin: 0 auto;
+  height: 100%;
+}
+
+@mixin text-margin($property, $value) {
+  #{$property}: $value;
+  @media (max-width: $breakpoint-tablet) {
+    #{$property}: $value * 0.6;
+  }
+}
+
+@mixin section-spacing($property, $vertical: false, $horizontal: false) {
+  @if $vertical {
+    #{$property}: 150px;
+  }
+  @if $horizontal {
+    #{$property}: 50px;
+  }
+}
+
+@mixin text-outline($outline-color, $outline-width, $fill-color) {
+  -webkit-text-stroke-color: $outline-color;
+  -webkit-text-stroke-width: $outline-width;
+  -webkit-text-fill-color: $fill-color;
+}

@@ -1,0 +1,18 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/text.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+.scroll {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.scroll__text {
+  margin-right: 5px;
+}
+
+.scroll__icon {
+  stroke-width: $line-width;
+}

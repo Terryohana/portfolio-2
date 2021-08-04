@@ -2,17 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
+import { HeaderComponent } from './components/organisms/header/header.component';
+import { LogoComponent } from './components/atoms/logo/logo.component';
+import { NameComponent } from './components/atoms/name/name.component';
+import { ScrollNoticeComponent } from './components/atoms/scroll-notice/scroll-notice.component';
+import { WorkComponent } from './components/organisms/work/work.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ButtonComponent
-  ],
-  imports: [
-    BrowserModule,
-    
-  ],
+  declarations: [AppComponent, ButtonComponent, HeaderComponent, LogoComponent, NameComponent, ScrollNoticeComponent, WorkComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

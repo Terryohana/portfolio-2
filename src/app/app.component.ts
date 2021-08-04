@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from 'gsap';
 
@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   scroll: any;
 
   ngOnInit() {
@@ -15,6 +15,9 @@ export class AppComponent implements OnInit {
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
     });
-    console.log(gsap);
+  }
+
+  ngAfterViewInit() {
+    this.scroll.update();
   }
 }
