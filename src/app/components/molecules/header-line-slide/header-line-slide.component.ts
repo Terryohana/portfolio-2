@@ -14,17 +14,17 @@ import { mapElements } from '../../helpers/mapElements';
   styleUrls: ['./header-line-slide.component.scss'],
 })
 export class HeaderLineSlideComponent {
-  @ViewChildren('lineRef') lineRefs: QueryList<ElementRef>;
-  @ViewChildren('filledFaceRef') filledFaceRefs: QueryList<ElementRef>;
-  @ViewChildren('outlinedFaceRef') outlinedFaceRefs: QueryList<ElementRef>;
+  @ViewChildren('line') lines: QueryList<ElementRef>;
+  @ViewChildren('filledFace') filledFaces: QueryList<ElementRef>;
+  @ViewChildren('outlinedFace') outlinedFaces: QueryList<ElementRef>;
 
-  @Output() textLinesEmitter = new EventEmitter();
+  @Output() linesEmitter = new EventEmitter();
   @Output() filledFacesEmitter = new EventEmitter();
   @Output() outlinedFacesEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.textLinesEmitter.emit(mapElements(this.lineRefs));
-    this.filledFacesEmitter.emit(mapElements(this.filledFaceRefs));
-    this.outlinedFacesEmitter.emit(mapElements(this.outlinedFaceRefs));
+    this.linesEmitter.emit(mapElements(this.lines));
+    this.filledFacesEmitter.emit(mapElements(this.filledFaces));
+    this.outlinedFacesEmitter.emit(mapElements(this.outlinedFaces));
   }
 }

@@ -4,20 +4,23 @@
   <div class="header__dim header__dim--top"></div>
   <div class="header__dim header__dim--bottom"></div>
   <div class="header__block header__block--top">
-    <app-logo (elementEmitter)="logoBg = $event"></app-logo>
+    <app-logo (bgWhiteEmitter)="logoBgWhite = $event"></app-logo>
     <app-name
-      (nameRefEmitter)="nameText = $event"
-      (lineRefEmitter)="nameLine = $event"
+      (nameEmitter)="nameText = $event"
+      (lineEmitter)="nameLine = $event"
     ></app-name>
   </div>
   <div class="header__block header__block--middle">
     <app-header-line-slide
-      (textLinesEmitter)="textLines = $event"
+      (linesEmitter)="textLines = $event"
       (filledFacesEmitter)="filledFaces = $event"
       (outlinedFacesEmitter)="outlinedFaces = $event"
     ></app-header-line-slide>
   </div>
   <div class="header__block header__block--bottom">
-    <app-scroll-notice></app-scroll-notice>
+    <app-scroll-notice
+      (textEmitter)="scrollText = $event"
+      (iconEmitter)="scrollIcon = $event"
+    ></app-scroll-notice>
   </div>
 </header>

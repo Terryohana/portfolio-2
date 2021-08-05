@@ -9,12 +9,14 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit {
-  public logoBg: HTMLElement;
+  public logoBgWhite: HTMLElement;
   public textLines: HTMLElement[];
   public filledFaces: HTMLElement[];
   public outlinedFaces: HTMLElement[];
   public nameText: HTMLElement;
   public nameLine: HTMLElement;
+  public scrollText: HTMLElement;
+  public scrollIcon: HTMLElement;
 
   ngAfterViewInit() {
     const settings = {
@@ -98,7 +100,7 @@ export class HeaderComponent implements AfterViewInit {
 
     const animateLogo = () => {
       const tl = gsap.timeline();
-      tl.to(this.logoBg, {
+      tl.to(this.logoBgWhite, {
         y: 0,
         duration: 1,
         ease: 'power4.inOut',
@@ -127,7 +129,7 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const animateScrollText = () => {
-      const name = new SplitText('.scroll__text', { type: 'chars' });
+      const name = new SplitText(this.scrollText, { type: 'chars' });
       const tl = gsap.timeline();
       tl.from(name.chars, {
         y: 10,
@@ -151,16 +153,16 @@ export class HeaderComponent implements AfterViewInit {
         },
       });
       tl.fromTo(
-        '.scroll__line',
+        this.scrollIcon,
         { drawSVG: false },
         {
           drawSVG: true,
         }
       );
-      tl.to('.scroll__line', {
+      tl.to(this.scrollIcon, {
         opacity: 0,
       });
-      tl.set('.scroll__line', {
+      tl.set(this.scrollIcon, {
         opacity: 1,
       });
       return tl;
