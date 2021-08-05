@@ -9,11 +9,11 @@ import {
 import { mapElements } from '../../helpers/mapElements';
 
 @Component({
-  selector: 'app-header-line-slide',
-  templateUrl: './header-line-slide.component.html',
-  styleUrls: ['./header-line-slide.component.scss'],
+  selector: 'app-text-slide',
+  templateUrl: './text-slide.component.html',
+  styleUrls: ['./text-slide.component.scss'],
 })
-export class HeaderLineSlideComponent {
+export class TextSlideComponent {
   @ViewChildren('line') lines: QueryList<ElementRef>;
   @ViewChildren('filledFace') filledFaces: QueryList<ElementRef>;
   @ViewChildren('outlinedFace') outlinedFaces: QueryList<ElementRef>;

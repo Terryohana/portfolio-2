@@ -10,7 +10,7 @@ import { WorkComponent } from './components/organisms/work/work.component';
 import { ProjectComponent } from './components/molecules/project/project.component';
 import { AboutComponent } from './components/organisms/about/about.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
-import { HeaderLineSlideComponent } from './components/molecules/header-line-slide/header-line-slide.component';
+import { TextSlideComponent } from './components/molecules/text-slide/text-slide.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { HeaderLineSlideComponent } from './components/molecules/header-line-sli
     ProjectComponent,
     AboutComponent,
     FooterComponent,
-    HeaderLineSlideComponent,
+    TextSlideComponent,
   ],
   imports: [BrowserModule],
   providers: [],

@@ -14,7 +14,6 @@ import {
 export class NameComponent {
   @ViewChild('text') text: ElementRef;
   @ViewChild('line') line: ElementRef;
-
   @Output() textEmitter = new EventEmitter();
   @Output() lineEmitter = new EventEmitter();
 

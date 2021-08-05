@@ -16,7 +16,7 @@
 
 .logo__text {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   color: $color-black;
   line-height: 100%;
   transform: translateY(3px);
@@ -31,19 +31,11 @@
 
 .logo__bg {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   transform: translateY(100%);
-}
-
-.logo__bg--white {
-  z-index: 1;
   background-color: $color-white;
-}
-
-.logo__bg--pink {
-  z-index: 0;
-  background-color: $color-pink;
 }
