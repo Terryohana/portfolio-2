@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
@@ -9,6 +9,8 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit {
+  @ViewChild('headerMask') headerMaskRef: ElementRef;
+
   public logoBgWhite: HTMLElement;
   public textLines: HTMLElement[];
   public filledFaces: HTMLElement[];
@@ -17,8 +19,14 @@ export class HeaderComponent implements AfterViewInit {
   public nameLine: HTMLElement;
   public scrollText: HTMLElement;
   public scrollIcon: HTMLElement;
+  public headerMask: HTMLElement;
 
   ngAfterViewInit() {
+    this.headerMask = this.headerMaskRef.nativeElement;
+    this.animateHeader();
+  }
+
+  public animateHeader() {
     const settings = {
       slide: {
         duration: 3,
@@ -63,11 +71,19 @@ export class HeaderComponent implements AfterViewInit {
       });
       this.textLines.forEach((line, i) => {
         if (i % 2 === 0) {
-          tl.from(line, { x: settings.slide.distance }, 0.5);
+          tl.from(line, { x: settings.slide.distance }, 0);
         } else {
-          tl.from(line, { x: -settings.slide.distance }, 0.5);
+          tl.from(line, { x: -settings.slide.distance }, 0);
         }
       });
+      tl.to(
+        this.headerMask,
+        {
+          opacity: 0,
+          duration: 2,
+        },
+        `-=${settings.slide.duration * 0.9}`
+      );
       return tl;
     };
 
