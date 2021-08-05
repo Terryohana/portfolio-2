@@ -1,6 +1,6 @@
-@import "../../../../assets/styles/variables.scss";
-@import "../../../../assets/styles/text.scss";
-@import "../../../../assets/styles/mixins.scss";
+@import "mixins";
+@import "variables";
+@import "text";
 
 .name {
   position: relative;

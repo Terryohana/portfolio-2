@@ -12,14 +12,14 @@ import {
   styleUrls: ['./name.component.scss'],
 })
 export class NameComponent {
-  @ViewChild('name') name: ElementRef;
+  @ViewChild('text') text: ElementRef;
   @ViewChild('line') line: ElementRef;
 
-  @Output() nameEmitter = new EventEmitter();
+  @Output() textEmitter = new EventEmitter();
   @Output() lineEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.nameEmitter.emit(this.name.nativeElement);
+    this.textEmitter.emit(this.text.nativeElement);
     this.lineEmitter.emit(this.line.nativeElement);
   }
 }

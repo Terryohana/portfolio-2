@@ -5,17 +5,17 @@
   <div class="header__dim header__dim--bottom"></div>
   <div #headerMask class="header__mask"></div>
   <div class="header__block header__block--top">
-    <app-logo (bgWhiteEmitter)="logoBgWhite = $event"></app-logo>
+    <app-logo (bgEmitter)="logoBg = $event"></app-logo>
     <app-name
-      (nameEmitter)="nameText = $event"
+      (textEmitter)="nameText = $event"
       (lineEmitter)="nameLine = $event"
     ></app-name>
   </div>
   <div class="header__block header__block--middle">
     <app-header-line-slide
       (linesEmitter)="textLines = $event"
-      (filledFacesEmitter)="filledFaces = $event"
-      (outlinedFacesEmitter)="outlinedFaces = $event"
+      (filledFacesEmitter)="textFilledFaces = $event"
+      (outlinedFacesEmitter)="textOutlinedFaces = $event"
     ></app-header-line-slide>
   </div>
   <div class="header__block header__block--bottom">

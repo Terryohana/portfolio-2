@@ -9,16 +9,36 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 })
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('headerMask') headerMaskRef: ElementRef;
-
-  public logoBgWhite: HTMLElement;
-  public textLines: HTMLElement[];
-  public filledFaces: HTMLElement[];
-  public outlinedFaces: HTMLElement[];
+  // logo
+  public logoBg: HTMLElement;
+  // name
   public nameText: HTMLElement;
   public nameLine: HTMLElement;
+  // header line slide
+  public textLines: HTMLElement[];
+  public textFilledFaces: HTMLElement[];
+  public textOutlinedFaces: HTMLElement[];
+  // scroll notice
   public scrollText: HTMLElement;
   public scrollIcon: HTMLElement;
+  // header mask
   public headerMask: HTMLElement;
+  // animation settings
+  public settings = {
+    slide: {
+      duration: 3,
+      distance: 3000,
+      ease: 'power4.out',
+    },
+    rotate: {
+      duration: 1,
+      ease: 'power4.inOut',
+      yPercent: 100,
+      rotateX: 90,
+      skewX: 30,
+      stagger: 0.03,
+    },
+  };
 
   ngAfterViewInit() {
     this.headerMask = this.headerMaskRef.nativeElement;
@@ -26,22 +46,6 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   public initHeaderAnimations() {
-    const settings = {
-      slide: {
-        duration: 3,
-        distance: 1800,
-        ease: 'power4.out',
-      },
-      rotate: {
-        duration: 1,
-        ease: 'power4.inOut',
-        yPercent: 100,
-        rotateX: 90,
-        skewX: 30,
-        stagger: 0.03,
-      },
-    };
-
     const setHeaderStyles = () => {
       const tl = gsap.timeline();
       tl.set(this.textLines, {
@@ -49,14 +53,14 @@ export class HeaderComponent implements AfterViewInit {
         textStrokeColor: '#ffffff',
         textStrokeWidth: 3,
       });
-      tl.set(this.filledFaces, {
+      tl.set(this.textFilledFaces, {
         textFillColor: '#ffffff',
         textStrokeColor: 'transparent',
         textStrokeWidth: 0,
-        yPercent: -settings.rotate.yPercent,
+        yPercent: -this.settings.rotate.yPercent,
         opacity: 0,
-        rotateX: settings.rotate.rotateX,
-        skewX: settings.rotate.skewX,
+        rotateX: this.settings.rotate.rotateX,
+        skewX: this.settings.rotate.skewX,
       });
       return tl;
     };
@@ -64,15 +68,15 @@ export class HeaderComponent implements AfterViewInit {
     const slideJobTitle = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: settings.slide.duration,
-          ease: settings.slide.ease,
+          duration: this.settings.slide.duration,
+          ease: this.settings.slide.ease,
         },
       });
       this.textLines.forEach((line, i) => {
         if (i % 2 === 0) {
-          tl.from(line, { x: settings.slide.distance }, 0);
+          tl.from(line, { x: this.settings.slide.distance }, 0);
         } else {
-          tl.from(line, { x: -settings.slide.distance }, 0);
+          tl.from(line, { x: -this.settings.slide.distance }, 0);
         }
       });
       tl.to(
@@ -83,32 +87,32 @@ export class HeaderComponent implements AfterViewInit {
           pointerEvents: 'none',
           zIndex: -1,
         },
-        `-=${settings.slide.duration * 0.9}`
+        `-=${this.settings.slide.duration * 0.8}`
       );
       return tl;
     };
 
-    const showFilledFaces = () => {
+    const showTextFilledFaces = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: settings.rotate.duration,
-          ease: settings.rotate.ease,
-          stagger: settings.rotate.stagger,
+          duration: this.settings.rotate.duration,
+          ease: this.settings.rotate.ease,
+          stagger: this.settings.rotate.stagger,
         },
       });
-      tl.to(this.filledFaces, {
+      tl.to(this.textFilledFaces, {
         yPercent: 0,
         opacity: 1,
         rotateX: 0,
         skewX: 0,
       });
       tl.to(
-        this.outlinedFaces,
+        this.textOutlinedFaces,
         {
-          yPercent: settings.rotate.yPercent,
+          yPercent: this.settings.rotate.yPercent,
           opacity: 0,
-          rotateX: -settings.rotate.rotateX,
-          skewX: -settings.rotate.skewX,
+          rotateX: -this.settings.rotate.rotateX,
+          skewX: -this.settings.rotate.skewX,
         },
         0
       );
@@ -117,7 +121,7 @@ export class HeaderComponent implements AfterViewInit {
 
     const animateLogo = () => {
       const tl = gsap.timeline();
-      tl.to(this.logoBgWhite, {
+      tl.to(this.logoBg, {
         y: 0,
         duration: 1,
         ease: 'power4.inOut',
@@ -126,7 +130,6 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const animateName = () => {
-      // const name = new SplitText(this.nameText, { type: 'chars' });
       const tl = gsap.timeline({
         defaults: {
           duration: 1,
@@ -164,17 +167,10 @@ export class HeaderComponent implements AfterViewInit {
       tl.set(this.scrollIcon, {
         opacity: 1,
       });
-      tl.fromTo(
-        this.scrollIcon,
-        { drawSVG: false },
-        {
-          drawSVG: true,
-        }
-      );
+      tl.fromTo(this.scrollIcon, { drawSVG: false }, { drawSVG: true });
       tl.to(this.scrollIcon, {
         opacity: 0,
       });
-
       return tl;
     };
 
@@ -182,7 +178,7 @@ export class HeaderComponent implements AfterViewInit {
     main
       .add(setHeaderStyles())
       .add(slideJobTitle())
-      .add(showFilledFaces(), '-=0.5')
+      .add(showTextFilledFaces(), '-=0.5')
       .add(animateLogo(), '-=0.75')
       .add(animateName(), '-=1')
       .add(animateScrollText(), '-=0.5')

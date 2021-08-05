@@ -13,11 +13,11 @@ import {
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent implements AfterViewInit {
-  @ViewChild('logoBgWhite') logoBgWhite: ElementRef;
+  @ViewChild('bg') bg: ElementRef;
 
-  @Output() bgWhiteEmitter = new EventEmitter();
+  @Output() bgEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.bgWhiteEmitter.emit(this.logoBgWhite.nativeElement);
+    this.bgEmitter.emit(this.bg.nativeElement);
   }
 }
