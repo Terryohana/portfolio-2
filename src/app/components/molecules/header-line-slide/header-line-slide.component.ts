@@ -5,6 +5,7 @@ import {
   EventEmitter,
   Output,
   QueryList,
+  ViewChild,
   ViewChildren,
 } from '@angular/core';
 import { mapElements } from '../../helpers/mapElements';
@@ -22,10 +23,14 @@ export class HeaderLineSlideComponent implements AfterViewInit {
   @ViewChildren('filledFaceRef') filledFaceRefs!: QueryList<ElementRef>;
   @ViewChildren('outlinedFaceRef') outlinedFaceRefs!: QueryList<ElementRef>;
 
+  @ViewChild('divComponent2') divComponent1: ElementRef;
+  @Output() divComponent = new EventEmitter();
+
   ngAfterViewInit() {
     const lines = mapElements(this.lineRefs);
     const filledFaces = mapElements(this.filledFaceRefs);
     const outlinedFaces = mapElements(this.outlinedFaceRefs);
+    this.divComponent.emit(this.divComponent1);
 
     const settings = {
       slide: {

@@ -4,11 +4,13 @@
   <div class="header__dim header__dim--top"></div>
   <div class="header__dim header__dim--bottom"></div>
   <div class="header__block header__block--top">
-    <app-logo></app-logo>
+    <app-logo (divComponent)="divOne = $event"></app-logo>
     <app-name></app-name>
   </div>
   <div class="header__block header__block--middle">
-    <app-header-line-slide></app-header-line-slide>
+    <app-header-line-slide
+      (divComponent)="divTwo = $event"
+    ></app-header-line-slide>
   </div>
   <div class="header__block header__block--bottom">
     <app-scroll-notice></app-scroll-notice>
