@@ -13,7 +13,7 @@ import {
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent implements AfterViewInit {
-  @ViewChild('logoBg') logoBgRef: ElementRef;
+  @ViewChild('logoBgRef') logoBgRef: ElementRef;
   @Output() elementEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {

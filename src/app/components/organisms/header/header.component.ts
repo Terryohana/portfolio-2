@@ -9,11 +9,11 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit {
-  logoBg: ElementRef;
-  divTwo: ElementRef;
+  public logoBg: HTMLElement;
+  public textLines: HTMLElement[];
 
   ngAfterViewInit() {
-    console.log(this.divTwo);
+    console.log(this.logoBg, this.textLines);
     const settings = {
       slide: {
         duration: 3,
@@ -31,12 +31,11 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const setHeaderStyles = () => {
-      const textLines = document.querySelectorAll('.header__title');
       const filledFaces = document.querySelectorAll(
         '.header__letter__face--filled'
       );
       const tl = gsap.timeline();
-      tl.set(textLines, {
+      tl.set(this.textLines, {
         textFillColor: 'transparent',
         textStrokeColor: '#ffffff',
         textStrokeWidth: 3,
@@ -54,7 +53,6 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const slideJobTitle = () => {
-      const textLines = document.querySelectorAll('.header__title');
       const tl = gsap.timeline({
         defaults: {
           duration: settings.slide.duration,
@@ -66,7 +64,7 @@ export class HeaderComponent implements AfterViewInit {
         opacity: 1,
         duration: settings.slide.duration,
       });
-      textLines.forEach((line, i) => {
+      this.textLines.forEach((line, i) => {
         if (i % 2 === 0) {
           tl.from(
             line,

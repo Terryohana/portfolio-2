@@ -3,8 +3,10 @@ import {
   ElementRef,
   EventEmitter,
   Output,
-  ViewChild,
+  QueryList,
+  ViewChildren,
 } from '@angular/core';
+import { mapElements } from '../../helpers/mapElements';
 
 @Component({
   selector: 'app-header-line-slide',
@@ -12,10 +14,10 @@ import {
   styleUrls: ['./header-line-slide.component.scss'],
 })
 export class HeaderLineSlideComponent {
-  @ViewChild('divComponent2') divComponent1: ElementRef;
-  @Output() divComponent = new EventEmitter();
+  @ViewChildren('lineRef') lineRefs: QueryList<ElementRef>;
+  @Output() elementEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.divComponent.emit(this.divComponent1);
+    this.elementEmitter.emit(mapElements(this.lineRefs));
   }
 }
