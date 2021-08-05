@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import LocomotiveScroll from 'locomotive-scroll';
 
 @Component({
@@ -14,10 +14,6 @@ export class AppComponent implements OnInit {
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
     });
-    this.updateScroll();
-  }
-
-  public updateScroll(): void {
     window.addEventListener('load', () => {
       this.scroll.update();
     });

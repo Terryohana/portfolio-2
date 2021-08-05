@@ -2,11 +2,15 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
+  Output,
   QueryList,
   ViewChildren,
 } from '@angular/core';
 import { mapElements } from '../../helpers/mapElements';
 import { gsap } from 'gsap';
+import { SplitText } from 'gsap/SplitText';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
 @Component({
   selector: 'app-header-line-slide',
@@ -67,9 +71,9 @@ export class HeaderLineSlideComponent implements AfterViewInit {
       });
       lines.forEach((line, i) => {
         if (i % 2 === 0) {
-          tl.from(line, { x: settings.slide.distance }, 0.5);
+          tl.from(line, { x: settings.slide.distance }, 0);
         } else {
-          tl.from(line, { x: -settings.slide.distance }, 0.5);
+          tl.from(line, { x: -settings.slide.distance }, 0);
         }
       });
       return tl;
@@ -102,15 +106,85 @@ export class HeaderLineSlideComponent implements AfterViewInit {
       return tl;
     };
 
-    const main = gsap.timeline({
-      delay: 1,
-      onComplete: this.slideComplete,
-    });
-    main.add(setStyles()).add(slideLines()).add(showFilledFaces(), '-=0.5');
-    return main;
-  }
+    const animateLogo = () => {
+      const tl = gsap.timeline();
+      tl.to('.logo__bg', {
+        y: 0,
+        duration: 1,
+        ease: 'power4.inOut',
+      });
+      return tl;
+    };
 
-  public slideComplete(): void {
-    console.log('slide complete');
+    const animateName = () => {
+      const name = new SplitText('.name__text', { type: 'chars' });
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 1,
+          ease: 'power4.inOut',
+        },
+      });
+      tl.from(name.chars, {
+        y: 10,
+        opacity: 0,
+        stagger: {
+          ease: 'power4.inOut',
+          amount: 0.01,
+        },
+      });
+      tl.to('.name__line', { x: 0 }, 0);
+      return tl;
+    };
+
+    const animateScrollText = () => {
+      const name = new SplitText('.scroll__text', { type: 'chars' });
+      const tl = gsap.timeline();
+      tl.from(name.chars, {
+        y: 10,
+        opacity: 0,
+        duration: 1,
+        stagger: {
+          ease: 'power4.inOut',
+          amount: 0.05,
+        },
+      });
+      return tl;
+    };
+
+    const animateScrollIcon = () => {
+      gsap.registerPlugin(DrawSVGPlugin);
+      const tl = gsap.timeline({
+        repeat: -1,
+        defaults: {
+          duration: 1,
+          ease: 'power4.out',
+        },
+      });
+      tl.fromTo(
+        '.scroll__line',
+        { drawSVG: false },
+        {
+          drawSVG: true,
+        }
+      );
+      tl.to('.scroll__line', {
+        opacity: 0,
+      });
+      tl.set('.scroll__line', {
+        opacity: 1,
+      });
+      return tl;
+    };
+
+    const main = gsap.timeline({ delay: 1 });
+    main
+      .add(setStyles())
+      .add(slideLines())
+      .add(showFilledFaces(), '-=0.5')
+      .add(animateLogo(), '-=0.75')
+      .add(animateName(), '-=1')
+      .add(animateScrollText(), '-=0.5')
+      .add(animateScrollIcon());
+    return main;
   }
 }
