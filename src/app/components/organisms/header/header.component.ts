@@ -9,12 +9,11 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit {
-  divOne: ElementRef;
+  logoBg: ElementRef;
   divTwo: ElementRef;
 
   ngAfterViewInit() {
-    console.log('div one', this.divOne);
-    console.log('div two', this.divTwo);
+    console.log(this.divTwo);
     const settings = {
       slide: {
         duration: 3,
@@ -124,7 +123,7 @@ export class HeaderComponent implements AfterViewInit {
 
     const animateLogo = () => {
       const tl = gsap.timeline();
-      tl.to('.logo__bg', {
+      tl.to(this.logoBg, {
         y: 0,
         duration: 1,
         ease: 'power4.inOut',
