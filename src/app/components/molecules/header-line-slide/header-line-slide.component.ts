@@ -15,9 +15,16 @@ import { mapElements } from '../../helpers/mapElements';
 })
 export class HeaderLineSlideComponent {
   @ViewChildren('lineRef') lineRefs: QueryList<ElementRef>;
-  @Output() elementEmitter = new EventEmitter();
+  @ViewChildren('filledFaceRef') filledFaceRefs: QueryList<ElementRef>;
+  @ViewChildren('outlinedFaceRef') outlinedFaceRefs: QueryList<ElementRef>;
+
+  @Output() textLinesEmitter = new EventEmitter();
+  @Output() filledFacesEmitter = new EventEmitter();
+  @Output() outlinedFacesEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.elementEmitter.emit(mapElements(this.lineRefs));
+    this.textLinesEmitter.emit(mapElements(this.lineRefs));
+    this.filledFacesEmitter.emit(mapElements(this.filledFaceRefs));
+    this.outlinedFacesEmitter.emit(mapElements(this.outlinedFaceRefs));
   }
 }

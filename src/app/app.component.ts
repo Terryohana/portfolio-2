@@ -7,15 +7,15 @@ import LocomotiveScroll from 'locomotive-scroll';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  scroll: any;
+  smoothScroll: any;
 
   ngOnInit() {
-    this.scroll = new LocomotiveScroll({
+    this.smoothScroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true,
     });
     window.addEventListener('load', () => {
-      this.scroll.update();
+      this.smoothScroll.update();
     });
   }
 }

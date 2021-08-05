@@ -11,9 +11,12 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 export class HeaderComponent implements AfterViewInit {
   public logoBg: HTMLElement;
   public textLines: HTMLElement[];
+  public filledFaces: HTMLElement[];
+  public outlinedFaces: HTMLElement[];
+  public nameText: HTMLElement;
+  public nameLine: HTMLElement;
 
   ngAfterViewInit() {
-    console.log(this.logoBg, this.textLines);
     const settings = {
       slide: {
         duration: 3,
@@ -31,16 +34,13 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const setHeaderStyles = () => {
-      const filledFaces = document.querySelectorAll(
-        '.header__letter__face--filled'
-      );
       const tl = gsap.timeline();
       tl.set(this.textLines, {
         textFillColor: 'transparent',
         textStrokeColor: '#ffffff',
         textStrokeWidth: 3,
       });
-      tl.set(filledFaces, {
+      tl.set(this.filledFaces, {
         textFillColor: '#ffffff',
         textStrokeColor: 'transparent',
         textStrokeWidth: 0,
@@ -59,40 +59,17 @@ export class HeaderComponent implements AfterViewInit {
           ease: settings.slide.ease,
         },
       });
-      tl.to('.header__block', {
-        delay: 0.5,
-        opacity: 1,
-        duration: settings.slide.duration,
-      });
       this.textLines.forEach((line, i) => {
         if (i % 2 === 0) {
-          tl.from(
-            line,
-            {
-              x: settings.slide.distance,
-            },
-            0.5
-          );
+          tl.from(line, { x: settings.slide.distance }, 0.5);
         } else {
-          tl.from(
-            line,
-            {
-              x: -settings.slide.distance,
-            },
-            0.5
-          );
+          tl.from(line, { x: -settings.slide.distance }, 0.5);
         }
       });
       return tl;
     };
 
     const showFilledFaces = () => {
-      const filledFaces = document.querySelectorAll(
-        '.header__letter__face--filled'
-      );
-      const outlinedFaces = document.querySelectorAll(
-        '.header__letter__face--outlined'
-      );
       const tl = gsap.timeline({
         defaults: {
           duration: settings.rotate.duration,
@@ -100,14 +77,14 @@ export class HeaderComponent implements AfterViewInit {
           stagger: settings.rotate.stagger,
         },
       });
-      tl.to(filledFaces, {
+      tl.to(this.filledFaces, {
         yPercent: 0,
         opacity: 1,
         rotateX: 0,
         skewX: 0,
       });
       tl.to(
-        outlinedFaces,
+        this.outlinedFaces,
         {
           yPercent: settings.rotate.yPercent,
           opacity: 0,
@@ -130,7 +107,7 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const animateName = () => {
-      const name = new SplitText('.name__text', { type: 'chars' });
+      const name = new SplitText(this.nameText, { type: 'chars' });
       const tl = gsap.timeline({
         defaults: {
           duration: 1,
@@ -145,7 +122,7 @@ export class HeaderComponent implements AfterViewInit {
           amount: 0.01,
         },
       });
-      tl.to('.name__line', { x: 0 }, 0);
+      tl.to(this.nameLine, { x: 0 }, 0);
       return tl;
     };
 

@@ -5,11 +5,16 @@
   <div class="header__dim header__dim--bottom"></div>
   <div class="header__block header__block--top">
     <app-logo (elementEmitter)="logoBg = $event"></app-logo>
-    <app-name></app-name>
+    <app-name
+      (nameRefEmitter)="nameText = $event"
+      (lineRefEmitter)="nameLine = $event"
+    ></app-name>
   </div>
   <div class="header__block header__block--middle">
     <app-header-line-slide
-      (elementEmitter)="textLines = $event"
+      (textLinesEmitter)="textLines = $event"
+      (filledFacesEmitter)="filledFaces = $event"
+      (outlinedFacesEmitter)="outlinedFaces = $event"
     ></app-header-line-slide>
   </div>
   <div class="header__block header__block--bottom">
