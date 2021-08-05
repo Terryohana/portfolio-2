@@ -14,6 +14,7 @@ import {
 })
 export class LogoComponent implements AfterViewInit {
   @ViewChild('logoBgWhite') logoBgWhite: ElementRef;
+
   @Output() bgWhiteEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {

@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
-import { SplitText } from 'gsap/SplitText';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
 @Component({
@@ -23,10 +22,10 @@ export class HeaderComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.headerMask = this.headerMaskRef.nativeElement;
-    this.animateHeader();
+    this.initHeaderAnimations();
   }
 
-  public animateHeader() {
+  public initHeaderAnimations() {
     const settings = {
       slide: {
         duration: 3,
@@ -81,6 +80,8 @@ export class HeaderComponent implements AfterViewInit {
         {
           opacity: 0,
           duration: 2,
+          pointerEvents: 'none',
+          zIndex: -1,
         },
         `-=${settings.slide.duration * 0.9}`
       );
@@ -125,36 +126,27 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const animateName = () => {
-      const name = new SplitText(this.nameText, { type: 'chars' });
+      // const name = new SplitText(this.nameText, { type: 'chars' });
       const tl = gsap.timeline({
         defaults: {
           duration: 1,
           ease: 'power4.inOut',
         },
       });
-      tl.from(name.chars, {
+      tl.from(this.nameText, {
         y: 10,
         opacity: 0,
-        stagger: {
-          ease: 'power4.inOut',
-          amount: 0.01,
-        },
       });
       tl.to(this.nameLine, { x: 0 }, 0);
       return tl;
     };
 
     const animateScrollText = () => {
-      const name = new SplitText(this.scrollText, { type: 'chars' });
       const tl = gsap.timeline();
-      tl.from(name.chars, {
+      tl.from(this.scrollText, {
         y: 10,
         opacity: 0,
         duration: 1,
-        stagger: {
-          ease: 'power4.inOut',
-          amount: 0.05,
-        },
       });
       return tl;
     };
@@ -163,10 +155,14 @@ export class HeaderComponent implements AfterViewInit {
       gsap.registerPlugin(DrawSVGPlugin);
       const tl = gsap.timeline({
         repeat: -1,
+        repeatDelay: 0.25,
         defaults: {
           duration: 1,
           ease: 'power4.out',
         },
+      });
+      tl.set(this.scrollIcon, {
+        opacity: 1,
       });
       tl.fromTo(
         this.scrollIcon,
@@ -178,9 +174,7 @@ export class HeaderComponent implements AfterViewInit {
       tl.to(this.scrollIcon, {
         opacity: 0,
       });
-      tl.set(this.scrollIcon, {
-        opacity: 1,
-      });
+
       return tl;
     };
 
