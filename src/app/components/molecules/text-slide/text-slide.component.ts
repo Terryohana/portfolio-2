@@ -5,6 +5,7 @@ import {
   Output,
   QueryList,
   ViewChildren,
+  ViewEncapsulation,
 } from '@angular/core';
 import { mapElements } from '../../../helpers/mapElements';
 
@@ -12,6 +13,7 @@ import { mapElements } from '../../../helpers/mapElements';
   selector: 'app-text-slide',
   templateUrl: './text-slide.component.html',
   styleUrls: ['./text-slide.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class TextSlideComponent {
   @ViewChildren('line') lines: QueryList<ElementRef>;

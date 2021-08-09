@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { gsap } from 'gsap';
+import { globalSettings } from '../../../helpers/globalSettings';
 
 @Component({
   selector: 'app-project',
@@ -21,7 +22,7 @@ export class ProjectComponent implements AfterViewInit {
       const settings = {
         title: {
           duration: 0.75,
-          ease: 'power4.inOut',
+          ease: `${globalSettings.ease}.inOut`,
           opacity: 1,
           yPercent: 100,
           rotateX: 90,
@@ -29,7 +30,7 @@ export class ProjectComponent implements AfterViewInit {
         },
         marker: {
           duration: 0.75,
-          ease: 'power4.inOut',
+          ease: `${globalSettings.ease}.inOut`,
           opacity: 1,
           xPercent: -100,
         },

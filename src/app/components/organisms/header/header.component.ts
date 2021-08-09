@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { globalSettings } from '../../../helpers/globalSettings';
 
 @Component({
   selector: 'app-header',
@@ -23,16 +24,14 @@ export class HeaderComponent implements AfterViewInit {
   public scrollIcon: HTMLElement;
   // header mask
   public headerMask: HTMLElement;
-  // animation settings
-  public settings = {
+  // animation
+  public localSettings = {
     slide: {
       duration: 3,
       distance: 3000,
-      ease: 'power4.out',
     },
     rotate: {
       duration: 1,
-      ease: 'power4.inOut',
       yPercent: 100,
       rotateX: 90,
       skewX: 30,
@@ -57,10 +56,10 @@ export class HeaderComponent implements AfterViewInit {
         textFillColor: '#ffffff',
         textStrokeColor: 'transparent',
         textStrokeWidth: 0,
-        yPercent: -this.settings.rotate.yPercent,
+        yPercent: -this.localSettings.rotate.yPercent,
         opacity: 0,
-        rotateX: this.settings.rotate.rotateX,
-        skewX: this.settings.rotate.skewX,
+        rotateX: this.localSettings.rotate.rotateX,
+        skewX: this.localSettings.rotate.skewX,
       });
       return tl;
     };
@@ -68,26 +67,26 @@ export class HeaderComponent implements AfterViewInit {
     const slideJobTitle = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: this.settings.slide.duration,
-          ease: this.settings.slide.ease,
+          duration: this.localSettings.slide.duration,
+          ease: `${globalSettings.ease}.out`,
         },
       });
       this.textLines.forEach((line, i) => {
         if (i % 2 === 0) {
-          tl.from(line, { x: this.settings.slide.distance }, 0);
+          tl.from(line, { x: this.localSettings.slide.distance }, 0);
         } else {
-          tl.from(line, { x: -this.settings.slide.distance }, 0);
+          tl.from(line, { x: -this.localSettings.slide.distance }, 0);
         }
       });
       tl.to(
         this.headerMask,
         {
           opacity: 0,
-          duration: 2,
+          duration: `${this.localSettings.slide.duration * 0.75}`,
           pointerEvents: 'none',
           zIndex: -1,
         },
-        `-=${this.settings.slide.duration * 0.8}`
+        `-=${this.localSettings.slide.duration * 0.75}`
       );
       return tl;
     };
@@ -95,9 +94,9 @@ export class HeaderComponent implements AfterViewInit {
     const showTextFilledFaces = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: this.settings.rotate.duration,
-          ease: this.settings.rotate.ease,
-          stagger: this.settings.rotate.stagger,
+          duration: this.localSettings.rotate.duration,
+          ease: `${globalSettings.ease}.inOut`,
+          stagger: this.localSettings.rotate.stagger,
         },
       });
       tl.to(this.textFilledFaces, {
@@ -109,10 +108,10 @@ export class HeaderComponent implements AfterViewInit {
       tl.to(
         this.textOutlinedFaces,
         {
-          yPercent: this.settings.rotate.yPercent,
+          yPercent: this.localSettings.rotate.yPercent,
           opacity: 0,
-          rotateX: -this.settings.rotate.rotateX,
-          skewX: -this.settings.rotate.skewX,
+          rotateX: -this.localSettings.rotate.rotateX,
+          skewX: -this.localSettings.rotate.skewX,
         },
         0
       );
@@ -124,7 +123,7 @@ export class HeaderComponent implements AfterViewInit {
       tl.to(this.logoBg, {
         y: 0,
         duration: 1,
-        ease: 'power4.inOut',
+        ease: `${globalSettings.ease}.inOut`,
       });
       return tl;
     };
@@ -133,7 +132,7 @@ export class HeaderComponent implements AfterViewInit {
       const tl = gsap.timeline({
         defaults: {
           duration: 1,
-          ease: 'power4.inOut',
+          ease: `${globalSettings.ease}.inOut`,
         },
       });
       tl.from(this.nameText, {
@@ -150,6 +149,7 @@ export class HeaderComponent implements AfterViewInit {
         y: 10,
         opacity: 0,
         duration: 1,
+        ease: `${globalSettings.ease}.inOut`,
       });
       return tl;
     };
@@ -161,7 +161,7 @@ export class HeaderComponent implements AfterViewInit {
         repeatDelay: 0.25,
         defaults: {
           duration: 1,
-          ease: 'power4.out',
+          ease: `${globalSettings.ease}.out`,
         },
       });
       tl.set(this.scrollIcon, {
@@ -174,7 +174,7 @@ export class HeaderComponent implements AfterViewInit {
       return tl;
     };
 
-    const main = gsap.timeline({ delay: 1 });
+    const main = gsap.timeline();
     main
       .add(setHeaderStyles())
       .add(slideJobTitle())

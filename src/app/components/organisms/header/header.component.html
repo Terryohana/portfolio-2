@@ -3,7 +3,6 @@
   <app-dim position="header__dim--right"></app-dim>
   <app-dim position="header__dim--bottom"></app-dim>
   <app-dim position="header__dim--left"></app-dim>
-  <div #headerMask class="header__mask"></div>
   <div class="header__block header__block--top">
     <app-logo (bgEmitter)="logoBg = $event"></app-logo>
     <app-name
@@ -25,3 +24,4 @@
     ></app-scroll-notice>
   </div>
 </header>
+<div #headerMask class="header__mask"></div>
