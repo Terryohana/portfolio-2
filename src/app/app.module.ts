@@ -12,6 +12,7 @@ import { AboutComponent } from './components/organisms/about/about.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
 import { TextSlideComponent } from './components/molecules/text-slide/text-slide.component';
 import { TextSlideLineComponent } from './components/atoms/text-slide-line/text-slide-line.component';
+import { DimComponent } from './components/atoms/dim/dim.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TextSlideLineComponent } from './components/atoms/text-slide-line/text-
     FooterComponent,
     TextSlideComponent,
     TextSlideLineComponent,
+    DimComponent,
   ],
   imports: [BrowserModule],
   providers: [],

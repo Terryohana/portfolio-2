@@ -6,7 +6,7 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
-import { mapElements } from '../../helpers/mapElements';
+import { mapElements } from '../../../helpers/mapElements';
 
 @Component({
   selector: 'app-text-slide',

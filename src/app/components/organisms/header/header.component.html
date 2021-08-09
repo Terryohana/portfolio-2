@@ -1,8 +1,8 @@
 <header data-scroll-section class="header">
-  <div class="header__dim header__dim--left"></div>
-  <div class="header__dim header__dim--right"></div>
-  <div class="header__dim header__dim--top"></div>
-  <div class="header__dim header__dim--bottom"></div>
+  <app-dim position="header__dim--top"></app-dim>
+  <app-dim position="header__dim--right"></app-dim>
+  <app-dim position="header__dim--bottom"></app-dim>
+  <app-dim position="header__dim--left"></app-dim>
   <div #headerMask class="header__mask"></div>
   <div class="header__block header__block--top">
     <app-logo (bgEmitter)="logoBg = $event"></app-logo>

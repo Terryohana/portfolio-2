@@ -1,0 +1,60 @@
+@import "mixins";
+@import "variables";
+@import "text";
+
+.header__dim {
+  position: absolute;
+  z-index: 6;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.header__dim--left {
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparentize($color: $color-black, $amount: 0) 0%,
+    transparentize($color: $color-black, $amount: 1) 100%
+  );
+}
+
+.header__dim--right {
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    transparentize($color: $color-black, $amount: 1) 0%,
+    transparentize($color: $color-black, $amount: 0) 100%
+  );
+}
+
+.header__dim--top {
+  top: 0;
+  height: 45%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    transparentize($color: $color-black, $amount: 0) 15%,
+    transparentize($color: $color-black, $amount: 1) 100%
+  );
+}
+
+.header__dim--bottom {
+  bottom: 0;
+  height: 45%;
+  left: 0;
+  right: 0;
+  transform-origin: center;
+  transform: rotate(180deg);
+  background: linear-gradient(
+    180deg,
+    transparentize($color: $color-black, $amount: 0) 15%,
+    transparentize($color: $color-black, $amount: 1) 100%
+  );
+}
