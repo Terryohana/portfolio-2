@@ -31,7 +31,7 @@
 }
 
 .h2__line--vertical {
-  top: 0;
+  top: -100%;
   bottom: 0;
   left: 0;
   width: 2px;
@@ -39,8 +39,8 @@
 
 .h2__line--horizontal {
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: -100%;
+  right: 0%;
   height: 2px;
 }
 

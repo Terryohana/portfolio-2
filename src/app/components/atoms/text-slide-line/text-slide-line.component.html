@@ -1,0 +1,23 @@
+<h1
+  *ngIf="developer"
+  data-scroll
+  data-scroll-speed="-2"
+  data-scroll-direction="horizontal"
+  class="h1 header__title"
+>
+  <div [ngClass]="transform">
+    <ng-container *ngFor="let word of developerWords"> Developer </ng-container>
+  </div>
+</h1>
+
+<h1
+  *ngIf="creative"
+  data-scroll
+  data-scroll-speed="2"
+  data-scroll-direction="horizontal"
+  class="h1 header__title"
+>
+  <div [ngClass]="transform">
+    <ng-container *ngFor="let word of creativeWords"> Creative </ng-container>
+  </div>
+</h1>

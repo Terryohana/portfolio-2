@@ -1,0 +1,78 @@
+@import "mixins";
+@import "variables";
+@import "text";
+
+// perspective
+$perspective: 400px;
+
+// rotate sizes
+$rotateXl: 64deg;
+$rotateLg: 32deg;
+$rotateMd: 16deg;
+$rotateSm: 8deg;
+
+// translate sizes
+$translateXl: 50px;
+$translateLg: 5px;
+
+.header__title {
+  cursor: default;
+  transform-origin: center;
+}
+
+.header__title__inner--one {
+  transform: perspective($perspective) rotateX($rotateXl)
+    translateY($translateXl);
+}
+
+.header__title__inner--two {
+  transform: perspective($perspective) rotateX($rotateLg)
+    translateY($translateLg);
+}
+
+.header__title__inner--three {
+  transform: perspective($perspective) rotateX($rotateMd);
+}
+
+.header__title__inner--four {
+  transform: perspective($perspective) rotateX($rotateSm);
+}
+
+.header__title__inner--five {
+  transform: perspective($perspective) rotateX(-$rotateSm);
+}
+
+.header__title__inner--six {
+  transform: perspective($perspective) rotateX(-$rotateMd);
+}
+
+.header__title__inner--seven {
+  transform: perspective($perspective) rotateX(-$rotateLg)
+    translateY(-$translateLg);
+}
+
+.header__title__inner--eight {
+  transform: perspective($perspective) rotateX(-$rotateXl)
+    translateY(-$translateXl);
+}
+
+.header__word {
+  display: inline-flex;
+}
+
+.header__letter {
+  position: relative;
+  overflow: hidden;
+}
+
+.header__letter__face {
+  display: inline-block;
+  padding: 0 1px;
+}
+
+.header__letter__face--outlined {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}

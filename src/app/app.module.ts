@@ -11,6 +11,7 @@ import { ProjectComponent } from './components/molecules/project/project.compone
 import { AboutComponent } from './components/organisms/about/about.component';
 import { FooterComponent } from './components/organisms/footer/footer.component';
 import { TextSlideComponent } from './components/molecules/text-slide/text-slide.component';
+import { TextSlideLineComponent } from './components/atoms/text-slide-line/text-slide-line.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TextSlideComponent } from './components/molecules/text-slide/text-slide
     AboutComponent,
     FooterComponent,
     TextSlideComponent,
+    TextSlideLineComponent,
   ],
   imports: [BrowserModule],
   providers: [],
