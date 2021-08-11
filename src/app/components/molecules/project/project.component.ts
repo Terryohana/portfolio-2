@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { globalSettings } from '../../../helpers/globalSettings';
 
@@ -8,121 +8,93 @@ import { globalSettings } from '../../../helpers/globalSettings';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent implements AfterViewInit {
+  @ViewChild('filled') filled: ElementRef;
+  @ViewChild('outlined') outlined: ElementRef;
+
+  public titleFilled: HTMLElement;
+  public titleOutlined: HTMLElement;
+
+  public settings = {
+    title: {
+      duration: 0.75,
+      ease: `${globalSettings.ease}.inOut`,
+      opacity: 1,
+      yPercent: 100,
+      rotateX: 90,
+      skewX: 40,
+    },
+  };
+
   ngAfterViewInit() {
+    this.titleOutlined = this.outlined.nativeElement;
+    this.titleFilled = this.filled.nativeElement;
     this.initProject();
   }
 
   public initProject() {
-    const projects = document.querySelectorAll('.project');
-    projects.forEach((project) => {
-      const text = project.children[1];
-      const titleFilled = project.children[1].children[0];
-      const titleOutlined = project.children[1].children[1];
-      const activeMarker = project.children[2];
-      const settings = {
-        title: {
-          duration: 0.75,
-          ease: `${globalSettings.ease}.inOut`,
-          opacity: 1,
-          yPercent: 100,
-          rotateX: 90,
-          skewX: 40,
-        },
-        marker: {
-          duration: 0.75,
-          ease: `${globalSettings.ease}.inOut`,
-          opacity: 1,
-          xPercent: -100,
-        },
-      };
-      gsap.set(titleOutlined, {
-        yPercent: -settings.title.yPercent,
-        opacity: 0,
-        rotateX: settings.title.rotateX,
-        skewX: settings.title.skewX,
-      });
-      gsap.set(activeMarker, {
-        xPercent: settings.marker.xPercent,
-        opacity: 0,
-      });
-      const showOutlinedTitle = () => {
-        const tl = gsap.timeline({
-          defaults: {
-            ease: settings.title.ease,
-            duration: settings.title.duration,
-          },
-        });
-        tl.to(titleFilled, {
-          yPercent: settings.title.yPercent,
-        });
-        tl.to(
-          titleFilled,
-          {
-            opacity: 0,
-            rotateX: -settings.title.rotateX,
-            skewX: -settings.title.skewX,
-          },
-          0
-        );
-        tl.to(
-          titleOutlined,
-          {
-            yPercent: 0,
-            opacity: settings.title.opacity,
-            rotateX: 0,
-            skewX: 0,
-          },
-          0
-        );
-        tl.to(
-          activeMarker,
-          {
-            xPercent: 0,
-            opacity: 1,
-          },
-          0
-        );
-        return tl;
-      };
-      const showFilledTitle = () => {
-        const tl = gsap.timeline({
-          defaults: {
-            duration: settings.title.duration,
-            ease: settings.title.ease,
-          },
-        });
-        tl.to(titleFilled, {
-          yPercent: 0,
-          opacity: settings.title.opacity,
-          rotateX: 0,
-          skewX: 0,
-        });
-        tl.to(
-          titleOutlined,
-          {
-            yPercent: -settings.title.yPercent,
-            opacity: 0,
-            rotateX: settings.title.rotateX,
-            skewX: settings.title.skewX,
-          },
-          0
-        );
-        tl.to(
-          activeMarker,
-          {
-            xPercent: settings.marker.xPercent,
-            opacity: 0,
-          },
-          0
-        );
-        return tl;
-      };
-      text.addEventListener('mouseenter', () => {
-        showOutlinedTitle();
-      });
-      text.addEventListener('mouseleave', () => {
-        showFilledTitle();
-      });
+    gsap.set(this.titleOutlined, {
+      yPercent: -this.settings.title.yPercent,
+      opacity: 0,
+      rotateX: this.settings.title.rotateX,
+      skewX: this.settings.title.skewX,
     });
+  }
+
+  public showOutlinedTitle() {
+    const tl = gsap.timeline({
+      defaults: {
+        ease: this.settings.title.ease,
+        duration: this.settings.title.duration,
+      },
+    });
+    tl.to(this.titleFilled, {
+      yPercent: this.settings.title.yPercent,
+    });
+    tl.to(
+      this.titleFilled,
+      {
+        opacity: 0,
+        rotateX: -this.settings.title.rotateX,
+        skewX: -this.settings.title.skewX,
+      },
+      0
+    );
+    tl.to(
+      this.titleOutlined,
+      {
+        yPercent: 0,
+        opacity: this.settings.title.opacity,
+        rotateX: 0,
+        skewX: 0,
+      },
+      0
+    );
+    return tl;
+  }
+
+  public showFilledTitle() {
+    const tl = gsap.timeline({
+      defaults: {
+        duration: this.settings.title.duration,
+        ease: this.settings.title.ease,
+      },
+    });
+    tl.to(this.titleFilled, {
+      yPercent: 0,
+      opacity: this.settings.title.opacity,
+      rotateX: 0,
+      skewX: 0,
+    });
+    tl.to(
+      this.titleOutlined,
+      {
+        yPercent: -this.settings.title.yPercent,
+        opacity: 0,
+        rotateX: this.settings.title.rotateX,
+        skewX: this.settings.title.skewX,
+      },
+      0
+    );
+    return tl;
   }
 }

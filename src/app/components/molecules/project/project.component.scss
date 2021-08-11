@@ -52,13 +52,3 @@
   mix-blend-mode: difference;
   padding-left: 3px;
 }
-
-.project__marker {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 30px;
-  background-color: $color-white;
-  z-index: 0;
-}
