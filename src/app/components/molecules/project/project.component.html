@@ -1,5 +1,27 @@
 <div class="project">
-  <p class="p p--sm project__number">01</p>
+  <div class="project__number">
+    <span class="p p--sm project__number__text">01</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="42"
+      height="42"
+      viewBox="0 0 42 42"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-circle"
+    >
+      <circle
+        #line
+        class="project__number__icon"
+        cx="21"
+        cy="21"
+        r="17.5"
+      ></circle>
+    </svg>
+  </div>
   <div
     (mouseenter)="showOutlinedTitle()"
     (mouseleave)="showFilledTitle()"

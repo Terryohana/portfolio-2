@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { gsap } from 'gsap';
 import { globalSettings } from '../../../helpers/globalSettings';
+import { gsap } from 'gsap';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
 @Component({
   selector: 'app-project',
@@ -10,9 +11,11 @@ import { globalSettings } from '../../../helpers/globalSettings';
 export class ProjectComponent implements AfterViewInit {
   @ViewChild('filled') filled: ElementRef;
   @ViewChild('outlined') outlined: ElementRef;
+  @ViewChild('line') line: ElementRef;
 
   public titleFilled: HTMLElement;
   public titleOutlined: HTMLElement;
+  public circle: any;
 
   public settings = {
     title: {
@@ -26,21 +29,25 @@ export class ProjectComponent implements AfterViewInit {
   };
 
   ngAfterViewInit() {
-    this.titleOutlined = this.outlined.nativeElement;
-    this.titleFilled = this.filled.nativeElement;
     this.initProject();
   }
 
   public initProject() {
+    gsap.registerPlugin(DrawSVGPlugin);
+    this.titleOutlined = this.outlined.nativeElement;
+    this.titleFilled = this.filled.nativeElement;
+    this.circle = this.line.nativeElement;
     gsap.set(this.titleOutlined, {
       yPercent: -this.settings.title.yPercent,
       opacity: 0,
       rotateX: this.settings.title.rotateX,
       skewX: this.settings.title.skewX,
     });
+    gsap.set(this.circle, { drawSVG: false });
   }
 
   public showOutlinedTitle() {
+    gsap.registerPlugin(DrawSVGPlugin);
     const tl = gsap.timeline({
       defaults: {
         ease: this.settings.title.ease,
@@ -69,10 +76,12 @@ export class ProjectComponent implements AfterViewInit {
       },
       0
     );
+    tl.fromTo(this.circle, { drawSVG: false }, { drawSVG: true }, 0);
     return tl;
   }
 
   public showFilledTitle() {
+    gsap.registerPlugin(DrawSVGPlugin);
     const tl = gsap.timeline({
       defaults: {
         duration: this.settings.title.duration,
@@ -95,6 +104,7 @@ export class ProjectComponent implements AfterViewInit {
       },
       0
     );
+    tl.fromTo(this.circle, { drawSVG: true }, { drawSVG: false }, 0);
     return tl;
   }
 }
