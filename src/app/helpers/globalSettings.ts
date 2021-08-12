@@ -1,3 +1,3 @@
 export const globalSettings = {
-  ease: 'power4',
+  ease: 'power3',
 };

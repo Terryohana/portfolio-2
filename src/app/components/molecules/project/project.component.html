@@ -1,6 +1,6 @@
 <div class="project">
   <div class="project__number">
-    <span class="p p--sm project__number__text">01</span>
+    <span class="p p--sm project__number__text"> {{ project.number }} </span>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="42"
@@ -25,16 +25,18 @@
   <div
     (mouseenter)="showOutlinedTitle()"
     (mouseleave)="showFilledTitle()"
-    class="project__text"
+    class="project__content"
   >
-    <h3 #filled class="h3 project__text__title project__text__title--filled">
-      Frasers Group
-    </h3>
-    <h3
-      #outlined
-      class="h3 project__text__title project__text__title--outlined"
-    >
-      Frasers Group
-    </h3>
+    <div #filled class="project__title project__title--top">
+      <h3 class="h3 project__title__inner project__title__inner--filled">
+        {{ project.heading }}
+      </h3>
+    </div>
+    <div #outlined class="project__title project__title--bottom">
+      <h3 class="h3 project__title__inner project__title__inner--outlined">
+        {{ project.heading }}
+      </h3>
+      <app-button></app-button>
+    </div>
   </div>
 </div>

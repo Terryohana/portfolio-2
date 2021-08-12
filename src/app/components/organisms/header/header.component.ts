@@ -28,7 +28,7 @@ export class HeaderComponent implements AfterViewInit {
   public localSettings = {
     slide: {
       duration: 3,
-      distance: 3000,
+      distance: 7000,
     },
     rotate: {
       duration: 1,

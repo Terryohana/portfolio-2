@@ -7,38 +7,13 @@
   display: flex;
   align-items: center;
   border-bottom: $line-width $color-white solid;
-  cursor: pointer;
   overflow: hidden;
   column-gap: 30px;
+  cursor: default;
 }
 
 .project--border-top {
   border-top: 1px $color-white solid;
-}
-
-.project__text {
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  margin: 20px 0;
-}
-
-.project__text__title {
-  padding: 15px 0;
-}
-
-.project__text__title--filled {
-  position: relative;
-  z-index: 1;
-  @include text-outline(transparent, 2px, $color-white);
-}
-
-.project__text__title--outlined {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  @include text-outline($color-white, 2px, transparent);
 }
 
 .project__number__text {
@@ -55,4 +30,47 @@
 .project__number__icon {
   stroke: $color-pink;
   stroke-width: $line-width;
+}
+
+.project__content {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin: 25px 0;
+  flex-grow: 1;
+}
+
+.project__title {
+  padding: 15px 0;
+}
+
+.project__title--top {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  @include text-outline(transparent, 2px, $color-white);
+}
+
+.project__title--bottom {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.project__title__inner {
+  line-height: 100%;
+}
+
+.project__title__inner--filled {
+  @include text-outline(transparent, 2px, $color-white);
+}
+
+.project__title__inner--outlined {
+  @include text-outline($color-white, 2px, transparent);
 }

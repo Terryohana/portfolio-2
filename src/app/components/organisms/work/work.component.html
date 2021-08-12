@@ -1,6 +1,6 @@
 <section data-scroll-section class="work">
   <h2 class="h2 h2--vertical work__title">
-    worked on
+    {{ heading }}
     <span
       data-scroll
       data-scroll-speed="-3"
@@ -8,9 +8,9 @@
     ></span>
   </h2>
   <div class="work__projects">
-    <app-project></app-project>
-    <app-project></app-project>
-    <app-project></app-project>
-    <app-project></app-project>
+    <app-project
+      *ngFor="let project of projects"
+      [project]="project"
+    ></app-project>
   </div>
 </section>

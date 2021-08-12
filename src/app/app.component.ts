@@ -9,6 +9,26 @@ import LocomotiveScroll from 'locomotive-scroll';
 export class AppComponent implements OnInit {
   smoothScroll: any;
 
+  public projects = [
+    {
+      number: '01',
+      heading: 'Frasers Group',
+    },
+    {
+      number: '02',
+      heading: 'Interactive Investor',
+    },
+
+    {
+      number: '03',
+      heading: 'The White Company',
+    },
+    {
+      number: '04',
+      heading: 'Colt',
+    },
+  ];
+
   ngOnInit() {
     this.smoothScroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),

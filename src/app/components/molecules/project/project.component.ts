@@ -1,7 +1,18 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { globalSettings } from '../../../helpers/globalSettings';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+
+export type Project = {
+  number: string;
+  heading: string;
+};
 
 @Component({
   selector: 'app-project',
@@ -12,6 +23,8 @@ export class ProjectComponent implements AfterViewInit {
   @ViewChild('filled') filled: ElementRef;
   @ViewChild('outlined') outlined: ElementRef;
   @ViewChild('line') line: ElementRef;
+
+  @Input() project: Project;
 
   public titleFilled: HTMLElement;
   public titleOutlined: HTMLElement;
@@ -76,7 +89,7 @@ export class ProjectComponent implements AfterViewInit {
       },
       0
     );
-    tl.fromTo(this.circle, { drawSVG: false }, { drawSVG: true }, 0);
+    tl.to(this.circle, { drawSVG: true }, 0);
     return tl;
   }
 
@@ -104,7 +117,7 @@ export class ProjectComponent implements AfterViewInit {
       },
       0
     );
-    tl.fromTo(this.circle, { drawSVG: true }, { drawSVG: false }, 0);
+    tl.to(this.circle, { drawSVG: false }, 0);
     return tl;
   }
 }
