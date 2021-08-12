@@ -2,11 +2,27 @@
 @import "variables";
 @import "text";
 
-.btn {
+.button {
+  position: relative;
   display: inline-block;
-  padding: 8px 14px 6px 14px;
+  padding: 12px 15px;
   cursor: pointer;
-  border: 2px $color-pink solid;
-  // background-color: $color-pink;
-  color: $color-white;
+  background-color: $color-white;
+  overflow: hidden;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: $color-black;
+}
+
+.button__bg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $color-pink;
 }

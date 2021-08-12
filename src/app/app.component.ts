@@ -9,25 +9,49 @@ import LocomotiveScroll from 'locomotive-scroll';
 export class AppComponent implements OnInit {
   smoothScroll: any;
 
-  public projects = [
-    {
-      number: '01',
-      heading: 'Frasers Group',
-    },
-    {
-      number: '02',
-      heading: 'Interactive Investor',
-    },
+  public work = {
+    heading: 'worked on',
+    projects: [
+      {
+        number: '01',
+        heading: 'Frasers Group',
+      },
+      {
+        number: '02',
+        heading: 'Interactive Investor',
+      },
+      {
+        number: '03',
+        heading: 'The White Company',
+      },
+      {
+        number: '04',
+        heading: 'Colt',
+      },
+    ],
+  };
 
-    {
-      number: '03',
-      heading: 'The White Company',
-    },
-    {
-      number: '04',
-      heading: 'Colt',
-    },
-  ];
+  public personal = {
+    heading: 'side projects',
+    projects: [
+      {
+        number: '01',
+        heading: 'Task Tracker',
+      },
+      {
+        number: '01',
+        heading: 'Task Tracker',
+      },
+      {
+        number: '01',
+        heading: 'Task Tracker',
+      },
+      {
+        number: '01',
+        heading: 'Task Tracker',
+      },
+    ],
+  };
 
   ngOnInit() {
     this.smoothScroll = new LocomotiveScroll({
