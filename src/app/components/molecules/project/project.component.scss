@@ -74,3 +74,9 @@
 .project__title__inner--outlined {
   @include text-outline($color-white, 2px, transparent);
 }
+
+.line {
+  width: 80px;
+  height: $line-width;
+  background-color: $color-pink;
+}
