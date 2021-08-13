@@ -3,11 +3,14 @@ import {
   Component,
   ElementRef,
   Input,
+  QueryList,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { globalSettings } from '../../../helpers/globalSettings';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { mapElements } from '../../../helpers/mapElements';
 
 export type Project = {
   number: string;
@@ -22,23 +25,23 @@ export type Project = {
 export class ProjectComponent implements AfterViewInit {
   @ViewChild('filled') filled: ElementRef;
   @ViewChild('outlined') outlined: ElementRef;
-  @ViewChild('line') line: ElementRef;
+  @ViewChild('circleLineRef') circleLineRef: ElementRef;
+  @ViewChildren('arrowLineRef') arrowLineRefs: QueryList<ElementRef>;
 
   @Input() project: Project;
 
   public titleFilled: HTMLElement;
   public titleOutlined: HTMLElement;
   public circle: any;
+  public arrowLines: any;
 
   public settings = {
-    title: {
-      duration: 0.75,
-      ease: `${globalSettings.ease}.inOut`,
-      opacity: 1,
-      yPercent: 100,
-      rotateX: 90,
-      skewX: 40,
-    },
+    duration: 0.75,
+    ease: `${globalSettings.ease}.inOut`,
+    opacity: 1,
+    yPercent: 100,
+    rotateX: 90,
+    skewX: 40,
   };
 
   ngAfterViewInit() {
@@ -49,33 +52,35 @@ export class ProjectComponent implements AfterViewInit {
     gsap.registerPlugin(DrawSVGPlugin);
     this.titleOutlined = this.outlined.nativeElement;
     this.titleFilled = this.filled.nativeElement;
-    this.circle = this.line.nativeElement;
+    this.circle = this.circleLineRef.nativeElement;
+    this.arrowLines = mapElements(this.arrowLineRefs);
     gsap.set(this.titleOutlined, {
-      yPercent: -this.settings.title.yPercent,
+      yPercent: -this.settings.yPercent,
       opacity: 0,
-      rotateX: this.settings.title.rotateX,
-      skewX: this.settings.title.skewX,
+      rotateX: this.settings.rotateX,
+      skewX: this.settings.skewX,
     });
     gsap.set(this.circle, { drawSVG: false });
+    gsap.set(this.arrowLines, { drawSVG: false });
   }
 
-  public showOutlinedTitle() {
+  public showBack() {
     gsap.registerPlugin(DrawSVGPlugin);
     const tl = gsap.timeline({
       defaults: {
-        ease: this.settings.title.ease,
-        duration: this.settings.title.duration,
+        ease: this.settings.ease,
+        duration: this.settings.duration,
       },
     });
-    tl.to(this.titleFilled, {
-      yPercent: this.settings.title.yPercent,
-    });
+    tl.to(this.circle, { drawSVG: true });
     tl.to(
       this.titleFilled,
       {
         opacity: 0,
-        rotateX: -this.settings.title.rotateX,
-        skewX: -this.settings.title.skewX,
+        yPercent: this.settings.yPercent,
+
+        rotateX: -this.settings.rotateX,
+        skewX: -this.settings.skewX,
       },
       0
     );
@@ -83,41 +88,62 @@ export class ProjectComponent implements AfterViewInit {
       this.titleOutlined,
       {
         yPercent: 0,
-        opacity: this.settings.title.opacity,
+        opacity: this.settings.opacity,
         rotateX: 0,
         skewX: 0,
       },
       0
     );
-    tl.to(this.circle, { drawSVG: true }, 0);
-    return tl;
-  }
-
-  public showFilledTitle() {
-    gsap.registerPlugin(DrawSVGPlugin);
-    const tl = gsap.timeline({
-      defaults: {
-        duration: this.settings.title.duration,
-        ease: this.settings.title.ease,
-      },
-    });
-    tl.to(this.titleFilled, {
-      yPercent: 0,
-      opacity: this.settings.title.opacity,
-      rotateX: 0,
-      skewX: 0,
-    });
     tl.to(
-      this.titleOutlined,
+      this.arrowLines,
       {
-        yPercent: -this.settings.title.yPercent,
-        opacity: 0,
-        rotateX: this.settings.title.rotateX,
-        skewX: this.settings.title.skewX,
+        drawSVG: true,
+        ease: this.settings.ease,
+        opacity: 1,
       },
       0
     );
-    tl.to(this.circle, { drawSVG: false }, 0);
+    return tl;
+  }
+
+  public showFront() {
+    gsap.registerPlugin(DrawSVGPlugin);
+    const tl = gsap.timeline({
+      defaults: {
+        duration: this.settings.duration,
+        ease: this.settings.ease,
+      },
+    });
+    tl.to(this.circle, { drawSVG: false });
+    tl.to(
+      this.titleFilled,
+      {
+        yPercent: 0,
+        opacity: this.settings.opacity,
+        rotateX: 0,
+        skewX: 0,
+      },
+      0
+    );
+    tl.to(
+      this.titleOutlined,
+      {
+        yPercent: -this.settings.yPercent,
+        opacity: 0,
+        rotateX: this.settings.rotateX,
+        skewX: this.settings.skewX,
+      },
+      0
+    );
+    tl.to(
+      this.arrowLines,
+      {
+        drawSVG: false,
+        ease: `${globalSettings.ease}.out`,
+        opacity: 0,
+      },
+      0
+    );
     return tl;
   }
 }

@@ -14,7 +14,7 @@
       class="feather feather-circle"
     >
       <circle
-        #line
+        #circleLineRef
         class="project__number__icon"
         cx="24"
         cy="24"
@@ -23,8 +23,8 @@
     </svg>
   </div>
   <div
-    (mouseenter)="showOutlinedTitle()"
-    (mouseleave)="showFilledTitle()"
+    (mouseenter)="showBack()"
+    (mouseleave)="showFront()"
     class="project__content"
   >
     <div #filled class="project__title project__title--top">
@@ -36,33 +36,45 @@
       <h3 class="h3 project__title__inner project__title__inner--outlined">
         {{ project.heading }}
       </h3>
-      <svg
-        width="68px"
-        height="35px"
-        viewBox="0 0 68 35"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <g
-          id="Page-1"
-          stroke="none"
-          stroke-width="1"
-          fill="none"
-          fill-rule="evenodd"
-          stroke-linecap="square"
-        >
-          <g
-            id="arrow-right"
-            transform="translate(2.000000, 3.000000)"
-            stroke="#FF69B4"
-            stroke-width="4"
-          >
-            <line x1="0.5" y1="14.5" x2="62" y2="14.5" id="Path"></line>
-            <polyline id="Path" points="48 0 63 14.5 48 29"></polyline>
-          </g>
-        </g>
-      </svg>
     </div>
   </div>
+  <svg
+    width="68px"
+    height="35px"
+    viewBox="0 0 68 35"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <g
+      id="Page-1"
+      stroke="none"
+      stroke-width="1"
+      fill="none"
+      fill-rule="evenodd"
+      stroke-linecap="square"
+    >
+      <g
+        id="arrow-right"
+        transform="translate(2.000000, 3.000000)"
+        stroke="#FF69B4"
+        stroke-width="3"
+        class="project__arrow"
+      >
+        <line
+          #arrowLineRef
+          x1="0.5"
+          y1="14.5"
+          x2="62"
+          y2="14.5"
+          id="Path"
+        ></line>
+        <polyline
+          #arrowLineRef
+          id="Path"
+          points="48 0 63 14.5 48 29"
+        ></polyline>
+      </g>
+    </g>
+  </svg>
 </div>

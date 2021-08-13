@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  border-bottom: $line-width $color-white solid;
+  border-bottom: $line-width transparentize($color-white, 0.9) solid;
   overflow: hidden;
   column-gap: 30px;
   cursor: default;
@@ -28,7 +28,7 @@
 }
 
 .project__number__icon {
-  stroke: $color-white;
+  stroke: $color-pink;
   stroke-width: 2px;
 }
 
@@ -75,8 +75,7 @@
   @include text-outline($color-white, 2px, transparent);
 }
 
-.line {
-  width: 80px;
-  height: $line-width;
-  background-color: $color-pink;
+.project__arrow {
+  stroke: $color-pink;
+  stroke-width: 4px;
 }
