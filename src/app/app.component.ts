@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
       {
         number: '01',
         heading: 'Frasers Group',
+        borderTop: 'project--border-top',
       },
       {
         number: '02',
@@ -37,6 +38,7 @@ export class AppComponent implements OnInit {
       {
         number: '01',
         heading: 'Task Tracker',
+        borderTop: 'project--border-top',
       },
       {
         number: '01',

@@ -15,6 +15,7 @@ import { mapElements } from '../../../helpers/mapElements';
 export type Project = {
   number: string;
   heading: string;
+  borderTop?: 'project--border-top';
 };
 
 @Component({
