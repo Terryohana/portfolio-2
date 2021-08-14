@@ -39,7 +39,7 @@ export class ProjectComponent implements AfterViewInit {
   public arrowLines: any;
 
   public settings = {
-    duration: 0.75,
+    duration: globalSettings.duration,
     ease: `${globalSettings.ease}.inOut`,
     opacity: 1,
     yPercent: 100,

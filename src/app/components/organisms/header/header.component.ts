@@ -25,13 +25,13 @@ export class HeaderComponent implements AfterViewInit {
   // header mask
   public headerMask: HTMLElement;
   // animation
-  public localSettings = {
+  public settings = {
     slide: {
-      duration: 3,
+      duration: globalSettings.duration * 4,
       distance: 7000,
     },
     rotate: {
-      duration: 1,
+      duration: globalSettings.duration,
       yPercent: 100,
       rotateX: 90,
       skewX: 30,
@@ -56,10 +56,10 @@ export class HeaderComponent implements AfterViewInit {
         textFillColor: '#ffffff',
         textStrokeColor: 'transparent',
         textStrokeWidth: 0,
-        yPercent: -this.localSettings.rotate.yPercent,
+        yPercent: -this.settings.rotate.yPercent,
         opacity: 0,
-        rotateX: this.localSettings.rotate.rotateX,
-        skewX: this.localSettings.rotate.skewX,
+        rotateX: this.settings.rotate.rotateX,
+        skewX: this.settings.rotate.skewX,
       });
       return tl;
     };
@@ -67,26 +67,26 @@ export class HeaderComponent implements AfterViewInit {
     const slideJobTitle = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: this.localSettings.slide.duration,
+          duration: this.settings.slide.duration,
           ease: `${globalSettings.ease}.out`,
         },
       });
       this.textLines.forEach((line, i) => {
         if (i % 2 === 0) {
-          tl.from(line, { x: this.localSettings.slide.distance }, 0);
+          tl.from(line, { x: this.settings.slide.distance }, 0);
         } else {
-          tl.from(line, { x: -this.localSettings.slide.distance }, 0);
+          tl.from(line, { x: -this.settings.slide.distance }, 0);
         }
       });
       tl.to(
         this.headerMask,
         {
           opacity: 0,
-          duration: `${this.localSettings.slide.duration * 0.75}`,
+          duration: `${this.settings.slide.duration * 0.75}`,
           pointerEvents: 'none',
           zIndex: -1,
         },
-        `-=${this.localSettings.slide.duration * 0.75}`
+        `-=${this.settings.slide.duration * 0.75}`
       );
       return tl;
     };
@@ -94,9 +94,9 @@ export class HeaderComponent implements AfterViewInit {
     const showTextFilledFaces = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: this.localSettings.rotate.duration,
+          duration: this.settings.rotate.duration,
           ease: `${globalSettings.ease}.inOut`,
-          stagger: this.localSettings.rotate.stagger,
+          stagger: this.settings.rotate.stagger,
         },
       });
       tl.to(this.textFilledFaces, {
@@ -108,10 +108,10 @@ export class HeaderComponent implements AfterViewInit {
       tl.to(
         this.textOutlinedFaces,
         {
-          yPercent: this.localSettings.rotate.yPercent,
+          yPercent: this.settings.rotate.yPercent,
           opacity: 0,
-          rotateX: -this.localSettings.rotate.rotateX,
-          skewX: -this.localSettings.rotate.skewX,
+          rotateX: -this.settings.rotate.rotateX,
+          skewX: -this.settings.rotate.skewX,
         },
         0
       );
@@ -122,7 +122,7 @@ export class HeaderComponent implements AfterViewInit {
       const tl = gsap.timeline();
       tl.to(this.logoBg, {
         y: 0,
-        duration: 1,
+        duration: globalSettings.duration,
         ease: `${globalSettings.ease}.inOut`,
       });
       return tl;
@@ -131,7 +131,7 @@ export class HeaderComponent implements AfterViewInit {
     const animateName = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: 1,
+          duration: globalSettings.duration,
           ease: `${globalSettings.ease}.inOut`,
         },
       });
@@ -148,7 +148,7 @@ export class HeaderComponent implements AfterViewInit {
       tl.from(this.scrollText, {
         y: 10,
         opacity: 0,
-        duration: 1,
+        duration: globalSettings.duration,
         ease: `${globalSettings.ease}.inOut`,
       });
       return tl;
@@ -160,7 +160,7 @@ export class HeaderComponent implements AfterViewInit {
         repeat: -1,
         repeatDelay: 0.25,
         defaults: {
-          duration: 1,
+          duration: globalSettings.duration,
           ease: `${globalSettings.ease}.out`,
         },
       });

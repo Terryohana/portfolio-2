@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
       },
       {
         number: '04',
-        heading: 'Colt',
+        heading: 'Knight Frank',
       },
     ],
   };
@@ -41,16 +41,12 @@ export class AppComponent implements OnInit {
         borderTop: 'project--border-top',
       },
       {
-        number: '01',
-        heading: 'Task Tracker',
+        number: '02',
+        heading: 'Full page nav',
       },
       {
-        number: '01',
-        heading: 'Task Tracker',
-      },
-      {
-        number: '01',
-        heading: 'Task Tracker',
+        number: '03',
+        heading: 'Image gallery',
       },
     ],
   };
