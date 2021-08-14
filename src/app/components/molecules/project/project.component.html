@@ -1,4 +1,9 @@
-<div [ngClass]="project.borderTop" class="project">
+<div
+  [ngClass]="project.borderTop"
+  (mouseenter)="showBack()"
+  (mouseleave)="showFront()"
+  class="project"
+>
   <div class="project__number">
     <span class="p p--sm project__number__text"> {{ project.number }} </span>
     <svg
@@ -22,11 +27,7 @@
       ></circle>
     </svg>
   </div>
-  <div
-    (mouseenter)="showBack()"
-    (mouseleave)="showFront()"
-    class="project__content"
-  >
+  <div class="project__content">
     <div #filled class="project__title project__title--top">
       <h3 class="h3 project__title__inner project__title__inner--filled">
         {{ project.heading }}
@@ -38,10 +39,13 @@
       </h3>
     </div>
   </div>
+  <div class="project__line">
+    <div #lineRef class="project__line__inner"></div>
+  </div>
   <svg
-    width="68px"
-    height="35px"
-    viewBox="0 0 68 35"
+    width="34px"
+    height="29px"
+    viewBox="0 0 34 29"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -52,28 +56,22 @@
       stroke-width="1"
       fill="none"
       fill-rule="evenodd"
-      stroke-linecap="square"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     >
       <g
-        id="arrow-right"
-        transform="translate(2.000000, 3.000000)"
+        id="chevrons-right-(1)"
+        transform="translate(2.000000, 2.000000)"
         stroke="#FF69B4"
         stroke-width="3"
         class="project__arrow"
       >
-        <line
-          #arrowLineRef
-          x1="0.5"
-          y1="14.5"
-          x2="62"
-          y2="14.5"
-          id="Path"
-        ></line>
         <polyline
           #arrowLineRef
           id="Path"
-          points="48 0 63 14.5 48 29"
+          points="17 25 30 12.5 17 0"
         ></polyline>
+        <polyline #arrowLineRef id="Path" points="0 25 13 12.5 0 0"></polyline>
       </g>
     </g>
   </svg>

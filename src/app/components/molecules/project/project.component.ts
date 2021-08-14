@@ -28,11 +28,13 @@ export class ProjectComponent implements AfterViewInit {
   @ViewChild('outlined') outlined: ElementRef;
   @ViewChild('circleLineRef') circleLineRef: ElementRef;
   @ViewChildren('arrowLineRef') arrowLineRefs: QueryList<ElementRef>;
+  @ViewChild('lineRef') lineRef: ElementRef;
 
   @Input() project: Project;
 
   public titleFilled: HTMLElement;
   public titleOutlined: HTMLElement;
+  public line: HTMLElement;
   public circle: any;
   public arrowLines: any;
 
@@ -53,6 +55,7 @@ export class ProjectComponent implements AfterViewInit {
     gsap.registerPlugin(DrawSVGPlugin);
     this.titleOutlined = this.outlined.nativeElement;
     this.titleFilled = this.filled.nativeElement;
+    this.line = this.lineRef.nativeElement;
     this.circle = this.circleLineRef.nativeElement;
     this.arrowLines = mapElements(this.arrowLineRefs);
     gsap.set(this.titleOutlined, {
@@ -63,6 +66,7 @@ export class ProjectComponent implements AfterViewInit {
     });
     gsap.set(this.circle, { drawSVG: false });
     gsap.set(this.arrowLines, { drawSVG: false });
+    gsap.set(this.line, { xPercent: -100 });
   }
 
   public showBack() {
@@ -95,6 +99,7 @@ export class ProjectComponent implements AfterViewInit {
       },
       0
     );
+    tl.to(this.line, { xPercent: 0 }, 0);
     tl.to(
       this.arrowLines,
       {
@@ -136,6 +141,7 @@ export class ProjectComponent implements AfterViewInit {
       },
       0
     );
+    tl.to(this.line, { xPercent: -100 }, 0);
     tl.to(
       this.arrowLines,
       {
@@ -145,6 +151,7 @@ export class ProjectComponent implements AfterViewInit {
       },
       0
     );
+
     return tl;
   }
 }

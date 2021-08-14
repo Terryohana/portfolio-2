@@ -37,7 +37,6 @@
   z-index: 2;
   overflow: hidden;
   margin: 25px 0;
-  flex-grow: 1;
 }
 
 .project__title {
@@ -73,6 +72,22 @@
 
 .project__title__inner--outlined {
   @include text-outline($color-white, 2px, transparent);
+}
+
+.project__line {
+  position: relative;
+  height: $line-width;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.project__line__inner {
+  background-color: $color-black-light;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .project__arrow {
