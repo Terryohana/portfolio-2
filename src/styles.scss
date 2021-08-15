@@ -18,3 +18,10 @@ body {
   color: $color-white;
   font-family: "Druk Text Wide";
 }
+
+header,
+main,
+footer {
+  max-width: $breakpoint-max;
+  margin: 0 auto;
+}

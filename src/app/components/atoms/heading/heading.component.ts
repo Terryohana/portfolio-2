@@ -6,7 +6,6 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { gsap } from 'gsap';
 
 export type Heading = string;
 
@@ -19,7 +18,8 @@ export class HeadingComponent {
   @ViewChild('headingRef') headingRef: ElementRef;
   @ViewChild('lineRef') lineRef: ElementRef;
   @Input() heading: Heading;
-  @Input() headingAxis: 'heading__text--vertical';
+  @Input() headingMargin?: 'heading--margin-bottom' | 'heading--margin-right';
+  @Input() textAxis: 'heading__text--vertical';
   @Input() lineAxis: 'heading__line--vertical';
   @Input() animateFromParent?: boolean;
   @Input() animateScrollHorizontal?: boolean;

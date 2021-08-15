@@ -12,7 +12,5 @@
 }
 
 .work__projects {
-  @include section-spacing(padding-left, $horizontal: true);
-  @include section-spacing(margin-left, $horizontal: true);
   flex-grow: 1;
 }

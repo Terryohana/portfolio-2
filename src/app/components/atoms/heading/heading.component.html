@@ -1,5 +1,5 @@
-<div class="heading">
-  <h2 #headingRef [ngClass]="headingAxis" class="h2 heading__text">
+<div [ngClass]="headingMargin" class="heading">
+  <h2 #headingRef [ngClass]="textAxis" class="h2 heading__text">
     {{ heading }}
   </h2>
   <div
@@ -13,7 +13,7 @@
     #lineRef
     [ngClass]="lineAxis"
     data-scroll
-    data-scroll-speed="-2"
+    data-scroll-speed="-4"
     data-scroll-direction="horizontal"
     class="h2 heading__line"
   ></div>
@@ -22,7 +22,7 @@
     #lineRef
     [ngClass]="lineAxis"
     data-scroll
-    data-scroll-speed="-3"
+    data-scroll-speed="-4"
     data-scroll-direction="vertical"
     class="h2 heading__line"
   ></div>

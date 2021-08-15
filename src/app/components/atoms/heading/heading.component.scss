@@ -4,12 +4,24 @@
 
 $padding: $line-width * 2;
 
+// wrapper
+
 .heading {
   position: relative;
   display: inline-block;
   z-index: 10;
   overflow: hidden;
 }
+
+.heading--margin-right {
+  margin-right: 100px;
+}
+
+.heading--margin-bottom {
+  margin-bottom: 65px;
+}
+
+// text
 
 .heading__text--horizontal {
   padding-bottom: $padding;
@@ -20,6 +32,8 @@ $padding: $line-width * 2;
   text-orientation: sideways;
   padding-left: $padding;
 }
+
+// line
 
 .heading__line {
   position: absolute;
