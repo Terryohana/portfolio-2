@@ -17,33 +17,6 @@
   overflow: hidden;
 }
 
-.h2--vertical {
-  padding-left: 8px;
-}
-
-.h2--horizontal {
-  padding-bottom: 8px;
-}
-
-.h2__line {
-  position: absolute;
-  background-color: $color-pink;
-}
-
-.h2__line--vertical {
-  top: -100%;
-  bottom: 0;
-  left: 0;
-  width: 2px;
-}
-
-.h2__line--horizontal {
-  bottom: 0;
-  left: -100%;
-  right: 0%;
-  height: 2px;
-}
-
 .h3 {
   font-size: 45px;
   line-height: 120%;

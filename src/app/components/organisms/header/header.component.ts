@@ -139,7 +139,7 @@ export class HeaderComponent implements AfterViewInit {
         y: 10,
         opacity: 0,
       });
-      tl.to(this.nameLine, { x: 0 }, 0);
+      tl.to(this.nameLine, { xPercent: 0 }, 0);
       return tl;
     };
 

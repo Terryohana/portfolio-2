@@ -5,10 +5,15 @@
   <app-dim position="header__dim--left"></app-dim>
   <div class="header__block header__block--top">
     <app-logo (bgEmitter)="logoBg = $event"></app-logo>
-    <app-name
-      (textEmitter)="nameText = $event"
+    <app-heading
+      heading="matt yates"
+      headingAxis="heading__text--horizontal"
+      lineAxis="heading__line--horizontal"
+      animationStyle="landing"
+      animateOnInit="true"
+      (headingEmitter)="nameText = $event"
       (lineEmitter)="nameLine = $event"
-    ></app-name>
+    ></app-heading>
   </div>
   <div class="header__block header__block--middle">
     <app-text-slide

@@ -11,11 +11,6 @@
   @include section-spacing(margin-bottom, $vertical: true);
 }
 
-.work__title {
-  writing-mode: vertical-rl;
-  text-orientation: sideways;
-}
-
 .work__projects {
   @include section-spacing(padding-left, $horizontal: true);
   @include section-spacing(margin-left, $horizontal: true);

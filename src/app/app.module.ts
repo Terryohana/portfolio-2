@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { HeaderComponent } from './components/organisms/header/header.component';
 import { LogoComponent } from './components/atoms/logo/logo.component';
-import { NameComponent } from './components/atoms/name/name.component';
 import { ScrollNoticeComponent } from './components/atoms/scroll-notice/scroll-notice.component';
 import { WorkComponent } from './components/organisms/work/work.component';
 import { ProjectComponent } from './components/molecules/project/project.component';
@@ -13,6 +12,8 @@ import { FooterComponent } from './components/organisms/footer/footer.component'
 import { TextSlideComponent } from './components/molecules/text-slide/text-slide.component';
 import { TextSlideLineComponent } from './components/atoms/text-slide-line/text-slide-line.component';
 import { DimComponent } from './components/atoms/dim/dim.component';
+import { ContactLinkComponent } from './components/molecules/contact-link/contact-link.component';
+import { HeadingComponent } from './components/atoms/heading/heading.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,6 @@ import { DimComponent } from './components/atoms/dim/dim.component';
     ButtonComponent,
     HeaderComponent,
     LogoComponent,
-    NameComponent,
     ScrollNoticeComponent,
     WorkComponent,
     ProjectComponent,
@@ -29,6 +29,8 @@ import { DimComponent } from './components/atoms/dim/dim.component';
     TextSlideComponent,
     TextSlideLineComponent,
     DimComponent,
+    ContactLinkComponent,
+    HeadingComponent,
   ],
   imports: [BrowserModule],
   providers: [],

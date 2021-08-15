@@ -42,11 +42,15 @@ export class AppComponent implements OnInit {
       },
       {
         number: '02',
-        heading: 'Full page nav',
+        heading: 'Space gallery',
       },
       {
         number: '03',
-        heading: 'Image gallery',
+        heading: 'Full page menu',
+      },
+      {
+        number: '04',
+        heading: 'Calculator',
       },
     ],
   };

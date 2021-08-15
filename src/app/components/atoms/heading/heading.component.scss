@@ -1,0 +1,39 @@
+@import "mixins";
+@import "variables";
+@import "text";
+
+$padding: $line-width * 2;
+
+.heading {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.heading__text--horizontal {
+  padding-bottom: $padding;
+}
+
+.heading__text--vertical {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  padding-left: $padding;
+}
+
+.heading__line {
+  position: absolute;
+  background-color: $color-pink;
+  left: 0;
+  bottom: 0;
+}
+
+.heading__line--vertical {
+  top: 0;
+  width: $line-width;
+}
+
+.heading__line--horizontal {
+  right: 0;
+  height: $line-width;
+}

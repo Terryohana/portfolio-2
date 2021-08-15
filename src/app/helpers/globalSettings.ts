@@ -1,4 +1,4 @@
 export const globalSettings = {
-  ease: 'power3',
-  duration: 1,
+  ease: 'power4',
+  duration: 0.8,
 };

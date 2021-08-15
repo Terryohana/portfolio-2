@@ -1,0 +1,29 @@
+<div class="heading">
+  <h2 #headingRef [ngClass]="headingAxis" class="h2 heading__text">
+    {{ heading }}
+  </h2>
+  <div
+    *ngIf="animateOnInit"
+    #lineRef
+    [ngClass]="lineAxis"
+    class="h2 heading__line"
+  ></div>
+  <div
+    *ngIf="animateScrollHorizontal"
+    #lineRef
+    [ngClass]="lineAxis"
+    data-scroll
+    data-scroll-speed="-2"
+    data-scroll-direction="horizontal"
+    class="h2 heading__line"
+  ></div>
+  <div
+    *ngIf="animateScrollVertical"
+    #lineRef
+    [ngClass]="lineAxis"
+    data-scroll
+    data-scroll-speed="-2"
+    data-scroll-direction="vertical"
+    class="h2 heading__line"
+  ></div>
+</div>

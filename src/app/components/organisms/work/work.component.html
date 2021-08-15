@@ -1,12 +1,11 @@
 <section data-scroll-section class="work">
-  <h2 class="h2 h2--vertical work__title">
-    {{ heading }}
-    <span
-      data-scroll
-      data-scroll-speed="-3"
-      class="h2__line h2__line--vertical"
-    ></span>
-  </h2>
+  <app-heading
+    [heading]="heading"
+    headingAxis="heading__text--vertical"
+    lineAxis="heading__line--vertical"
+    animationStyle="scroll-vertical"
+    animateScrollVertical="true"
+  ></app-heading>
   <div class="work__projects">
     <app-project
       *ngFor="let project of projects"

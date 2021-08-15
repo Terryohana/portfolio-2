@@ -1,13 +1,11 @@
 <section data-scroll-section class="about">
-  <h2 class="h2 h2--horizontal about__title">
-    about me
-    <span
-      data-scroll
-      data-scroll-speed="-3"
-      data-scroll-direction="horizontal"
-      class="h2__line h2__line--horizontal"
-    ></span>
-  </h2>
+  <app-heading
+    heading="about me"
+    headingAxis="heading__text--horizontal"
+    lineAxis="heading__line--horizontal"
+    animationStyle="scroll-horizontal"
+    animateScrollHorizontal="true"
+  ></app-heading>
   <div class="about__text">
     <p class="p p--xl about__text__p">
       hi, i'm matt. i'm a front end developer with a focus on animation,
@@ -16,6 +14,6 @@
     <p class="p p--xl about__text__p">there's me on my bike.</p>
   </div>
   <div class="about__bike" data-scroll data-scroll-speed="-3">
-    <img class="about__bike__image" src="./images/bike.png" />
+    <img class="about__bike__image" src="assets/images/bike.png" alt="bike" />
   </div>
 </section>
