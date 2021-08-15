@@ -29,7 +29,7 @@
 
 .project__number__icon {
   stroke: $color-pink;
-  stroke-width: 2px;
+  stroke-width: $line-width-sm;
 }
 
 .project__content {
@@ -47,7 +47,7 @@
   position: relative;
   width: 100%;
   z-index: 1;
-  @include text-outline(transparent, 2px, $color-white);
+  @include text-outline(transparent, $line-width, $color-white);
 }
 
 .project__title--bottom {
@@ -67,11 +67,11 @@
 }
 
 .project__title__inner--filled {
-  @include text-outline(transparent, 2px, $color-white);
+  @include text-outline(transparent, $line-width-sm, $color-white);
 }
 
 .project__title__inner--outlined {
-  @include text-outline($color-white, 2px, transparent);
+  @include text-outline($color-white, $line-width-sm, transparent);
 }
 
 .project__line {
