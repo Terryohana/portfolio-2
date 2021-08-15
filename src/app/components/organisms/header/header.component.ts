@@ -47,6 +47,7 @@ export class HeaderComponent implements AfterViewInit {
   public initHeaderAnimations() {
     const setHeaderStyles = () => {
       const tl = gsap.timeline();
+      tl.set(this.nameLine, { xPercent: -100 });
       tl.set(this.textLines, {
         textFillColor: 'transparent',
         textStrokeColor: '#ffffff',

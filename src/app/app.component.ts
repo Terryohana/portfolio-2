@@ -46,10 +46,6 @@ export class AppComponent implements OnInit {
       },
       {
         number: '03',
-        heading: 'Full page menu',
-      },
-      {
-        number: '04',
         heading: 'Calculator',
       },
     ],

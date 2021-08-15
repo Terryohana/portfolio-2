@@ -3,7 +3,7 @@
     {{ heading }}
   </h2>
   <div
-    *ngIf="animateOnInit"
+    *ngIf="animateFromParent"
     #lineRef
     [ngClass]="lineAxis"
     class="h2 heading__line"
@@ -22,7 +22,7 @@
     #lineRef
     [ngClass]="lineAxis"
     data-scroll
-    data-scroll-speed="-2"
+    data-scroll-speed="-3"
     data-scroll-direction="vertical"
     class="h2 heading__line"
   ></div>

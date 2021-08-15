@@ -21,41 +21,22 @@ export class HeadingComponent {
   @Input() heading: Heading;
   @Input() headingAxis: 'heading__text--vertical';
   @Input() lineAxis: 'heading__line--vertical';
-  @Input() animationSettings:
-    | 'landing'
-    | 'scroll-vertical'
-    | 'scroll-horizontal';
-  @Input() animateOnInit?: boolean;
+  @Input() animateFromParent?: boolean;
   @Input() animateScrollHorizontal?: boolean;
   @Input() animateScrollVertical?: boolean;
-  @Input() scrollSpeed: string;
-
   @Output() headingEmitter = new EventEmitter();
   @Output() lineEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.initHeading();
+    this.sendElementsToParent();
   }
 
-  public initHeading() {
+  public sendElementsToParent() {
     const heading = this.headingRef.nativeElement;
     const line = this.lineRef.nativeElement;
-    if ((this.animationSettings = 'landing')) {
-      gsap.set(line, {
-        xPercent: -100,
-      });
+    if (this.animateFromParent) {
       this.headingEmitter.emit(heading);
       this.lineEmitter.emit(line);
-    }
-    if ((this.animationSettings = 'scroll-horizontal')) {
-      gsap.set(line, {
-        xPercent: -100,
-      });
-    }
-    if ((this.animationSettings = 'scroll-vertical')) {
-      gsap.set(line, {
-        yPercent: -100,
-      });
     } else {
       return null;
     }
