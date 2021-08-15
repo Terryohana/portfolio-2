@@ -18,7 +18,6 @@ export class HeadingComponent {
   @ViewChild('headingRef') headingRef: ElementRef;
   @ViewChild('lineRef') lineRef: ElementRef;
   @Input() heading: Heading;
-  @Input() headingMargin?: 'heading--margin-bottom' | 'heading--margin-right';
   @Input() textAxis: 'heading__text--vertical';
   @Input() lineAxis: 'heading__line--vertical';
   @Input() animateFromParent?: boolean;

@@ -2,8 +2,23 @@
 @import "variables";
 @import "text";
 
-.footer {
-  @include section-spacing(padding-right, $horizontal: true);
+.contact {
   @include section-spacing(padding-left, $horizontal: true);
+  @include section-spacing(padding-right, $horizontal: true);
+  @include section-spacing(padding-bottom, $horizontal: true);
   @include section-spacing(padding-bottom, $vertical: true);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 75px;
+}
+
+.contact__items {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+app-contact-item {
+  flex-basis: 50%;
 }

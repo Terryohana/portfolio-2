@@ -5,6 +5,7 @@
 .work {
   display: flex;
   align-items: flex-start;
+  column-gap: 75px;
   @include section-spacing(padding-left, $horizontal: true);
   @include section-spacing(padding-right, $horizontal: true);
   @include section-spacing(padding-bottom, $horizontal: true);

@@ -7,6 +7,9 @@
   @include section-spacing(padding-bottom, $horizontal: true);
   @include section-spacing(margin-bottom, $vertical: true);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
 }
 
 .about__title {
@@ -18,10 +21,8 @@
   width: 950px;
 }
 
-.about__text__p {
-  &:last-child {
-    margin-top: 50px;
-  }
+.about__text__p--last {
+  margin-top: 50px;
 }
 
 .about__bike {

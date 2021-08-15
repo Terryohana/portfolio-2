@@ -12,6 +12,7 @@ import { TextSlideComponent } from './components/molecules/text-slide/text-slide
 import { TextSlideLineComponent } from './components/atoms/text-slide-line/text-slide-line.component';
 import { DimComponent } from './components/atoms/dim/dim.component';
 import { HeadingComponent } from './components/atoms/heading/heading.component';
+import { ContactItemComponent } from './components/molecules/contact-item/contact-item.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HeadingComponent } from './components/atoms/heading/heading.component';
     TextSlideLineComponent,
     DimComponent,
     HeadingComponent,
+    ContactItemComponent,
   ],
   imports: [BrowserModule],
   providers: [],

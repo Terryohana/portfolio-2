@@ -51,6 +51,28 @@ export class AppComponent implements OnInit {
     ],
   };
 
+  public contact = {
+    heading: 'get in touch',
+    contactItems: [
+      {
+        heading: 'Github',
+        desc: 'github.com/mattyatesdev',
+      },
+      {
+        heading: 'Codepen',
+        desc: 'codepen.com/mattyatesdev',
+      },
+      {
+        heading: 'Linkedin',
+        desc: 'linkedin.com/mattyatesdev',
+      },
+      {
+        heading: 'Email',
+        desc: 'mattyates.dev@gmail.com',
+      },
+    ],
+  };
+
   ngOnInit() {
     this.smoothScroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),

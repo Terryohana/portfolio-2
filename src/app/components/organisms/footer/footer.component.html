@@ -1,1 +1,15 @@
-<footer data-scroll-section class="footer"></footer>
+<footer data-scroll-section class="contact">
+  <div class="contact__items">
+    <app-contact-item
+      *ngFor="let item of contactItems"
+      [contact]="item"
+    ></app-contact-item>
+  </div>
+  <app-heading
+    class="contact__heading"
+    heading="get in touch"
+    textAxis="heading__text--vertical"
+    lineAxis="heading__line--vertical"
+    animateScrollVertical="true"
+  ></app-heading>
+</footer>
