@@ -3,9 +3,9 @@
 @import "text";
 
 .about {
-  @include section-spacing(padding-left, $horizontal: true);
-  @include section-spacing(padding-bottom, $horizontal: true);
-  @include section-spacing(margin-bottom, $vertical: true);
+  @include spacing(padding-left, $x: true);
+  @include spacing(padding-bottom, $x: true);
+  @include spacing(margin-bottom, $y: true);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 }
 
 .about__title {
-  @include section-spacing(margin-bottom, $horizontal: true);
+  @include spacing(margin-bottom, $x: true);
   display: inline-block;
 }
 

@@ -3,10 +3,10 @@
 @import "text";
 
 .contact {
-  @include section-spacing(padding-left, $horizontal: true);
-  @include section-spacing(padding-right, $horizontal: true);
-  @include section-spacing(padding-bottom, $horizontal: true);
-  @include section-spacing(padding-bottom, $vertical: true);
+  @include spacing(padding-left, $x: true);
+  @include spacing(padding-right, $x: true);
+  @include spacing(padding-bottom, $x: true);
+  @include spacing(padding-bottom, $y: true);
   position: relative;
   display: flex;
   justify-content: space-between;
