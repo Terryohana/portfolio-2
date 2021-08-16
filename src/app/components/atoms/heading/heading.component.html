@@ -13,7 +13,7 @@
     class="h2 heading__line"
   ></div>
   <div
-    *ngIf="animateScrollX"
+    *ngIf="animateXOnScroll"
     #lineRef
     [ngClass]="xAxis ? 'heading__line--x' : 'heading__line--y'"
     data-scroll
@@ -22,7 +22,7 @@
     class="h2 heading__line"
   ></div>
   <div
-    *ngIf="animateScrollY"
+    *ngIf="animateYOnScroll"
     #lineRef
     [ngClass]="xAxis ? 'heading__line--x' : 'heading__line--y'"
     data-scroll

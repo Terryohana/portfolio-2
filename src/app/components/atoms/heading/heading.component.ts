@@ -20,8 +20,8 @@ export class HeadingComponent {
   @Input() heading: Heading;
   @Input() xAxis: boolean;
   @Input() animateFromParent?: boolean;
-  @Input() animateScrollX?: boolean;
-  @Input() animateScrollY?: boolean;
+  @Input() animateXOnScroll?: boolean;
+  @Input() animateYOnScroll?: boolean;
   @Output() headingEmitter = new EventEmitter();
   @Output() lineEmitter = new EventEmitter();
 
