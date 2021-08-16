@@ -18,8 +18,7 @@ export class HeadingComponent {
   @ViewChild('headingRef') headingRef: ElementRef;
   @ViewChild('lineRef') lineRef: ElementRef;
   @Input() heading: Heading;
-  @Input() textAxis: 'heading__text--vertical';
-  @Input() lineAxis: 'heading__line--vertical';
+  @Input() xAxis: boolean;
   @Input() animateFromParent?: boolean;
   @Input() animateScrollHorizontal?: boolean;
   @Input() animateScrollVertical?: boolean;

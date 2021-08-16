@@ -1,17 +1,21 @@
 <div class="heading">
-  <h2 #headingRef [ngClass]="textAxis" class="h2 heading__text">
+  <h2
+    #headingRef
+    [ngClass]="xAxis ? 'heading__text--horizontal' : 'heading__text--vertical'"
+    class="h2 heading__text"
+  >
     {{ heading }}
   </h2>
   <div
     *ngIf="animateFromParent"
     #lineRef
-    [ngClass]="lineAxis"
+    [ngClass]="xAxis ? 'heading__line--horizontal' : 'heading__line--vertical'"
     class="h2 heading__line"
   ></div>
   <div
     *ngIf="animateScrollHorizontal"
     #lineRef
-    [ngClass]="lineAxis"
+    [ngClass]="xAxis ? 'heading__line--horizontal' : 'heading__line--vertical'"
     data-scroll
     data-scroll-speed="-4"
     data-scroll-direction="horizontal"
@@ -20,7 +24,7 @@
   <div
     *ngIf="animateScrollVertical"
     #lineRef
-    [ngClass]="lineAxis"
+    [ngClass]="xAxis ? 'heading__line--horizontal' : 'heading__line--vertical'"
     data-scroll
     data-scroll-speed="-4"
     data-scroll-direction="vertical"

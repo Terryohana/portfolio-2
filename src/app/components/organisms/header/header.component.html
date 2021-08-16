@@ -7,9 +7,9 @@
     <app-logo (bgEmitter)="logoBg = $event"></app-logo>
     <app-heading
       heading="matt yates"
-      textAxis="heading__text--horizontal"
+      [xAxis]="true"
+      [animateFromParent]="true"
       lineAxis="heading__line--horizontal"
-      animateFromParent="true"
       (headingEmitter)="nameText = $event"
       (lineEmitter)="nameLine = $event"
     ></app-heading>
