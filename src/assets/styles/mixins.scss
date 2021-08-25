@@ -11,11 +11,11 @@
   }
 }
 
-@mixin spacing($property, $y: false, $x: false) {
-  @if $y {
+@mixin spacing($property, $lg: false, $sm: false) {
+  @if $lg {
     #{$property}: 150px;
   }
-  @if $x {
+  @if $sm {
     #{$property}: 50px;
   }
 }

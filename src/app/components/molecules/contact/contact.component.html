@@ -1,0 +1,18 @@
+<div (mouseenter)="showBack()" (mouseleave)="showFront()" class="contact">
+  <div class="contact__content">
+    <div #filled class="contact__title contact__title--top">
+      <h3 class="h3 contact__title__inner contact__title__inner--filled">
+        {{ contact.heading }}
+      </h3>
+    </div>
+    <div #outlined class="contact__title contact__title--bottom">
+      <h3 class="h3 contact__title__inner contact__title__inner--outlined">
+        {{ contact.heading }}
+      </h3>
+    </div>
+  </div>
+  <p class="p">{{ contact.desc }}</p>
+  <div class="contact__line">
+    <div #lineRef class="contact__line__inner"></div>
+  </div>
+</div>

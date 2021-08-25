@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ContactItem } from '../../molecules/contact-item/contact-item.component';
+import { Contact } from '../../molecules/contact/contact.component';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +8,5 @@ import { ContactItem } from '../../molecules/contact-item/contact-item.component
 })
 export class FooterComponent {
   @Input() heading: string;
-  @Input() contactItems: ContactItem[];
+  @Input() contactItems: Contact[];
 }

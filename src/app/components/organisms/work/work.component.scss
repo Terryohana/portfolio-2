@@ -6,10 +6,10 @@
   display: flex;
   align-items: flex-start;
   column-gap: 75px;
-  @include spacing(padding-left, $x: true);
-  @include spacing(padding-right, $x: true);
-  @include spacing(padding-bottom, $x: true);
-  @include spacing(margin-bottom, $y: true);
+  @include spacing(padding-left, $sm: true);
+  @include spacing(padding-right, $sm: true);
+  @include spacing(padding-bottom, $sm: true);
+  @include spacing(margin-bottom, $lg: true);
 }
 
 .work__projects {

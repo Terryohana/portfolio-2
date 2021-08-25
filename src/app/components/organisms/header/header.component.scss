@@ -3,7 +3,7 @@
 @import "text";
 
 .header {
-  @include spacing(margin-bottom, $y: true);
+  @include spacing(margin-bottom, $lg: true);
   height: 100vh;
   max-height: 900px;
   position: relative;
@@ -21,9 +21,9 @@
 }
 
 .header__block--top {
-  @include spacing(top, $x: true);
-  @include spacing(left, $x: true);
-  @include spacing(right, $x: true);
+  @include spacing(top, $sm: true);
+  @include spacing(left, $sm: true);
+  @include spacing(right, $sm: true);
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -40,9 +40,9 @@
 }
 
 .header__block--bottom {
-  @include spacing(bottom, $x: true);
-  @include spacing(left, $x: true);
-  @include spacing(right, $x: true);
+  @include spacing(bottom, $sm: true);
+  @include spacing(left, $sm: true);
+  @include spacing(right, $sm: true);
   position: absolute;
   text-align: center;
 }

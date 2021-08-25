@@ -1,0 +1,66 @@
+@import "mixins";
+@import "variables";
+@import "text";
+
+.contact__item {
+  display: grid;
+  row-gap: 10px;
+}
+
+.contact__content {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin: 25px 0;
+}
+
+.contact__title {
+  padding: 20px 0;
+}
+
+.contact__title--top {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  @include text-outline(transparent, $line-width, $color-white);
+}
+
+.contact__title--bottom {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.contact__title__inner {
+  line-height: 100%;
+}
+
+.contact__title__inner--filled {
+  @include text-outline(transparent, $line-width-sm, $color-white);
+}
+
+.contact__title__inner--outlined {
+  @include text-outline($color-white, $line-width-sm, transparent);
+}
+
+.contact__line {
+  position: relative;
+  height: $line-width;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.contact__line__inner {
+  background-color: $color-pink;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

@@ -53,16 +53,12 @@ export class AppComponent implements OnInit {
     ],
   };
 
-  public contact = {
+  public footer = {
     heading: 'get in touch',
     contactItems: [
       {
         heading: 'Github',
         desc: 'github.com/mattyatesdev',
-      },
-      {
-        heading: 'Codepen',
-        desc: 'codepen.com/mattyatesdev',
       },
       {
         heading: 'Linkedin',
