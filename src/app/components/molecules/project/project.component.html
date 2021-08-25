@@ -1,8 +1,11 @@
-<div
+<a
   [ngClass]="project.borderTop"
   (mouseenter)="showBack()"
   (mouseleave)="showFront()"
   class="project"
+  [href]="project.href"
+  target="_blank"
+  rel="”noreferrer”"
 >
   <div class="project__number">
     <span class="p p--sm project__number__text"> {{ project.number }} </span>
@@ -74,4 +77,4 @@
       </g>
     </g>
   </svg>
-</div>
+</a>

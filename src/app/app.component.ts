@@ -16,18 +16,22 @@ export class AppComponent implements OnInit {
         number: '01',
         heading: 'Frasers Group',
         borderTop: 'project--border-top',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '02',
         heading: 'Interactive Investor',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '03',
         heading: 'The White Company',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '04',
         heading: 'Knight Frank',
+        href: 'https://www.google.co.uk/',
       },
     ],
   };
@@ -39,14 +43,12 @@ export class AppComponent implements OnInit {
         number: '01',
         heading: 'Task Tracker',
         borderTop: 'project--border-top',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '02',
         heading: 'Space gallery',
-      },
-      {
-        number: '03',
-        heading: 'Calculator',
+        href: 'https://www.google.co.uk/',
       },
     ],
   };

@@ -7,7 +7,7 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { globalSettings } from '../../../helpers/globalSettings';
+import { animations } from '../../../constants/animations';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { mapElements } from '../../../helpers/mapElements';
@@ -15,6 +15,7 @@ import { mapElements } from '../../../helpers/mapElements';
 export type Project = {
   number: string;
   heading: string;
+  href: string;
   borderTop?: 'project--border-top';
 };
 
@@ -39,8 +40,8 @@ export class ProjectComponent implements AfterViewInit {
   public arrowLines: any;
 
   public settings = {
-    duration: globalSettings.duration,
-    ease: `${globalSettings.ease}.inOut`,
+    duration: animations.duration,
+    ease: `${animations.ease}.inOut`,
     opacity: 1,
     yPercent: 100,
     rotateX: 90,
@@ -146,7 +147,7 @@ export class ProjectComponent implements AfterViewInit {
       this.arrowLines,
       {
         drawSVG: false,
-        ease: `${globalSettings.ease}.out`,
+        ease: `${animations.ease}.out`,
         opacity: 0,
       },
       0
