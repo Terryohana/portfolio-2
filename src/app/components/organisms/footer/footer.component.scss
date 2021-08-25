@@ -2,25 +2,23 @@
 @import "variables";
 @import "text";
 
-.contact {
-  @include spacing(padding-left, $x: true);
-  @include spacing(padding-right, $x: true);
-  @include spacing(padding-bottom, $x: true);
-  @include spacing(padding-bottom, $y: true);
+.footer {
+  @include spacing(padding-left, $sm: true);
+  @include spacing(padding-right, $sm: true);
+  @include spacing(padding-bottom, $sm: true);
+  @include spacing(padding-bottom, $lg: true);
   position: relative;
   display: flex;
   justify-content: space-between;
-  column-gap: 75px;
 }
 
-.contact__items {
+.footer__items {
+  flex-grow: 1;
+  max-width: $breakpoint-desktop-sm;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: $breakpoint-desktop-sm;
-  row-gap: 20px;
+  justify-content: space-between;
 }
 
-app-contact-item {
-  flex-basis: 50%;
+.footer__heading {
+  @include spacing(padding-left, $sm: true);
 }

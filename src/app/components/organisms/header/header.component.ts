@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
-import { globalSettings } from '../../../helpers/globalSettings';
+import { animations } from '../../../constants/animations';
 
 @Component({
   selector: 'app-header',
@@ -27,11 +27,11 @@ export class HeaderComponent implements AfterViewInit {
   // animation
   public settings = {
     slide: {
-      duration: globalSettings.duration * 4,
+      duration: animations.duration * 4,
       distance: 7000,
     },
     rotate: {
-      duration: globalSettings.duration,
+      duration: animations.duration,
       yPercent: 100,
       rotateX: 90,
       skewX: 30,
@@ -69,7 +69,7 @@ export class HeaderComponent implements AfterViewInit {
       const tl = gsap.timeline({
         defaults: {
           duration: this.settings.slide.duration,
-          ease: `${globalSettings.ease}.out`,
+          ease: `${animations.ease}.out`,
         },
       });
       this.textLines.forEach((line, i) => {
@@ -96,7 +96,7 @@ export class HeaderComponent implements AfterViewInit {
       const tl = gsap.timeline({
         defaults: {
           duration: this.settings.rotate.duration,
-          ease: `${globalSettings.ease}.inOut`,
+          ease: `${animations.ease}.inOut`,
           stagger: this.settings.rotate.stagger,
         },
       });
@@ -123,8 +123,8 @@ export class HeaderComponent implements AfterViewInit {
       const tl = gsap.timeline();
       tl.to(this.logoBg, {
         y: 0,
-        duration: globalSettings.duration,
-        ease: `${globalSettings.ease}.inOut`,
+        duration: animations.duration,
+        ease: `${animations.ease}.inOut`,
       });
       return tl;
     };
@@ -132,8 +132,8 @@ export class HeaderComponent implements AfterViewInit {
     const animateName = () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: globalSettings.duration,
-          ease: `${globalSettings.ease}.inOut`,
+          duration: animations.duration,
+          ease: `${animations.ease}.inOut`,
         },
       });
       tl.from(this.nameText, {
@@ -149,8 +149,8 @@ export class HeaderComponent implements AfterViewInit {
       tl.from(this.scrollText, {
         y: 10,
         opacity: 0,
-        duration: globalSettings.duration,
-        ease: `${globalSettings.ease}.inOut`,
+        duration: animations.duration,
+        ease: `${animations.ease}.inOut`,
       });
       return tl;
     };
@@ -161,8 +161,8 @@ export class HeaderComponent implements AfterViewInit {
         repeat: -1,
         repeatDelay: 0.25,
         defaults: {
-          duration: globalSettings.duration,
-          ease: `${globalSettings.ease}.out`,
+          duration: animations.duration,
+          ease: `${animations.ease}.out`,
         },
       });
       tl.set(this.scrollIcon, {

@@ -1,0 +1,74 @@
+@import "mixins";
+@import "variables";
+@import "text";
+
+.contact {
+  cursor: pointer;
+}
+
+.contact__top {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.contact__title {
+  padding: 20px 0;
+}
+
+.contact__title--top {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  @include text-outline(transparent, $line-width, $color-white);
+}
+
+.contact__title--bottom {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.contact__title__inner {
+  line-height: 100%;
+}
+
+.contact__title__inner--filled {
+  @include text-outline(transparent, $line-width-sm, $color-white);
+}
+
+.contact__title__inner--outlined {
+  @include text-outline($color-white, $line-width-sm, transparent);
+}
+
+.contact__bottom {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 14px;
+}
+
+.contact__bottom__line {
+  position: absolute;
+  height: $line-width;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.contact__bottom__line--pink {
+  background-color: $color-pink;
+  z-index: 1;
+}
+
+.contact__bottom__line--black {
+  background-color: $color-black-light;
+  z-index: 0;
+}

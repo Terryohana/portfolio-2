@@ -16,18 +16,22 @@ export class AppComponent implements OnInit {
         number: '01',
         heading: 'Frasers Group',
         borderTop: 'project--border-top',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '02',
         heading: 'Interactive Investor',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '03',
         heading: 'The White Company',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '04',
         heading: 'Knight Frank',
+        href: 'https://www.google.co.uk/',
       },
     ],
   };
@@ -39,36 +43,33 @@ export class AppComponent implements OnInit {
         number: '01',
         heading: 'Task Tracker',
         borderTop: 'project--border-top',
+        href: 'https://www.google.co.uk/',
       },
       {
         number: '02',
         heading: 'Space gallery',
-      },
-      {
-        number: '03',
-        heading: 'Calculator',
+        href: 'https://www.google.co.uk/',
       },
     ],
   };
 
-  public contact = {
+  public footer = {
     heading: 'get in touch',
     contactItems: [
       {
         heading: 'Github',
         desc: 'github.com/mattyatesdev',
-      },
-      {
-        heading: 'Codepen',
-        desc: 'codepen.com/mattyatesdev',
+        href: 'https://github.com/mattyatesdev',
       },
       {
         heading: 'Linkedin',
-        desc: 'linkedin.com/mattyatesdev',
+        desc: 'linkedin.com/in/mattyatesdev',
+        href: 'https://www.linkedin.com/in/mattyatesdev/',
       },
       {
         heading: 'Email',
         desc: 'mattyates.dev@gmail.com',
+        href: 'mailto:mattyates.dev@gmail.com',
       },
     ],
   };

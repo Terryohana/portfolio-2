@@ -3,9 +3,9 @@
 @import "text";
 
 .about {
-  @include spacing(padding-left, $x: true);
-  @include spacing(padding-bottom, $x: true);
-  @include spacing(margin-bottom, $y: true);
+  @include spacing(padding-left, $sm: true);
+  @include spacing(padding-bottom, $sm: true);
+  @include spacing(margin-bottom, $lg: true);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,12 +13,12 @@
 }
 
 .about__title {
-  @include spacing(margin-bottom, $x: true);
+  @include spacing(margin-bottom, $sm: true);
   display: inline-block;
 }
 
 .about__text {
-  width: 950px;
+  width: 1100px;
 }
 
 .about__text__p--last {

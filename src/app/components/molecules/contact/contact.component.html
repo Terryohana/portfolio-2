@@ -1,0 +1,27 @@
+<a
+  [href]="contact.href"
+  (mouseenter)="showBack()"
+  (mouseleave)="showFront()"
+  class="contact"
+>
+  <div class="contact__top">
+    <div #filled class="contact__title contact__title--top">
+      <h4 class="h4 contact__title__inner contact__title__inner--filled">
+        {{ contact.heading }}
+      </h4>
+    </div>
+    <div #outlined class="contact__title contact__title--bottom">
+      <h4 class="h4 contact__title__inner contact__title__inner--outlined">
+        {{ contact.heading }}
+      </h4>
+    </div>
+  </div>
+  <div class="contact__bottom">
+    {{ contact.desc }}
+    <div
+      #lineRef
+      class="contact__bottom__line contact__bottom__line--pink"
+    ></div>
+    <div class="contact__bottom__line contact__bottom__line--black"></div>
+  </div>
+</a>
