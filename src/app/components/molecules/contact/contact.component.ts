@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 export type Contact = {
   heading: string;
   desc: string;
+  href: string;
 };
 
 @Component({

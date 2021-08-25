@@ -18,3 +18,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.footer__heading {
+  @include spacing(padding-left, $sm: true);
+}

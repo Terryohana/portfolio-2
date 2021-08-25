@@ -2,16 +2,15 @@
 @import "variables";
 @import "text";
 
-.contact__item {
-  display: grid;
-  row-gap: 10px;
+.contact {
+  cursor: pointer;
 }
 
-.contact__content {
+.contact__top {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  margin: 25px 0;
+  margin-bottom: 5px;
 }
 
 .contact__title {
@@ -49,18 +48,27 @@
   @include text-outline($color-white, $line-width-sm, transparent);
 }
 
-.contact__line {
+.contact__bottom {
+  display: inline-block;
   position: relative;
-  height: $line-width;
-  flex-grow: 1;
   overflow: hidden;
+  padding-bottom: 14px;
 }
 
-.contact__line__inner {
-  background-color: $color-pink;
+.contact__bottom__line {
   position: absolute;
-  top: 0;
-  right: 0;
+  height: $line-width;
   bottom: 0;
   left: 0;
+  right: 0;
+}
+
+.contact__bottom__line--pink {
+  background-color: $color-pink;
+  z-index: 1;
+}
+
+.contact__bottom__line--black {
+  background-color: $color-black-light;
+  z-index: 0;
 }

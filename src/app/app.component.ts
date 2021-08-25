@@ -59,14 +59,17 @@ export class AppComponent implements OnInit {
       {
         heading: 'Github',
         desc: 'github.com/mattyatesdev',
+        href: 'https://github.com/mattyatesdev',
       },
       {
         heading: 'Linkedin',
-        desc: 'linkedin.com/mattyatesdev',
+        desc: 'linkedin.com/in/mattyatesdev',
+        href: 'https://www.linkedin.com/in/mattyatesdev/',
       },
       {
         heading: 'Email',
         desc: 'mattyates.dev@gmail.com',
+        href: 'mailto:mattyates.dev@gmail.com',
       },
     ],
   };
