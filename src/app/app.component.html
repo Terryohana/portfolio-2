@@ -1,17 +1,23 @@
-<div #blah class="scrollContainer" data-scroll-container>
+<div #container class="scrollContainer" data-scroll-container>
   <!-- <app-header></app-header> -->
   <main>
-    <app-work [heading]="work.heading" [projects]="work.projects"></app-work>
     <app-work
-      [heading]="personal.heading"
-      [projects]="personal.projects"
+      [heading]="data.work.heading"
+      [projects]="data.work.projects"
     ></app-work>
-    <div #blah2>
-      <app-about (wheelsEmitter)="bikeWheels = $event"></app-about>
+    <app-work
+      [heading]="data.personal.heading"
+      [projects]="data.personal.projects"
+    ></app-work>
+    <div #about>
+      <app-about
+        (bikeEmitter)="bike = $event"
+        (wheelsEmitter)="bikeWheels = $event"
+      ></app-about>
     </div>
   </main>
   <app-footer
-    [heading]="footer.heading"
-    [contactItems]="footer.contactItems"
+    [heading]="data.footer.heading"
+    [contactItems]="data.footer.contactItems"
   ></app-footer>
 </div>
