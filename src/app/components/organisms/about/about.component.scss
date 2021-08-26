@@ -25,15 +25,37 @@
   margin-top: 50px;
 }
 
-.about__bike {
+.cyclist {
   position: absolute;
-  width: 150px;
-  top: 10%;
+  top: 0;
   right: 0;
 }
 
-.about__bike__image {
-  width: 150px;
-  transform: rotate(-90deg);
-  transform-origin: bottom right;
+.cyclist__wheel {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px $color-white solid;
+  &:first-child {
+    margin-bottom: 50px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 1px);
+    width: 2px;
+    background-color: $color-white;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(50% - 1px);
+    height: 2px;
+    background-color: $color-white;
+  }
 }

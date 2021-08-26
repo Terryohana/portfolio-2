@@ -1,12 +1,14 @@
-<div data-scroll-container>
+<div #blah class="scrollContainer" data-scroll-container>
   <!-- <app-header></app-header> -->
   <main>
-    <!-- <app-work [heading]="work.heading" [projects]="work.projects"></app-work> -->
+    <app-work [heading]="work.heading" [projects]="work.projects"></app-work>
     <app-work
       [heading]="personal.heading"
       [projects]="personal.projects"
     ></app-work>
-    <app-about></app-about>
+    <div #blah2>
+      <app-about (wheelsEmitter)="bikeWheels = $event"></app-about>
+    </div>
   </main>
   <app-footer
     [heading]="footer.heading"

@@ -13,7 +13,6 @@ import { TextSlideLineComponent } from './components/atoms/text-slide-line/text-
 import { DimComponent } from './components/atoms/dim/dim.component';
 import { HeadingComponent } from './components/atoms/heading/heading.component';
 import { ContactComponent } from './components/molecules/contact/contact.component';
-import { CyclistComponent } from './components/atoms/cyclist/cyclist.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { CyclistComponent } from './components/atoms/cyclist/cyclist.component';
     DimComponent,
     HeadingComponent,
     ContactComponent,
-    CyclistComponent,
   ],
   imports: [BrowserModule],
   providers: [],

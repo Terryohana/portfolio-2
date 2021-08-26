@@ -1,4 +1,13 @@
-import { Component, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  EventEmitter,
+  Output,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
+import { mapElements } from '../../../helpers/mapElements';
 
 @Component({
   selector: 'app-about',
@@ -6,9 +15,10 @@ import { Component, AfterViewInit } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements AfterViewInit {
-  ngAfterViewInit() {
-    this.initAbout();
-  }
+  @ViewChildren('wheel') wheels: QueryList<ElementRef>;
+  @Output() wheelsEmitter = new EventEmitter();
 
-  public initAbout() {}
+  ngAfterViewInit(): void {
+    this.wheelsEmitter.emit(mapElements(this.wheels));
+  }
 }

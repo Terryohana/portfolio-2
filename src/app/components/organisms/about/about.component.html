@@ -4,7 +4,7 @@
     [xAxis]="true"
     [animateXOnScroll]="true"
   ></app-heading>
-  <div class="about__text">
+  <div (wheelsEmitter)="wheels = $event" class="about__text">
     <p class="p p--lg about__text__p">
       hi, i'm matt. i'm a front end developer with a passion for animation,
       interaction and creative design. i'm based in london, working at wiser.
@@ -13,5 +13,8 @@
       there's me on my bike.
     </p>
   </div>
-  <app-cyclist></app-cyclist>
+  <div class="cyclist">
+    <div #wheel class="cyclist__wheel"></div>
+    <div #wheel class="cyclist__wheel"></div>
+  </div>
 </section>
