@@ -11,19 +11,19 @@ import {
 import { mapElements } from '../../../helpers/mapElements';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
+  selector: 'app-bike',
+  templateUrl: './bike.component.html',
+  styleUrls: ['./bike.component.scss'],
 })
-export class AboutComponent implements AfterViewInit {
+export class BikeComponent implements AfterViewInit {
   @ViewChild('bike') bike: ElementRef;
   @ViewChildren('wheel') wheels: QueryList<ElementRef>;
 
   @Output() bikeEmitter = new EventEmitter();
-  @Output() wheelsEmitter = new EventEmitter();
+  @Output() bikeWheelsEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
     this.bikeEmitter.emit(this.bike.nativeElement);
-    this.wheelsEmitter.emit(mapElements(this.wheels));
+    this.bikeWheelsEmitter.emit(mapElements(this.wheels));
   }
 }

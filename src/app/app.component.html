@@ -1,23 +1,68 @@
 <div #container class="scrollContainer" data-scroll-container>
   <!-- <app-header></app-header> -->
   <main>
-    <app-work
-      [heading]="data.work.heading"
-      [projects]="data.work.projects"
-    ></app-work>
-    <app-work
-      [heading]="data.personal.heading"
-      [projects]="data.personal.projects"
-    ></app-work>
-    <div #about>
-      <app-about
+    <section data-scroll-section class="work">
+      <app-heading
+        [heading]="data.work.heading"
+        [xAxis]="false"
+        [animateYOnScroll]="true"
+        animateYOnScroll="true"
+      ></app-heading>
+      <div class="work__projects">
+        <app-project
+          *ngFor="let project of data.work.projects"
+          [project]="project"
+        ></app-project>
+      </div>
+    </section>
+    <section data-scroll-section class="work">
+      <app-heading
+        [heading]="data.personal.heading"
+        [xAxis]="false"
+        [animateYOnScroll]="true"
+        animateYOnScroll="true"
+      ></app-heading>
+      <div class="work__projects">
+        <app-project
+          *ngFor="let project of data.personal.projects"
+          [project]="project"
+        ></app-project>
+      </div>
+    </section>
+    <section class="about" data-scroll-section #about>
+      <app-heading
+        heading="about me"
+        [xAxis]="true"
+        [animateXOnScroll]="true"
+      ></app-heading>
+      <div class="about__text">
+        <p class="p p--lg about__text__p">
+          hi, i'm matt. i'm a front end developer with a passion for animation,
+          interaction and creative design. i'm based in london, working at
+          wiser.
+        </p>
+        <p class="p p--lg about__text__p about__text__p--last">
+          there's me on my bike.
+        </p>
+      </div>
+      <app-bike
         (bikeEmitter)="bike = $event"
-        (wheelsEmitter)="bikeWheels = $event"
-      ></app-about>
-    </div>
+        (bikeWheelsEmitter)="bikeWheels = $event"
+      ></app-bike>
+    </section>
   </main>
-  <app-footer
-    [heading]="data.footer.heading"
-    [contactItems]="data.footer.contactItems"
-  ></app-footer>
+  <footer data-scroll-section class="footer">
+    <div class="footer__items">
+      <app-contact
+        *ngFor="let item of data.footer.contactItems"
+        [contact]="item"
+      ></app-contact>
+    </div>
+    <app-heading
+      class="footer__heading"
+      heading="get in touch"
+      [xAxis]="false"
+      [animateYOnScroll]="true"
+    ></app-heading>
+  </footer>
 </div>

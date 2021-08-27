@@ -2,29 +2,6 @@
 @import "variables";
 @import "text";
 
-.about {
-  @include spacing(padding-left, $sm: true);
-  @include spacing(padding-bottom, $sm: true);
-  @include spacing(margin-bottom, $lg: true);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  row-gap: 60px;
-}
-
-.about__title {
-  @include spacing(margin-bottom, $sm: true);
-  display: inline-block;
-}
-
-.about__text {
-  width: 1100px;
-}
-
-.about__text__p--last {
-  margin-top: 50px;
-}
-
 .bike {
   position: absolute;
   top: 0;
