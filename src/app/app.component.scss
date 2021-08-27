@@ -1,0 +1,61 @@
+@import "mixins";
+@import "variables";
+@import "text";
+
+.about {
+  @include spacing(padding-left, $sm: true);
+  @include spacing(padding-bottom, $sm: true);
+  @include spacing(margin-bottom, $lg: true);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+}
+
+.about__title {
+  @include spacing(margin-bottom, $sm: true);
+  display: inline-block;
+}
+
+.about__text {
+  width: 1100px;
+}
+
+.about__text__p--last {
+  margin-top: 50px;
+}
+
+.work {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 75px;
+  @include spacing(padding-left, $sm: true);
+  @include spacing(padding-right, $sm: true);
+  @include spacing(padding-bottom, $sm: true);
+  @include spacing(margin-bottom, $lg: true);
+}
+
+.work__projects {
+  flex-grow: 1;
+}
+
+.footer {
+  @include spacing(padding-left, $sm: true);
+  @include spacing(padding-right, $sm: true);
+  @include spacing(padding-bottom, $sm: true);
+  @include spacing(padding-bottom, $lg: true);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__items {
+  flex-grow: 1;
+  max-width: $breakpoint-desktop-sm;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__heading {
+  @include spacing(padding-left, $sm: true);
+}

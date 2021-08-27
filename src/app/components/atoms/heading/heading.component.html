@@ -7,27 +7,13 @@
     {{ heading }}
   </h2>
   <div
-    *ngIf="animateFromParent"
     #lineRef
     [ngClass]="xAxis ? 'heading__line--x' : 'heading__line--y'"
-    class="h2 heading__line"
+    class="h2 heading__line heading__line--pink"
   ></div>
   <div
-    *ngIf="animateXOnScroll"
-    #lineRef
+    *ngIf="!header"
     [ngClass]="xAxis ? 'heading__line--x' : 'heading__line--y'"
-    data-scroll
-    data-scroll-speed="-4"
-    data-scroll-direction="horizontal"
-    class="h2 heading__line"
-  ></div>
-  <div
-    *ngIf="animateYOnScroll"
-    #lineRef
-    [ngClass]="xAxis ? 'heading__line--x' : 'heading__line--y'"
-    data-scroll
-    data-scroll-speed="-4"
-    data-scroll-direction="vertical"
-    class="h2 heading__line"
+    class="h2 heading__line heading__line--black"
   ></div>
 </div>
