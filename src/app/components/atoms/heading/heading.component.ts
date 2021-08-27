@@ -18,7 +18,8 @@ export class HeadingComponent {
   @ViewChild('headingRef') headingRef: ElementRef;
   @ViewChild('lineRef') lineRef: ElementRef;
   @Input() heading: Heading;
-  @Input() xAxis: boolean;
+  @Input() xAxis?: boolean;
+  @Input() header?: boolean;
 
   @Output() headingEmitter = new EventEmitter();
   @Output() lineEmitter = new EventEmitter();

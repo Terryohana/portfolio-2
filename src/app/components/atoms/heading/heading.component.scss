@@ -23,8 +23,16 @@ $padding: $line-width * 2;
 
 .heading__line {
   position: absolute;
-  background-color: $color-pink;
   bottom: 0;
+}
+
+.heading__line--pink {
+  background-color: $color-pink;
+}
+
+.heading__line--black {
+  background-color: $color-black-light;
+  z-index: -1;
 }
 
 .heading__line--y {

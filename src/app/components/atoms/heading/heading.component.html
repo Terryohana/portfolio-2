@@ -9,6 +9,11 @@
   <div
     #lineRef
     [ngClass]="xAxis ? 'heading__line--x' : 'heading__line--y'"
-    class="h2 heading__line"
+    class="h2 heading__line heading__line--pink"
+  ></div>
+  <div
+    *ngIf="!header"
+    [ngClass]="xAxis ? 'heading__line--x' : 'heading__line--y'"
+    class="h2 heading__line heading__line--black"
   ></div>
 </div>
