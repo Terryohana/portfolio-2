@@ -19,24 +19,12 @@ export class HeadingComponent {
   @ViewChild('lineRef') lineRef: ElementRef;
   @Input() heading: Heading;
   @Input() xAxis: boolean;
-  @Input() animateFromParent?: boolean;
-  @Input() animateXOnScroll?: boolean;
-  @Input() animateYOnScroll?: boolean;
+
   @Output() headingEmitter = new EventEmitter();
   @Output() lineEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.sendElementsToParent();
-  }
-
-  public sendElementsToParent() {
-    const heading = this.headingRef.nativeElement;
-    const line = this.lineRef.nativeElement;
-    if (this.animateFromParent) {
-      this.headingEmitter.emit(heading);
-      this.lineEmitter.emit(line);
-    } else {
-      return null;
-    }
+    this.headingEmitter.emit(this.headingRef.nativeElement);
+    this.lineEmitter.emit(this.lineRef.nativeElement);
   }
 }

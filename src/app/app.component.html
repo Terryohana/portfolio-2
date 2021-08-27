@@ -1,12 +1,10 @@
 <div #container class="scrollContainer" data-scroll-container>
-  <!-- <app-header></app-header> -->
+  <app-header></app-header>
   <main>
     <section data-scroll-section class="work">
       <app-heading
         [heading]="data.work.heading"
-        [xAxis]="false"
-        [animateYOnScroll]="true"
-        animateYOnScroll="true"
+        (lineEmitter)="workLine = $event"
       ></app-heading>
       <div class="work__projects">
         <app-project
@@ -18,9 +16,7 @@
     <section data-scroll-section class="work">
       <app-heading
         [heading]="data.personal.heading"
-        [xAxis]="false"
-        [animateYOnScroll]="true"
-        animateYOnScroll="true"
+        (lineEmitter)="personalLine = $event"
       ></app-heading>
       <div class="work__projects">
         <app-project
@@ -33,7 +29,7 @@
       <app-heading
         heading="about me"
         [xAxis]="true"
-        [animateXOnScroll]="true"
+        (lineEmitter)="aboutLine = $event"
       ></app-heading>
       <div class="about__text">
         <p class="p p--lg about__text__p">
@@ -61,8 +57,7 @@
     <app-heading
       class="footer__heading"
       heading="get in touch"
-      [xAxis]="false"
-      [animateYOnScroll]="true"
+      (lineEmitter)="footerLine = $event"
     ></app-heading>
   </footer>
 </div>

@@ -3,6 +3,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { data } from 'src/assets/data/data';
+import { translateLine } from './helpers/translateLine';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,14 +15,16 @@ export class AppComponent implements AfterViewInit {
 
   public locoScroll: any;
   public locoContainer: HTMLElement;
-  public about: HTMLElement;
+  public workLine: HTMLElement;
+  public personalLine: HTMLElement;
+  public aboutLine: HTMLElement;
+  public footerLine: HTMLElement;
   public bike: HTMLElement;
   public bikeWheels: HTMLElement[];
   public data = data;
 
   ngAfterViewInit() {
     this.locoContainer = this.locoContainerRef.nativeElement;
-    this.about = this.aboutRef.nativeElement;
     this.syncScrollLibraries();
   }
 
@@ -50,7 +53,15 @@ export class AppComponent implements AfterViewInit {
     });
     ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
     ScrollTrigger.refresh();
+    this.animateHeadings();
     this.animateBike();
+  }
+
+  public animateHeadings() {
+    translateLine(this.workLine, false, this.locoContainer);
+    translateLine(this.personalLine, false, this.locoContainer);
+    translateLine(this.aboutLine, true, this.locoContainer);
+    translateLine(this.footerLine, false, this.locoContainer, 'bottom center');
   }
 
   public animateBike() {
@@ -58,7 +69,7 @@ export class AppComponent implements AfterViewInit {
     tl.to(this.bike, { y: 500 });
     tl.to(this.bikeWheels, { rotate: -540 }, 0);
     ScrollTrigger.create({
-      trigger: this.about,
+      trigger: this.bike,
       start: 'top bottom',
       scroller: this.locoContainer,
       animation: tl,
