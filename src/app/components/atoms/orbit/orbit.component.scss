@@ -1,32 +1,42 @@
+@import "mixins";
+@import "variables";
+@import "text";
+
+.blah {
+  position: relative;
+}
+
 .atom {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
   perspective: 1000;
-  margin-left: -170px;
-  margin-top: -146px;
   transform-style: preserve-3d;
 }
 
-.nucleus {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -10px 0 0 -10px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #272727;
-}
+// .nucleus {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 100px;
+//   height: 100px;
+//   background: $color-white;
+//   color: $color-black;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 .orbit {
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
-  width: 300px;
-  height: 300px;
-  border-radius: 300px;
-  border: 5px solid #ccc;
+  width: 600px;
+  height: 600px;
+  border-radius: 600px;
+  border: 5px solid $color-black-light;
   transform-style: preserve-3d;
   transform: rotateX(80deg) rotateY(20deg);
 }
@@ -42,13 +52,15 @@
 }
 
 .path {
-  width: 300px;
-  height: 300px;
+  z-index: 0;
+  width: 600px;
+  height: 600px;
   position: relative;
   transform-style: preserve-3d;
 }
 
 .electron {
+  z-index: 0;
   position: absolute;
   top: -5px;
   left: 50%;
@@ -56,5 +68,13 @@
   width: 10px;
   height: 10px;
   border-radius: 10px;
-  background: #ccc;
+  background-color: $color-pink;
+}
+
+.logo {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

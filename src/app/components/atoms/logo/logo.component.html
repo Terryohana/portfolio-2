@@ -1,4 +1,9 @@
-<div class="logo">
-  <div #bg class="logo__bg"></div>
+<div *ngIf="!orbit" class="logo logo--sm">
+  <div #bg class="logo__bg logo__bg--dynamic"></div>
+  <span class="logo__text">M</span>
+</div>
+
+<div *ngIf="orbit" class="logo logo--lg">
+  <div class="logo__bg logo__bg--static"></div>
   <span class="logo__text">M</span>
 </div>

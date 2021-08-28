@@ -45,11 +45,12 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  // min-height: 600px;
 }
 
 .footer__items {
   @include spacing(padding-bottom, $lg: true);
-  flex-grow: 1;
+  // flex-grow: 1;
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
@@ -68,5 +69,7 @@
 }
 
 .footer__orbit {
-  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

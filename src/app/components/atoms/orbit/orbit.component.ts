@@ -47,7 +47,7 @@ export class OrbitComponent implements OnInit {
 
       // Add a rotation to the whole atom
       gsap.set(atom, { transformOrigin: 'center center' });
-      gsap.to(atom, { rotation: 360, ease: 'none', repeat: -1, duration: 300 });
+      // gsap.to(atom, { rotation: 360, ease: 'none', repeat: -1, duration: 300 });
 
       // Skip the loading
       tl.progress(0.9999);
