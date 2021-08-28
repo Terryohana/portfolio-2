@@ -1,0 +1,60 @@
+.atom {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 1000;
+  margin-left: -170px;
+  margin-top: -146px;
+  transform-style: preserve-3d;
+}
+
+.nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #272727;
+}
+
+.orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+  border: 5px solid #ccc;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(20deg);
+}
+
+.orbit:nth-child(2) {
+  transform: rotateX(80deg) rotateY(70deg);
+}
+.orbit:nth-child(3) {
+  transform: rotateX(80deg) rotateY(-20deg);
+}
+.orbit:nth-child(4) {
+  transform: rotateX(80deg) rotateY(-50deg);
+}
+
+.path {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.electron {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #ccc;
+}

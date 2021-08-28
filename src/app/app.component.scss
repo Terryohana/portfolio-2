@@ -42,20 +42,31 @@
 .footer {
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-right, $sm: true);
-  @include spacing(padding-bottom, $sm: true);
-  @include spacing(padding-bottom, $lg: true);
   position: relative;
   display: flex;
   justify-content: space-between;
 }
 
 .footer__items {
+  @include spacing(padding-bottom, $lg: true);
   flex-grow: 1;
-  max-width: $breakpoint-desktop-sm;
+  max-width: 800px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 100px;
+}
+
+.footer__items__item {
+  &:last-child {
+    flex-basis: 100%;
+  }
 }
 
 .footer__heading {
   @include spacing(padding-left, $sm: true);
+}
+
+.footer__orbit {
+  align-self: flex-end;
 }

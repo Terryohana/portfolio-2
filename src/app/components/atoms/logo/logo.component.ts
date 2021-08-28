@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  Input,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -13,6 +14,7 @@ import {
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent implements AfterViewInit {
+  @Input() orbit?: boolean;
   @ViewChild('bg') bg: ElementRef;
   @Output() bgEmitter = new EventEmitter();
 

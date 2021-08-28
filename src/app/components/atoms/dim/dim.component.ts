@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dim',
@@ -6,5 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./dim.component.scss'],
 })
 export class DimComponent {
-  @Input() position?: boolean;
+  @Input() position?: string;
 }

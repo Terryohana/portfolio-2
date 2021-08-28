@@ -2,16 +2,21 @@
 @import "variables";
 @import "text";
 
+@mixin logo-size($height) {
+  height: $height;
+  width: $height * 1.15;
+  font-size: $height * 0.55;
+}
+
 .logo {
   position: relative;
   z-index: 8;
-  width: 64px;
-  height: 54px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
   background-color: $color-black;
+  @include logo-size(54px);
 }
 
 .logo__text {
@@ -19,14 +24,13 @@
   z-index: 2;
   color: $color-black;
   line-height: 100%;
-  transform: translateY(3px);
-  font-size: 30px;
   line-height: 100%;
   font-family: "Druk Text Wide Super";
   font-weight: normal;
   font-style: normal;
   text-transform: uppercase;
   pointer-events: none;
+  transform: translateY(10%);
 }
 
 .logo__bg {
@@ -36,6 +40,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  transform: translateY(100%);
   background-color: $color-white;
+  transform: translateY(100%);
 }

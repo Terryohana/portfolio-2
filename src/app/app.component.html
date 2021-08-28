@@ -1,7 +1,7 @@
 <div #container class="scrollContainer" data-scroll-container>
-  <app-header></app-header>
+  <!-- <app-header></app-header> -->
   <main>
-    <section data-scroll-section class="work">
+    <!-- <section data-scroll-section class="work">
       <app-heading
         [heading]="data.work.heading"
         (lineEmitter)="workLine = $event"
@@ -24,7 +24,7 @@
           [project]="project"
         ></app-project>
       </div>
-    </section>
+    </section> -->
     <section class="about" data-scroll-section #about>
       <app-heading
         heading="about me"
@@ -50,10 +50,12 @@
   <footer data-scroll-section class="footer">
     <div class="footer__items">
       <app-contact
+        class="footer__items__item"
         *ngFor="let item of data.footer.contactItems"
         [contact]="item"
       ></app-contact>
     </div>
+    <app-orbit class="footer__orbit"></app-orbit>
     <app-heading
       class="footer__heading"
       heading="get in touch"
