@@ -50,6 +50,7 @@
 
 .footer__items {
   @include spacing(padding-bottom, $lg: true);
+  padding-bottom: 200px;
   // flex-grow: 1;
   max-width: 800px;
   display: flex;
@@ -72,4 +73,5 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  transform: translateX(-25%);
 }

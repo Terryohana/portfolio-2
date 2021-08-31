@@ -2,14 +2,16 @@
 @import "variables";
 @import "text";
 
-.blah {
+$width: 500px;
+
+.wrapper {
   position: relative;
 }
 
 .atom {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: $width;
+  height: $width;
   perspective: 1000;
   transform-style: preserve-3d;
 }
@@ -33,9 +35,9 @@
   z-index: 0;
   top: 0;
   left: 0;
-  width: 600px;
-  height: 600px;
-  border-radius: 600px;
+  width: $width;
+  height: $width;
+  border-radius: $width;
   border: 5px solid $color-black-light;
   transform-style: preserve-3d;
   transform: rotateX(80deg) rotateY(20deg);
@@ -53,8 +55,8 @@
 
 .path {
   z-index: 0;
-  width: 600px;
-  height: 600px;
+  width: $width;
+  height: $width;
   position: relative;
   transform-style: preserve-3d;
 }
@@ -77,4 +79,5 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
