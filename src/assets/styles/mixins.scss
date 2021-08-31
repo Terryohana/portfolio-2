@@ -13,10 +13,16 @@
 
 @mixin spacing($property, $lg: false, $sm: false) {
   @if $lg {
-    #{$property}: 150px;
+    #{$property}: 175px;
+    @media (max-width: $breakpoint-desktop-lg) {
+      #{$property}: 150px;
+    }
   }
   @if $sm {
-    #{$property}: 50px;
+    #{$property}: 75px;
+    @media (max-width: $breakpoint-desktop-lg) {
+      #{$property}: 50px;
+    }
   }
 }
 
