@@ -6,12 +6,12 @@ export const data = {
         number: '01',
         heading: 'Frasers Group',
         borderTop: 'project--border-top',
-        href: 'https://www.google.co.uk/',
+        href: 'https://frasers.group/careers',
       },
       {
         number: '02',
         heading: 'Interactive Investor',
-        href: 'https://www.google.co.uk/',
+        href: 'https://careers.ii.co.uk/',
       },
       {
         number: '03',

@@ -71,6 +71,7 @@ export class AppComponent implements AfterViewInit {
     ScrollTrigger.create({
       trigger: this.bike,
       start: 'top bottom',
+      end: 'bottom top',
       scroller: this.locoContainer,
       animation: tl,
       scrub: true,

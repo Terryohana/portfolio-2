@@ -18,7 +18,7 @@
 
 .project__number__text {
   position: absolute;
-  top: 50%;
+  top: 49.75%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -26,7 +26,6 @@
 .project__number {
   position: relative;
 }
-
 .project__number__icon {
   stroke: $color-pink;
   stroke-width: $line-width-sm;
