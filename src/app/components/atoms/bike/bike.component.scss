@@ -4,37 +4,28 @@
 
 .bike {
   position: absolute;
-  top: -150px;
   right: 0;
-  border: 1px $color-white solid;
-  padding: 10px;
+  border: 1px red solid;
+}
+
+.bike__body {
+  position: relative;
+  z-index: 1;
+  width: 110px;
+  transform: translateX(-12px) rotate(-90deg);
+  transform-origin: bottom right;
 }
 
 .bike__wheel {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px $color-white solid;
-  &:first-child {
-    margin-bottom: 50px;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc(50% - 1px);
-    width: 2px;
-    background-color: $color-white;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: calc(50% - 1px);
-    height: 2px;
-    background-color: $color-white;
-  }
+  position: absolute;
+  right: 0px;
+  width: 66px;
+}
+
+.bike__wheel--front {
+  bottom: -137px;
+}
+
+.bike__wheel--back {
+  bottom: -32px;
 }

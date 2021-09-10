@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { data } from 'src/assets/data/data';
 import { translateLine } from './helpers/translateLine';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
