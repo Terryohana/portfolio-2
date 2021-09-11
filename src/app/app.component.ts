@@ -71,11 +71,11 @@ export class AppComponent implements AfterViewInit {
     tl.to(this.bikeWheels, { rotate: -540 }, 0);
     ScrollTrigger.create({
       trigger: this.bike,
-      start: 'top bottom',
-      end: 'bottom top',
+      start: 'top center',
+      end: '+=1500',
       scroller: this.locoContainer,
       animation: tl,
-      scrub: true,
+      scrub: 2,
     });
   }
 }
