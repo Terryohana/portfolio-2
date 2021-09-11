@@ -29,6 +29,7 @@ export class ContactComponent {
     ease: `${animations.ease}.inOut`,
     opacity: 1,
     yPercent: 100,
+    xPercent: 101,
     rotateX: 90,
     skewX: 40,
   };
@@ -47,7 +48,7 @@ export class ContactComponent {
       rotateX: this.settings.rotateX,
       skewX: this.settings.skewX,
     });
-    gsap.set(this.line, { xPercent: -100 });
+    gsap.set(this.line, { xPercent: -this.settings.xPercent });
   }
 
   public showBack() {
@@ -108,7 +109,7 @@ export class ContactComponent {
       },
       0
     );
-    tl.to(this.line, { xPercent: -100 }, 0);
+    tl.to(this.line, { xPercent: -this.settings.xPercent }, 0);
     return tl;
   }
 }
