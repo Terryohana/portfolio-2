@@ -48,15 +48,7 @@ export class HeaderComponent implements AfterViewInit {
     const setHeaderStyles = () => {
       const tl = gsap.timeline();
       tl.set(this.nameLine, { xPercent: -100 });
-      tl.set(this.textLines, {
-        textFillColor: 'transparent',
-        textStrokeColor: '#ffffff',
-        textStrokeWidth: 3,
-      });
       tl.set(this.textFilledFaces, {
-        textFillColor: '#ffffff',
-        textStrokeColor: 'transparent',
-        textStrokeWidth: 0,
         yPercent: -this.settings.rotate.yPercent,
         opacity: 0,
         rotateX: this.settings.rotate.rotateX,

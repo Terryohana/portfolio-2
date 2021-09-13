@@ -5,6 +5,9 @@
   font-weight: normal;
   font-style: normal;
   text-transform: uppercase;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 30px;
+  }
 }
 
 .h2 {
@@ -15,6 +18,9 @@
   font-weight: bold;
   font-style: normal;
   overflow: hidden;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 16px;
+  }
 }
 
 .h3 {
@@ -42,8 +48,14 @@
 
 .p--md {
   font-size: 16px;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 15px;
+  }
 }
 
 .p--lg {
   font-size: 65px;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 30px;
+  }
 }

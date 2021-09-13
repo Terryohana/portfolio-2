@@ -6,6 +6,9 @@
   position: absolute;
   right: 0;
   top: 0;
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
 }
 
 .bike__body {

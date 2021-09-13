@@ -19,6 +19,9 @@
 
 .logo--sm {
   @include logo-size(54px);
+  @media (max-width: $breakpoint-tablet) {
+    @include logo-size(45px);
+  }
 }
 
 .logo--lg {

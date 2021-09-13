@@ -1,5 +1,5 @@
 <div #container class="scrollContainer" data-scroll-container>
-  <!-- <app-header></app-header> -->
+  <app-header></app-header>
   <main>
     <section data-scroll-section class="work">
       <app-heading
@@ -25,7 +25,7 @@
         ></app-project>
       </div>
     </section>
-    <!-- <section class="about" data-scroll-section #about>
+    <section class="about" data-scroll-section #about>
       <app-heading
         heading="about me"
         [xAxis]="true"
@@ -45,9 +45,15 @@
         (bikeEmitter)="bike = $event"
         (bikeWheelsEmitter)="bikeWheels = $event"
       ></app-bike>
-    </section> -->
+    </section>
   </main>
-  <!-- <footer data-scroll-section class="footer">
+  <footer data-scroll-section class="footer">
+    <app-heading
+      [xAxis]="true"
+      class="footer__heading"
+      heading="get in touch"
+      (lineEmitter)="footerLine = $event"
+    ></app-heading>
     <div class="footer__items">
       <app-contact
         class="footer__items__item"
@@ -55,11 +61,5 @@
         [contact]="item"
       ></app-contact>
     </div>
-    <app-heading
-      class="footer__heading"
-      heading="get in touch"
-      (lineEmitter)="footerLine = $event"
-    ></app-heading>
-    <app-orbit class="footer__orbit"></app-orbit>
-  </footer> -->
+  </footer>
 </div>

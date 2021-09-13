@@ -12,12 +12,16 @@ $rotateMd: 16deg;
 $rotateSm: 8deg;
 
 // translate sizes
-$translateXl: 50px;
-$translateLg: 5px;
+$translateXl: 65%;
+$translateLg: 5%;
 
 .header__title {
   cursor: default;
   transform-origin: center;
+  @include text-outline($color-white, 3px, transparent);
+  @media (max-width: $breakpoint-tablet) {
+    @include text-outline($color-white, 1px, transparent);
+  }
 }
 
 .header__title__inner {
@@ -73,6 +77,10 @@ $translateLg: 5px;
 .header__letter__face {
   display: inline-block;
   padding: 0 1px;
+}
+
+.header__letter__face--filled {
+  @include text-outline(transparent, 0, $color-white);
 }
 
 .header__letter__face--outlined {

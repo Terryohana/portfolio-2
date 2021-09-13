@@ -19,6 +19,13 @@
 
 .about__text {
   width: 1100px;
+  @media (max-width: $breakpoint-desktop-sm) {
+    width: 80%;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    @include spacing(padding-right, $sm: true);
+  }
 }
 
 .about__text__p--last {
@@ -50,33 +57,26 @@
 .footer {
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-right, $sm: true);
-  position: relative;
-  display: flex;
-  justify-content: space-between;
+  @include spacing(padding-bottom, $lg: true);
 }
 
 .footer__items {
-  @include spacing(padding-bottom, $lg: true);
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 100px;
-}
-
-.footer__items__item {
-  &:last-child {
-    flex-basis: 100%;
+  @media (max-width: $breakpoint-desktop-lg) {
+    max-width: none;
+    row-gap: 50px;
   }
 }
 
-.footer__heading {
-  @include spacing(padding-left, $sm: true);
-}
-
-.footer__orbit {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translateX(-35%);
+.footer__items__item {
+  @media (max-width: $breakpoint-tablet) {
+    flex-basis: 100%;
+  }
+  &:last-child {
+    flex-basis: 100%;
+  }
 }

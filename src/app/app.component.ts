@@ -62,7 +62,7 @@ export class AppComponent implements AfterViewInit {
     translateLine(this.workLine, false, this.locoContainer);
     translateLine(this.personalLine, false, this.locoContainer);
     translateLine(this.aboutLine, true, this.locoContainer);
-    translateLine(this.footerLine, false, this.locoContainer, 'bottom center');
+    translateLine(this.footerLine, true, this.locoContainer, 'bottom center');
   }
 
   public animateBike() {
