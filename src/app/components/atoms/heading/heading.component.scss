@@ -19,11 +19,20 @@ $padding: $line-width * 1.5;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   padding-left: $padding;
+  @media (max-width: $breakpoint-desktop-sm) {
+    writing-mode: initial;
+    text-orientation: initial;
+    padding-left: 0;
+    padding-bottom: $padding;
+  }
 }
 
 .heading__line {
   position: absolute;
   bottom: 0;
+  @media (max-width: $breakpoint-desktop-sm) {
+    transform: none !important;
+  }
 }
 
 .heading__line--pink {
@@ -40,6 +49,14 @@ $padding: $line-width * 1.5;
   top: 0;
   bottom: 0;
   left: 0;
+  @media (max-width: $breakpoint-desktop-sm) {
+    width: auto;
+    top: auto;
+    height: $line-width;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .heading__line--x {

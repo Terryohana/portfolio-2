@@ -24,6 +24,9 @@
   font-weight: normal;
   font-style: normal;
   text-transform: uppercase;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 28px;
+  }
 }
 
 .p {

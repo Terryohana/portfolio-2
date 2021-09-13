@@ -17,11 +17,17 @@
     @media (max-width: $breakpoint-desktop-lg) {
       #{$property}: 150px;
     }
+    @media (max-width: $breakpoint-tablet) {
+      #{$property}: 60px;
+    }
   }
   @if $sm {
     #{$property}: 75px;
     @media (max-width: $breakpoint-desktop-lg) {
       #{$property}: 50px;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      #{$property}: 20px;
     }
   }
 }

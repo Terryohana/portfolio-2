@@ -10,10 +10,20 @@
   overflow: hidden;
   column-gap: 30px;
   cursor: pointer;
+  @media (max-width: $breakpoint-desktop-sm) {
+    width: 100%;
+  }
 }
 
 .project--border-top {
   border-top: $line-width $color-black-light solid;
+}
+
+.project__number {
+  position: relative;
+  @media (max-width: $breakpoint-desktop-sm) {
+    display: none;
+  }
 }
 
 .project__number__text {
@@ -23,9 +33,6 @@
   transform: translate(-50%, -50%);
 }
 
-.project__number {
-  position: relative;
-}
 .project__number__icon {
   stroke: $color-pink;
   stroke-width: $line-width-sm;
@@ -36,10 +43,16 @@
   z-index: 2;
   overflow: hidden;
   margin: 25px 0;
+  @media (max-width: $breakpoint-tablet) {
+    margin: 5px 0;
+  }
 }
 
 .project__title {
   padding: 20px 0;
+  @media (max-width: $breakpoint-desktop-sm) {
+    flex-basis: 100%;
+  }
 }
 
 .project__title--top {
@@ -47,6 +60,10 @@
   width: 100%;
   z-index: 1;
   @include text-outline(transparent, $line-width, $color-white);
+  @media (max-width: $breakpoint-tablet) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .project__title--bottom {
@@ -59,10 +76,17 @@
   bottom: 0;
   left: 0;
   z-index: 0;
+  @media (max-width: $breakpoint-tablet) {
+    opacity: 0 !important;
+    transform: none !important;
+  }
 }
 
 .project__title__inner {
   line-height: 100%;
+  @media (max-width: $breakpoint-tablet) {
+    line-height: 120%;
+  }
 }
 
 .project__title__inner--filled {
@@ -78,6 +102,9 @@
   height: $line-width;
   flex-grow: 1;
   overflow: hidden;
+  @media (max-width: $breakpoint-desktop-sm) {
+    display: none;
+  }
 }
 
 .project__line__inner {
@@ -92,4 +119,7 @@
 .project__arrow {
   stroke: $color-pink;
   stroke-width: $line-width;
+  @media (max-width: $breakpoint-desktop-sm) {
+    display: none;
+  }
 }
