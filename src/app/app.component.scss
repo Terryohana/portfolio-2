@@ -37,11 +37,13 @@
 }
 
 .about__title {
-  @include heading-margin(margin-bottom);
   display: inline-block;
 }
 
 .about__text {
+  display: flex;
+  flex-direction: column;
+  @include heading-margin(row-gap);
   width: 1100px;
   @media (max-width: $breakpoint-desktop-sm) {
     width: 80%;
@@ -50,10 +52,6 @@
     width: 100%;
     @include spacing(padding-right, $sm: true);
   }
-}
-
-.about__text__p--last {
-  margin-top: 50px;
 }
 
 .footer {

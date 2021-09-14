@@ -62,3 +62,9 @@ $padding: $line-width * 1.5;
   left: 0;
   right: 0;
 }
+
+.heading__line--mobile {
+  @media (max-width: $breakpoint-tablet) {
+    transform: none !important;
+  }
+}
