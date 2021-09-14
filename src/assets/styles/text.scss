@@ -20,7 +20,6 @@
   overflow: hidden;
   @media (max-width: $breakpoint-tablet) {
     font-size: 15px;
-    font-weight: normal;
   }
 }
 
@@ -57,6 +56,6 @@
 .p--lg {
   font-size: 65px;
   @media (max-width: $breakpoint-tablet) {
-    font-size: 28px;
+    font-size: 30px;
   }
 }

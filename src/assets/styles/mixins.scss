@@ -35,7 +35,7 @@
 @mixin heading-margin($property) {
   #{$property}: 70px;
   @media (max-width: $breakpoint-tablet) {
-    #{$property}: 40px;
+    #{$property}: 35px;
   }
 }
 

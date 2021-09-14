@@ -23,6 +23,11 @@ export const data = {
         heading: 'Knight Frank',
         href: 'https://www.google.co.uk/',
       },
+      {
+        number: '05',
+        heading: 'Colt',
+        href: 'https://www.google.co.uk/',
+      },
     ],
   },
   personal: {
@@ -36,7 +41,7 @@ export const data = {
       },
       {
         number: '02',
-        heading: 'Space gallery',
+        heading: 'Stories from space',
         href: 'https://www.google.co.uk/',
       },
     ],

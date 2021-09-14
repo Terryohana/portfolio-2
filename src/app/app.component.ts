@@ -12,6 +12,7 @@ import { translateLine } from './helpers/translateLine';
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild('container') locoContainerRef: ElementRef;
+  @ViewChild('footer') footerRef: ElementRef;
   @ViewChild('about') aboutRef: ElementRef;
 
   public locoScroll: any;
@@ -20,15 +21,15 @@ export class AppComponent implements AfterViewInit {
   public personalLine: HTMLElement;
   public aboutLine: HTMLElement;
   public footerLine: HTMLElement;
+  public footer: HTMLElement;
   public bike: HTMLElement;
   public bikeWheels: HTMLElement[];
-  public bikeMobile: HTMLElement;
-  public bikeWheelsMobile: HTMLElement[];
   public breakpoint = window.matchMedia('(max-width: 800px)');
   public data = data;
 
   ngAfterViewInit() {
     this.locoContainer = this.locoContainerRef.nativeElement;
+    this.footer = this.footerRef.nativeElement;
     this.syncScrollLibraries();
   }
 
@@ -58,11 +59,7 @@ export class AppComponent implements AfterViewInit {
     ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
     ScrollTrigger.refresh();
     this.animateHeadings();
-    if (this.breakpoint.matches) {
-      this.animateBikeMobile();
-    } else {
-      this.animateBike();
-    }
+    this.animateBike();
   }
 
   public animateHeadings() {
@@ -79,28 +76,16 @@ export class AppComponent implements AfterViewInit {
 
   public animateBike() {
     const tl = gsap.timeline();
-    tl.to(this.bike, { y: 500 });
+    tl.to(this.bike, { y: 1000 });
     tl.to(this.bikeWheels, { rotate: -540 }, 0);
     ScrollTrigger.create({
       trigger: this.bike,
-      start: 'top center',
-      end: '+=1500',
+      start: 'top top',
+      endTrigger: this.footer,
+      end: 'bottom bottom',
       scroller: this.locoContainer,
       animation: tl,
-      scrub: 2,
-    });
-  }
-  public animateBikeMobile() {
-    const tl = gsap.timeline();
-    tl.fromTo(this.bikeMobile, { x: -100 }, { x: 300 });
-    tl.to(this.bikeWheelsMobile, { rotate: 540 }, 0);
-    ScrollTrigger.create({
-      trigger: this.bikeMobile,
-      start: 'top bottom',
-      end: '+=1500',
-      scroller: this.locoContainer,
-      animation: tl,
-      scrub: 2,
+      scrub: 1,
     });
   }
 }

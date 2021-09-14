@@ -59,6 +59,13 @@
   }
 }
 
+.about__break {
+  display: none;
+  @media (max-width: $breakpoint-tablet) {
+    display: inline;
+  }
+}
+
 .footer {
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-right, $sm: true);

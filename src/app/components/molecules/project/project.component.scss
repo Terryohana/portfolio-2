@@ -97,6 +97,9 @@
 
 .project__title__inner--filled {
   @include text-outline(transparent, $line-width-sm, $color-white);
+  @media (max-width: $breakpoint-tablet) {
+    @include text-outline($color-white, 1px, transparent);
+  }
 }
 
 .project__title__inner--outlined {
@@ -108,9 +111,6 @@
   @include line-width(height);
   flex-grow: 1;
   overflow: hidden;
-  @media (max-width: $breakpoint-desktop-sm) {
-    display: none;
-  }
 }
 
 .project__line__inner {
@@ -120,6 +120,9 @@
   right: 0;
   bottom: 0;
   left: 0;
+  @media (max-width: $breakpoint-tablet) {
+    @include text-outline($color-white, 1px, transparent);
+  }
 }
 
 .project__arrow {
