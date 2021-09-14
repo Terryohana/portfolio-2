@@ -8,6 +8,10 @@
   max-height: 900px;
   position: relative;
   overflow: hidden;
+  @media (max-width: $breakpoint-tablet) {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 .header__mask {

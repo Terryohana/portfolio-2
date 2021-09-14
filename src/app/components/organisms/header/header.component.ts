@@ -11,7 +11,7 @@ import { animations } from '../../../constants/animations';
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('headerMask') headerMaskRef: ElementRef;
   // logo
-  public logoBg: HTMLElement;
+  public logoBgs: HTMLElement[];
   // name
   public nameText: HTMLElement;
   public nameLine: HTMLElement;
@@ -49,6 +49,7 @@ export class HeaderComponent implements AfterViewInit {
       const tl = gsap.timeline();
       tl.set(this.nameLine, { xPercent: -100 });
       tl.set(this.scrollIcons[1], { opacity: 0 });
+      tl.set([this.logoBgs[0], this.logoBgs[1]], { yPercent: 100 });
       tl.set(this.textFilledFaces, {
         yPercent: -this.settings.rotate.yPercent,
         opacity: 0,
@@ -76,7 +77,7 @@ export class HeaderComponent implements AfterViewInit {
         this.headerMask,
         {
           opacity: 0,
-          duration: `${this.settings.slide.duration * 0.75}`,
+          duration: `${this.settings.slide.duration * 0.65}`,
           pointerEvents: 'none',
           zIndex: -1,
         },
@@ -113,12 +114,24 @@ export class HeaderComponent implements AfterViewInit {
     };
 
     const animateLogo = () => {
-      const tl = gsap.timeline();
-      tl.to(this.logoBg, {
-        y: 0,
-        duration: animations.duration,
+      const tl = gsap.timeline({
+        defaults: {
+          duration: animations.duration,
+          ease: `${animations.ease}.inOut`,
+        },
+      });
+      tl.to(this.logoBgs[0], {
+        yPercent: 0,
         ease: `${animations.ease}.inOut`,
       });
+      tl.to(
+        this.logoBgs[1],
+        {
+          yPercent: -100,
+          duration: animations.duration * 2,
+        },
+        `-=${animations.duration}`
+      );
       return tl;
     };
 
@@ -172,10 +185,10 @@ export class HeaderComponent implements AfterViewInit {
     main
       .add(setHeaderStyles())
       .add(slideJobTitle())
-      .add(showTextFilledFaces(), '-=0.5')
-      .add(animateLogo(), '-=0.75')
-      .add(animateName(), '-=1')
-      .add(animateScrollText(), '-=0.5')
+      .add(showTextFilledFaces(), `-=${this.settings.slide.duration * 0.1}`)
+      .add(animateLogo(), `-=${this.settings.rotate.duration * 0.5}`)
+      .add(animateName(), `-=${animations.duration * 1.5}`)
+      .add(animateScrollText(), `-=${animations.duration}`)
       .add(animateScrollIcon());
     return main;
   }

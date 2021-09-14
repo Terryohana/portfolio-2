@@ -11,7 +11,6 @@ import { TextSlideLineComponent } from './components/atoms/text-slide-line/text-
 import { DimComponent } from './components/atoms/dim/dim.component';
 import { HeadingComponent } from './components/atoms/heading/heading.component';
 import { ContactComponent } from './components/molecules/contact/contact.component';
-import { OrbitComponent } from './components/atoms/orbit/orbit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { OrbitComponent } from './components/atoms/orbit/orbit.component';
     DimComponent,
     HeadingComponent,
     ContactComponent,
-    OrbitComponent,
   ],
   imports: [BrowserModule],
   providers: [],
