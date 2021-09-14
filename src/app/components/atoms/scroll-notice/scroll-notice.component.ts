@@ -3,8 +3,11 @@ import {
   ElementRef,
   EventEmitter,
   Output,
+  QueryList,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
+import { mapElements } from '../../../helpers/mapElements';
 
 @Component({
   selector: 'app-scroll-notice',
@@ -13,13 +16,13 @@ import {
 })
 export class ScrollNoticeComponent {
   @ViewChild('text') text: ElementRef;
-  @ViewChild('icon') icon: ElementRef;
+  @ViewChildren('icon') icons: QueryList<ElementRef>;
 
   @Output() textEmitter = new EventEmitter();
-  @Output() iconEmitter = new EventEmitter();
+  @Output() iconsEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
     this.textEmitter.emit(this.text.nativeElement);
-    this.iconEmitter.emit(this.icon.nativeElement);
+    this.iconsEmitter.emit(mapElements(this.icons));
   }
 }

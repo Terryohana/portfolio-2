@@ -21,7 +21,7 @@ export class HeaderComponent implements AfterViewInit {
   public textOutlinedFaces: HTMLElement[];
   // scroll notice
   public scrollText: HTMLElement;
-  public scrollIcon: HTMLElement;
+  public scrollIcons: HTMLElement[];
   // header mask
   public headerMask: HTMLElement;
   // animation
@@ -48,6 +48,7 @@ export class HeaderComponent implements AfterViewInit {
     const setHeaderStyles = () => {
       const tl = gsap.timeline();
       tl.set(this.nameLine, { xPercent: -100 });
+      tl.set(this.scrollIcons[1], { opacity: 0 });
       tl.set(this.textFilledFaces, {
         yPercent: -this.settings.rotate.yPercent,
         opacity: 0,
@@ -138,7 +139,7 @@ export class HeaderComponent implements AfterViewInit {
 
     const animateScrollText = () => {
       const tl = gsap.timeline();
-      tl.from(this.scrollText, {
+      tl.from([this.scrollText, this.scrollIcons[1]], {
         y: 10,
         opacity: 0,
         duration: animations.duration,
@@ -157,11 +158,11 @@ export class HeaderComponent implements AfterViewInit {
           ease: `${animations.ease}.out`,
         },
       });
-      tl.set(this.scrollIcon, {
+      tl.set(this.scrollIcons[0], {
         opacity: 1,
       });
-      tl.fromTo(this.scrollIcon, { drawSVG: false }, { drawSVG: true });
-      tl.to(this.scrollIcon, {
+      tl.fromTo(this.scrollIcons[0], { drawSVG: false }, { drawSVG: true });
+      tl.to(this.scrollIcons[0], {
         opacity: 0,
       });
       return tl;

@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  border-bottom: $line-width $color-black-light solid;
+  border-bottom: $line-width $color-grey solid;
   overflow: hidden;
   column-gap: 30px;
   cursor: pointer;
@@ -16,7 +16,7 @@
 }
 
 .project--border-top {
-  border-top: $line-width $color-black-light solid;
+  border-top: $line-width $color-grey solid;
 }
 
 .project__number {
@@ -108,7 +108,7 @@
 }
 
 .project__line__inner {
-  background-color: $color-black-light;
+  background-color: $color-grey;
   position: absolute;
   top: 0;
   right: 0;
