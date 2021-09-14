@@ -30,9 +30,6 @@ $padding: $line-width * 1.5;
 .heading__line {
   position: absolute;
   bottom: 0;
-  @media (max-width: $breakpoint-desktop-sm) {
-    transform: none !important;
-  }
 }
 
 .heading__line--pink {

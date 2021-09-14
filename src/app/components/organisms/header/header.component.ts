@@ -79,7 +79,7 @@ export class HeaderComponent implements AfterViewInit {
           pointerEvents: 'none',
           zIndex: -1,
         },
-        `-=${this.settings.slide.duration * 0.75}`
+        `-=${this.settings.slide.duration * 0.65}`
       );
       return tl;
     };
