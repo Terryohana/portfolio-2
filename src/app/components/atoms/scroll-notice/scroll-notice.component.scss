@@ -14,7 +14,7 @@
 }
 
 .scroll__icon {
-  stroke-width: $line-width;
+  @include line-width(stroke-width);
 }
 
 .scroll__icon--pink {

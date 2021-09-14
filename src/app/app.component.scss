@@ -2,6 +2,30 @@
 @import "variables";
 @import "text";
 
+.work {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 75px;
+  @include spacing(padding-left, $sm: true);
+  @include spacing(padding-right, $sm: true);
+  @include spacing(padding-bottom, $sm: true);
+  @include spacing(margin-bottom, $lg: true);
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    @include heading-margin(row-gap);
+  }
+}
+
+.work__projects {
+  flex-grow: 1;
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+
 .about {
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-bottom, $sm: true);
@@ -9,11 +33,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 60px;
+  @include heading-margin(row-gap);
 }
 
 .about__title {
-  @include spacing(margin-bottom, $sm: true);
+  @include heading-margin(margin-bottom);
   display: inline-block;
 }
 
@@ -32,32 +56,13 @@
   margin-top: 50px;
 }
 
-.work {
-  display: flex;
-  align-items: flex-start;
-  column-gap: 75px;
-  @include spacing(padding-left, $sm: true);
-  @include spacing(padding-right, $sm: true);
-  @include spacing(padding-bottom, $sm: true);
-  @include spacing(margin-bottom, $lg: true);
-  @media (max-width: $breakpoint-desktop-sm) {
-    flex-direction: column;
-    row-gap: 40px;
-  }
-}
-
-.work__projects {
-  flex-grow: 1;
-  @media (max-width: $breakpoint-desktop-sm) {
-    flex-grow: auto;
-    width: 100%;
-  }
-}
-
 .footer {
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-right, $sm: true);
   @include spacing(padding-bottom, $lg: true);
+  @media (max-width: $breakpoint-tablet) {
+    @include heading-margin(row-gap);
+  }
 }
 
 .footer__items {
@@ -68,7 +73,6 @@
   row-gap: 100px;
   @media (max-width: $breakpoint-desktop-lg) {
     max-width: none;
-    row-gap: 50px;
   }
 }
 

@@ -4,13 +4,6 @@
   height: 100%;
 }
 
-@mixin text-margin($property, $value) {
-  #{$property}: $value;
-  @media (max-width: $breakpoint-tablet) {
-    #{$property}: $value * 0.6;
-  }
-}
-
 @mixin spacing($property, $lg: false, $sm: false) {
   @if $lg {
     #{$property}: 175px;
@@ -29,6 +22,20 @@
     @media (max-width: $breakpoint-tablet) {
       #{$property}: 20px;
     }
+  }
+}
+
+@mixin line-width($property) {
+  #{$property}: $line-width;
+  @media (max-width: $breakpoint-tablet) {
+    #{$property}: $line-width - 1px;
+  }
+}
+
+@mixin heading-margin($property) {
+  #{$property}: 70px;
+  @media (max-width: $breakpoint-tablet) {
+    #{$property}: 40px;
   }
 }
 
