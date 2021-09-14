@@ -28,7 +28,7 @@
 @mixin line-width($property) {
   #{$property}: $line-width;
   @media (max-width: $breakpoint-tablet) {
-    #{$property}: $line-width - 1px;
+    #{$property}: $line-width-sm;
   }
 }
 

@@ -67,7 +67,7 @@
 
 .contact__bottom__line {
   position: absolute;
-  height: $line-width;
+  @include line-width(height);
   bottom: 0;
   left: 0;
   right: 0;

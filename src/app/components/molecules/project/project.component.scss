@@ -67,7 +67,6 @@
   position: relative;
   width: 100%;
   z-index: 1;
-  @include text-outline(transparent, $line-width, $color-white);
   @media (max-width: $breakpoint-tablet) {
     opacity: 1 !important;
     transform: none !important;
@@ -106,7 +105,7 @@
 
 .project__line {
   position: relative;
-  height: $line-width;
+  @include line-width(height);
   flex-grow: 1;
   overflow: hidden;
   @media (max-width: $breakpoint-desktop-sm) {
@@ -128,7 +127,7 @@
 }
 
 .project__arrow--dynamic {
-  stroke-width: $line-width;
+  @include line-width(stroke-width);
   @media (max-width: $breakpoint-tablet) {
     display: none;
   }
