@@ -22,6 +22,7 @@ export class AppComponent implements AfterViewInit {
   public footerLine: HTMLElement;
   public bike: HTMLElement;
   public bikeWheels: HTMLElement[];
+  public breakpoint = window.matchMedia('(max-width: 800px)');
   public data = data;
 
   ngAfterViewInit() {
@@ -59,8 +60,13 @@ export class AppComponent implements AfterViewInit {
   }
 
   public animateHeadings() {
-    translateLine(this.workLine, false, this.locoContainer);
-    translateLine(this.personalLine, false, this.locoContainer);
+    if (this.breakpoint.matches) {
+      translateLine(this.workLine, true, this.locoContainer);
+      translateLine(this.personalLine, true, this.locoContainer);
+    } else {
+      translateLine(this.workLine, false, this.locoContainer);
+      translateLine(this.personalLine, false, this.locoContainer);
+    }
     translateLine(this.aboutLine, true, this.locoContainer);
     translateLine(this.footerLine, true, this.locoContainer, 'bottom center');
   }
