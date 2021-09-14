@@ -22,6 +22,8 @@ export class AppComponent implements AfterViewInit {
   public footerLine: HTMLElement;
   public bike: HTMLElement;
   public bikeWheels: HTMLElement[];
+  public bikeMobile: HTMLElement;
+  public bikeWheelsMobile: HTMLElement[];
   public breakpoint = window.matchMedia('(max-width: 800px)');
   public data = data;
 
@@ -56,7 +58,11 @@ export class AppComponent implements AfterViewInit {
     ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
     ScrollTrigger.refresh();
     this.animateHeadings();
-    this.animateBike();
+    if (this.breakpoint.matches) {
+      this.animateBikeMobile();
+    } else {
+      this.animateBike();
+    }
   }
 
   public animateHeadings() {
@@ -78,6 +84,19 @@ export class AppComponent implements AfterViewInit {
     ScrollTrigger.create({
       trigger: this.bike,
       start: 'top center',
+      end: '+=1500',
+      scroller: this.locoContainer,
+      animation: tl,
+      scrub: 2,
+    });
+  }
+  public animateBikeMobile() {
+    const tl = gsap.timeline();
+    tl.fromTo(this.bikeMobile, { x: -100 }, { x: 300 });
+    tl.to(this.bikeWheelsMobile, { rotate: 540 }, 0);
+    ScrollTrigger.create({
+      trigger: this.bikeMobile,
+      start: 'top bottom',
       end: '+=1500',
       scroller: this.locoContainer,
       animation: tl,

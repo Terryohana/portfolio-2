@@ -51,6 +51,14 @@
   }
 }
 
+.about__text__p {
+  &:last-child {
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+}
+
 .footer {
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-right, $sm: true);
