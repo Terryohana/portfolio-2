@@ -5,7 +5,7 @@
 .work {
   display: flex;
   align-items: flex-start;
-  column-gap: 75px;
+  @include heading-margin(column-gap);
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-right, $sm: true);
   @include spacing(padding-bottom, $sm: true);
@@ -33,17 +33,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  @include heading-margin(row-gap);
-}
-
-.about__title {
-  display: inline-block;
 }
 
 .about__text {
+  @include heading-margin(margin-top);
+  @include heading-margin(row-gap);
   display: flex;
   flex-direction: column;
-  @include heading-margin(row-gap);
   width: 1100px;
   @media (max-width: $breakpoint-desktop-sm) {
     width: 80%;
@@ -58,12 +54,10 @@
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-right, $sm: true);
   @include spacing(padding-bottom, $lg: true);
-  @media (max-width: $breakpoint-tablet) {
-    @include heading-margin(row-gap);
-  }
 }
 
 .footer__items {
+  @include heading-margin(margin-top);
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
