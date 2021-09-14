@@ -14,6 +14,19 @@
 }
 
 .scroll__icon {
+  @include line-width(stroke-width);
+}
+
+.scroll__icon--pink {
+  position: relative;
+  z-index: 1;
   stroke: $color-pink;
-  stroke-width: $line-width;
+}
+
+.scroll__icon--grey {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  stroke: $color-grey;
 }

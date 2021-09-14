@@ -19,7 +19,8 @@
   font-style: normal;
   overflow: hidden;
   @media (max-width: $breakpoint-tablet) {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: normal;
   }
 }
 
@@ -31,7 +32,7 @@
   font-style: normal;
   text-transform: uppercase;
   @media (max-width: $breakpoint-tablet) {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
@@ -56,6 +57,6 @@
 .p--lg {
   font-size: 65px;
   @media (max-width: $breakpoint-tablet) {
-    font-size: 30px;
+    font-size: 28px;
   }
 }

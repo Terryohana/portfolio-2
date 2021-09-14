@@ -43,6 +43,13 @@
     transparentize($color: $color-black, $amount: 0) 15%,
     transparentize($color: $color-black, $amount: 1) 100%
   );
+  @media (max-width: $breakpoint-tablet) {
+    background: linear-gradient(
+      180deg,
+      transparentize($color: $color-black, $amount: 0) 70%,
+      transparentize($color: $color-black, $amount: 1) 100%
+    );
+  }
 }
 
 .header__dim--bottom {
@@ -57,4 +64,11 @@
     transparentize($color: $color-black, $amount: 0) 15%,
     transparentize($color: $color-black, $amount: 1) 100%
   );
+  @media (max-width: $breakpoint-tablet) {
+    background: linear-gradient(
+      180deg,
+      transparentize($color: $color-black, $amount: 0) 70%,
+      transparentize($color: $color-black, $amount: 1) 100%
+    );
+  }
 }

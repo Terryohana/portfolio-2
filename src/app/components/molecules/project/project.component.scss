@@ -6,17 +6,21 @@
   position: relative;
   display: flex;
   align-items: center;
-  border-bottom: $line-width $color-black-light solid;
+  border-bottom: $line-width $color-grey solid;
   overflow: hidden;
   column-gap: 30px;
   cursor: pointer;
-  @media (max-width: $breakpoint-desktop-sm) {
+  @media (max-width: $breakpoint-tablet) {
+    border: none;
     width: 100%;
   }
 }
 
 .project--border-top {
-  border-top: $line-width $color-black-light solid;
+  border-top: $line-width $color-grey solid;
+  @media (max-width: $breakpoint-tablet) {
+    border: none;
+  }
 }
 
 .project__number {
@@ -43,15 +47,19 @@
   z-index: 2;
   overflow: hidden;
   margin: 25px 0;
+  @media (max-width: $breakpoint-desktop-sm) {
+    flex-grow: 1;
+  }
   @media (max-width: $breakpoint-tablet) {
-    margin: 5px 0;
+    margin: 0;
+    max-width: 90%;
   }
 }
 
 .project__title {
   padding: 20px 0;
-  @media (max-width: $breakpoint-desktop-sm) {
-    flex-basis: 100%;
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0;
   }
 }
 
@@ -59,7 +67,6 @@
   position: relative;
   width: 100%;
   z-index: 1;
-  @include text-outline(transparent, $line-width, $color-white);
   @media (max-width: $breakpoint-tablet) {
     opacity: 1 !important;
     transform: none !important;
@@ -77,14 +84,13 @@
   left: 0;
   z-index: 0;
   @media (max-width: $breakpoint-tablet) {
-    opacity: 0 !important;
-    transform: none !important;
+    display: none;
   }
 }
 
 .project__title__inner {
   line-height: 100%;
-  @media (max-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-desktop-sm) {
     line-height: 120%;
   }
 }
@@ -99,7 +105,7 @@
 
 .project__line {
   position: relative;
-  height: $line-width;
+  @include line-width(height);
   flex-grow: 1;
   overflow: hidden;
   @media (max-width: $breakpoint-desktop-sm) {
@@ -108,7 +114,7 @@
 }
 
 .project__line__inner {
-  background-color: $color-black-light;
+  background-color: $color-grey;
   position: absolute;
   top: 0;
   right: 0;
@@ -118,8 +124,22 @@
 
 .project__arrow {
   stroke: $color-pink;
-  stroke-width: $line-width;
-  @media (max-width: $breakpoint-desktop-sm) {
+}
+
+.project__arrow--dynamic {
+  @include line-width(stroke-width);
+  @media (max-width: $breakpoint-tablet) {
     display: none;
+  }
+}
+
+.project__arrow--static {
+  display: none;
+  @media (max-width: $breakpoint-tablet) {
+    @include line-width(stroke-width);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }

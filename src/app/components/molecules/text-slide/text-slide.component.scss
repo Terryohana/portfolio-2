@@ -18,7 +18,7 @@ $translateLg: 5%;
 .header__title {
   cursor: default;
   transform-origin: center;
-  @include text-outline($color-white, 3px, transparent);
+  @include text-outline($color-white, $line-width, transparent);
   @media (max-width: $breakpoint-tablet) {
     @include text-outline($color-white, 1px, transparent);
   }
@@ -77,6 +77,9 @@ $translateLg: 5%;
 .header__letter__face {
   display: inline-block;
   padding: 0 1px;
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0;
+  }
 }
 
 .header__letter__face--filled {

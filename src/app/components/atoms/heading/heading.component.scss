@@ -19,7 +19,7 @@ $padding: $line-width * 1.5;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   padding-left: $padding;
-  @media (max-width: $breakpoint-desktop-sm) {
+  @media (max-width: $breakpoint-tablet) {
     writing-mode: initial;
     text-orientation: initial;
     padding-left: 0;
@@ -30,9 +30,6 @@ $padding: $line-width * 1.5;
 .heading__line {
   position: absolute;
   bottom: 0;
-  @media (max-width: $breakpoint-desktop-sm) {
-    transform: none !important;
-  }
 }
 
 .heading__line--pink {
@@ -40,19 +37,19 @@ $padding: $line-width * 1.5;
 }
 
 .heading__line--black {
-  background-color: $color-black-light;
+  background-color: $color-grey;
   z-index: -1;
 }
 
 .heading__line--y {
-  width: $line-width;
+  @include line-width(width);
   top: 0;
   bottom: 0;
   left: 0;
-  @media (max-width: $breakpoint-desktop-sm) {
+  @media (max-width: $breakpoint-tablet) {
+    @include line-width(height);
     width: auto;
     top: auto;
-    height: $line-width;
     bottom: 0;
     left: 0;
     right: 0;
@@ -60,8 +57,14 @@ $padding: $line-width * 1.5;
 }
 
 .heading__line--x {
-  height: $line-width;
+  @include line-width(height);
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.heading__line--mobile {
+  @media (max-width: $breakpoint-tablet) {
+    transform: none !important;
+  }
 }

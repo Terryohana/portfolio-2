@@ -15,17 +15,10 @@
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
-}
-
-.logo--sm {
   @include logo-size(54px);
   @media (max-width: $breakpoint-tablet) {
     @include logo-size(45px);
   }
-}
-
-.logo--lg {
-  @include logo-size(100px);
 }
 
 .logo__text {
@@ -52,10 +45,12 @@
   background-color: $color-white;
 }
 
-.logo__bg--dynamic {
-  transform: translateY(100%);
+.logo__bg--white {
+  z-index: 0;
+  background-color: $color-white;
 }
 
-.logo__bg--static {
-  transform: none;
+.logo__bg--pink {
+  z-index: 1;
+  background-color: $color-pink;
 }

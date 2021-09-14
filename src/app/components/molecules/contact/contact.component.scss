@@ -10,11 +10,16 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-  margin-bottom: 5px;
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 10px;
+  }
 }
 
 .contact__title {
   padding: 20px 0;
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0;
+  }
 }
 
 .contact__title--top {
@@ -22,6 +27,10 @@
   width: 100%;
   z-index: 1;
   @include text-outline(transparent, $line-width, $color-white);
+  @media (max-width: $breakpoint-tablet) {
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
 
 .contact__title--bottom {
@@ -34,6 +43,9 @@
   bottom: 0;
   left: 0;
   z-index: 0;
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
 }
 
 .contact__title__inner {
@@ -42,6 +54,9 @@
 
 .contact__title__inner--filled {
   @include text-outline(transparent, $line-width-sm, $color-white);
+  @media (max-width: $breakpoint-tablet) {
+    @include text-outline($color-white, 1px, transparent);
+  }
 }
 
 .contact__title__inner--outlined {
@@ -52,12 +67,15 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
-  padding-bottom: 14px;
+  padding-bottom: $line-width * 1.5;
+  @media (max-width: $breakpoint-tablet) {
+    padding-bottom: $line-width * 1.5;
+  }
 }
 
 .contact__bottom__line {
   position: absolute;
-  height: $line-width;
+  @include line-width(height);
   bottom: 0;
   left: 0;
   right: 0;
@@ -66,9 +84,12 @@
 .contact__bottom__line--pink {
   background-color: $color-pink;
   z-index: 1;
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
 }
 
 .contact__bottom__line--black {
-  background-color: $color-black-light;
+  background-color: $color-grey;
   z-index: 0;
 }

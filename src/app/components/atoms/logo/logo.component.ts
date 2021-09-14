@@ -3,10 +3,11 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  Input,
   Output,
-  ViewChild,
+  QueryList,
+  ViewChildren,
 } from '@angular/core';
+import { mapElements } from '../../../helpers/mapElements';
 
 @Component({
   selector: 'app-logo',
@@ -14,11 +15,10 @@ import {
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent implements AfterViewInit {
-  @Input() orbit?: boolean;
-  @ViewChild('bg') bg: ElementRef;
-  @Output() bgEmitter = new EventEmitter();
+  @ViewChildren('bg') bgs: QueryList<ElementRef>;
+  @Output() bgsEmitter = new EventEmitter();
 
   ngAfterViewInit(): void {
-    this.bgEmitter.emit(this.bg.nativeElement);
+    this.bgsEmitter.emit(mapElements(this.bgs));
   }
 }
