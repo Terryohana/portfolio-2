@@ -10,14 +10,16 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-  margin-bottom: 5px;
   @media (max-width: $breakpoint-tablet) {
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 }
 
 .contact__title {
   padding: 20px 0;
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0;
+  }
 }
 
 .contact__title--top {
@@ -52,6 +54,9 @@
 
 .contact__title__inner--filled {
   @include text-outline(transparent, $line-width-sm, $color-white);
+  @media (max-width: $breakpoint-tablet) {
+    @include text-outline($color-white, 1px, transparent);
+  }
 }
 
 .contact__title__inner--outlined {
@@ -62,7 +67,10 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
-  padding-bottom: 14px;
+  padding-bottom: $line-width * 1.5;
+  @media (max-width: $breakpoint-tablet) {
+    padding-bottom: $line-width * 1.5;
+  }
 }
 
 .contact__bottom__line {

@@ -11,7 +11,7 @@
       #{$property}: 150px;
     }
     @media (max-width: $breakpoint-tablet) {
-      #{$property}: 60px;
+      #{$property}: 70px;
     }
   }
   @if $sm {

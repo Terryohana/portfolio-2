@@ -18,7 +18,7 @@ $translateLg: 5%;
 .header__title {
   cursor: default;
   transform-origin: center;
-  @include text-outline($color-white, 3px, transparent);
+  @include text-outline($color-white, $line-width, transparent);
   @media (max-width: $breakpoint-tablet) {
     @include text-outline($color-white, 1px, transparent);
   }
