@@ -58,12 +58,12 @@
 
 .footer__items {
   @include heading-margin(margin-top);
+  @include heading-margin(row-gap);
   max-width: 800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 100px;
-  @media (max-width: $breakpoint-desktop-lg) {
+  @media (max-width: $breakpoint-tablet) {
     max-width: none;
   }
 }
