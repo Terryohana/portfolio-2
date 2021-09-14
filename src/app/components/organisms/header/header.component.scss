@@ -40,6 +40,9 @@
   right: -500vw;
   transform: translateY(-48%);
   text-align: center;
+  @media (max-width: $breakpoint-tablet) {
+    transform: translateY(-50%);
+  }
 }
 
 .header__block--bottom {
