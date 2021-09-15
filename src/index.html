@@ -10,19 +10,6 @@
   <body>
     <app-root>
       <style>
-        @font-face {
-          font-family: "Druk Text Wide";
-          src: url("assets/fonts/DrukTextWide-Heavy.woff2") format("woff2"),
-            url("assets/fonts/DrukTextWide-Heavy.woff") format("woff");
-          font-weight: 900;
-          font-style: normal;
-          font-display: swap;
-        }
-        * {
-          margin: 0;
-          padding: 0;
-          font-family: "Druk Text Wide";
-        }
         .loader {
           position: relative;
           display: flex;
@@ -35,37 +22,21 @@
           opacity: 0;
           animation: reveal 1s 1s forwards;
         }
-        .logo {
+        .box {
           position: relative;
           width: 88px;
           height: 80px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: #ffffff;
           overflow: hidden;
         }
-        .logo__text {
-          position: relative;
-          z-index: 1;
-          color: #000000;
-          font-weight: 900;
-          font-size: 44px;
-          line-height: 100%;
-        }
-        .logo__bg {
+        .box__bg {
           position: absolute;
           inset: 0;
           background-color: #ff69b4;
           animation: slide 1.5s 1.5s infinite;
           transform: translateY(100%);
-        }
-        .loader__text {
-          color: #ffffff;
-          font-size: 15px;
-          width: 100%;
-          text-align: center;
-          margin-top: 15px;
         }
         @keyframes slide {
           from {
@@ -86,11 +57,9 @@
       </style>
       <div class="loader">
         <div class="loader__inner">
-          <div class="logo">
-            <div class="logo__text">M</div>
-            <div class="logo__bg"></div>
+          <div class="box">
+            <div class="box__bg"></div>
           </div>
-          <div class="loader__text">loading</div>
         </div>
       </div>
     </app-root>
