@@ -102,9 +102,6 @@
     flex-basis: 100%;
   }
   &:last-child {
-    @media not all and (min-resolution: 0.001dpcm) {
-      margin-top: 50px;
-    }
     flex-basis: 100%;
   }
 }
