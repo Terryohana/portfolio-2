@@ -26,6 +26,19 @@
   }
 }
 
+.work__projects--desktop {
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.work__projects--mobile {
+  display: none;
+  @media (max-width: $breakpoint-tablet) {
+    display: flex;
+  }
+}
+
 .about {
   @include spacing(padding-left, $sm: true);
   @include spacing(padding-bottom, $sm: true);

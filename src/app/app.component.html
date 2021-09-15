@@ -1,14 +1,20 @@
 <div #container class="scrollContainer" data-scroll-container>
   <app-header></app-header>
-  <main>
+  <main #main>
     <section data-scroll-section class="work">
       <app-heading
         [heading]="data.work.heading"
         (lineEmitter)="workLine = $event"
       ></app-heading>
-      <div class="work__projects">
+      <div class="work__projects work__projects--desktop">
         <app-project
-          *ngFor="let project of data.work.projects"
+          *ngFor="let project of data.work.projectsDesktop"
+          [project]="project"
+        ></app-project>
+      </div>
+      <div class="work__projects work__projects--mobile">
+        <app-project
+          *ngFor="let project of data.work.projectsMobile"
           [project]="project"
         ></app-project>
       </div>

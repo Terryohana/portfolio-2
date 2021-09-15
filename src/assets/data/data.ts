@@ -1,7 +1,7 @@
 export const data = {
   work: {
     heading: 'worked on',
-    projects: [
+    projectsDesktop: [
       {
         number: '01',
         heading: 'Frasers Group',
@@ -15,11 +15,29 @@ export const data = {
       },
       {
         number: '03',
-        heading: 'The White Company',
-        href: 'https://develop--dreamy-panini-f60681.netlify.app/',
+        heading: 'haysmacintyre',
+        href: 'https://earlycareers.haysmacintyre.com/',
       },
       {
         number: '04',
+        heading: 'Knight Frank',
+        href: 'https://knightfrankearlycareers.com/',
+      },
+    ],
+    projectsMobile: [
+      {
+        number: '01',
+        heading: 'Frasers Group',
+        borderTop: 'project--border-top',
+        href: 'https://frasers.group/careers',
+      },
+      {
+        number: '02',
+        heading: 'hays macintyre',
+        href: 'https://earlycareers.haysmacintyre.com/',
+      },
+      {
+        number: '03',
         heading: 'Knight Frank',
         href: 'https://knightfrankearlycareers.com/',
       },
