@@ -16,12 +16,6 @@
   }
 }
 
-.work__heading {
-  @media not all and (min-resolution: 0.001dpcm) {
-    display: none;
-  }
-}
-
 .work__projects {
   flex-grow: 1;
   @media (max-width: $breakpoint-tablet) {
