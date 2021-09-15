@@ -3,6 +3,7 @@
   <main #main>
     <section data-scroll-section class="work">
       <app-heading
+        class="work__heading"
         [heading]="data.work.heading"
         (lineEmitter)="workLine = $event"
       ></app-heading>
@@ -21,6 +22,7 @@
     </section>
     <section data-scroll-section class="work">
       <app-heading
+        class="work__heading"
         [heading]="data.personal.heading"
         (lineEmitter)="personalLine = $event"
       ></app-heading>

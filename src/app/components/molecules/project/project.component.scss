@@ -58,6 +58,9 @@
 
 .project__title {
   padding: 20px 0;
+  @media not all and (min-resolution: 0.001dpcm) {
+    padding: 20px;
+  }
   @media (max-width: $breakpoint-tablet) {
     padding: 0;
   }
@@ -120,6 +123,9 @@
   right: 0;
   bottom: 0;
   left: 0;
+  @media not all and (min-resolution: 0.001dpcm) {
+    right: 20px;
+  }
   @media (max-width: $breakpoint-tablet) {
     @include text-outline($color-white, 1px, transparent);
   }
