@@ -1,4 +1,4 @@
 export const animations = {
-  ease: 'power4',
+  ease: 'power3',
   duration: 0.8,
 };

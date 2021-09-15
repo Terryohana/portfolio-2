@@ -77,11 +77,11 @@ export class HeaderComponent implements AfterViewInit {
         this.headerMask,
         {
           opacity: 0,
-          duration: `${this.settings.slide.duration * 0.65}`,
+          duration: `${this.settings.slide.duration * 0.5}`,
           pointerEvents: 'none',
           zIndex: -1,
         },
-        `-=${this.settings.slide.duration * 0.65}`
+        `-=${this.settings.slide.duration * 0.6}`
       );
       return tl;
     };
@@ -186,9 +186,9 @@ export class HeaderComponent implements AfterViewInit {
       .add(setHeaderStyles())
       .add(slideJobTitle())
       .add(showTextFilledFaces(), `-=${this.settings.slide.duration * 0.1}`)
-      .add(animateLogo(), `-=${this.settings.rotate.duration * 0.5}`)
-      .add(animateName(), `-=${animations.duration * 1.5}`)
-      .add(animateScrollText(), `-=${animations.duration}`)
+      .add(animateLogo(), `-=${this.settings.rotate.duration * 0.75}`)
+      .add(animateName(), `-=${animations.duration * 1.75}`)
+      .add(animateScrollText(), `-=${animations.duration * 1.25}`)
       .add(animateScrollIcon());
     return main;
   }

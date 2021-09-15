@@ -46,7 +46,7 @@
   @media (max-width: $breakpoint-tablet) {
     background: linear-gradient(
       180deg,
-      transparentize($color: $color-black, $amount: 0) 70%,
+      transparentize($color: $color-black, $amount: 0) 60%,
       transparentize($color: $color-black, $amount: 1) 100%
     );
   }
@@ -67,7 +67,7 @@
   @media (max-width: $breakpoint-tablet) {
     background: linear-gradient(
       180deg,
-      transparentize($color: $color-black, $amount: 0) 70%,
+      transparentize($color: $color-black, $amount: 0) 60%,
       transparentize($color: $color-black, $amount: 1) 100%
     );
   }
