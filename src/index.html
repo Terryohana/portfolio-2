@@ -18,10 +18,6 @@
           height: 100vh;
           background-color: #000000;
         }
-        .loader__inner {
-          opacity: 0;
-          animation: reveal 1s 1s forwards;
-        }
         .box {
           position: relative;
           width: 88px;
@@ -30,6 +26,8 @@
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          opacity: 0;
+          animation: reveal 1s 1s forwards;
         }
         .box__bg {
           position: absolute;
@@ -56,10 +54,8 @@
         }
       </style>
       <div class="loader">
-        <div class="loader__inner">
-          <div class="box">
-            <div class="box__bg"></div>
-          </div>
+        <div class="box">
+          <div class="box__bg"></div>
         </div>
       </div>
     </app-root>
